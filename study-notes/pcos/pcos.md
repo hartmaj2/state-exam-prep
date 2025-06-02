@@ -1,9 +1,9 @@
 # Preparation for Computer architecture and operating system architecture question
 
 ## TODOS:
-- [ ] try virtual address translation example (from past exams)
-- [ ] try example with PIO (from past exams)
-- [ ] try example with page faults
+- [x] try virtual address translation example (from past exams)
+- [x] try example with PIO (from past exams)
+- [x] try example with page faults
 
 ## Topics
 - [x] Základní architektura počítače, reprezentace čísel, dat a programů.
@@ -44,7 +44,7 @@ zadané sekvenci (vysvětlených) instrukcí procesoru
     - soubory, analogie s adresovým prostorem
     - abstrakce a rozhraní pro práci se soubory
 
-- [ ] Paralelismus, vlákna a rozhraní pro jejich správu, synchronizace vláken.
+- [x] Paralelismus, vlákna a rozhraní pro jejich správu, synchronizace vláken.
   - časově závislé chyby (race conditions)
   - kritická sekce, vzájemné vyloučení
   - základní sychronizační primitiva, jejich rozhraní a použití
