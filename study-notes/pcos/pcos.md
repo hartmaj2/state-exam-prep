@@ -352,6 +352,16 @@ Disassembly of section __TEXT,__text:
   - this can be found in the page table
   - then use the frame number to form physical address as [ frame number | offset ]
 
+- translation for two-level paging
+  - derive offset based on page/frame size (e.g. 4KB -> 2^12 -> 12-bit offset) ... O
+  - the rest is split equally:
+    - first part -> page directory (first-level page table) index ... A
+    - second part -> second-level page table index ... B
+  - take p.d. index (A) and count this many entries from the p.d. start (this will be given to you)
+    - at that index take the data and remove the offset part ... C
+  - now look at address C and count B entries away from it to find the first part of the physical address ... D
+  - combine D and O ... your final physical address
+
 ### Storage sharing
 
 - analogy filesystem vs address space
