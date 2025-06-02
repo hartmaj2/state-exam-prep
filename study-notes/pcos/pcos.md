@@ -434,11 +434,12 @@ Disassembly of section __TEXT,__text:
     - when resource is released, somebody wakes us up
     - does not consume CPU while waiting
 
-### Subtopics
+## Practical coding problem
 
-- [ ] Paralelismus, vlákna a rozhraní pro jejich správu, synchronizace vláken.
-  - časově závislé chyby (race conditions)
-  - kritická sekce, vzájemné vyloučení
-  - základní sychronizační primitiva, jejich rozhraní a použití
-    - zámky
-    - aktivní a pasivní čekání
+- decompose
+  - add own functions that were not needed if necessary (don't have to stick with just the functions I am given to implement)
+
+- possible to use functions and types that are normally assumed to exist
+  - e.g. mutex, lock_mutex(), unlock_mutex()
+
+- focus on high level things that need to be done (don't get distracted by unnecessary details)
