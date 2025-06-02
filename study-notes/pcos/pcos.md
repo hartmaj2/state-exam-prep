@@ -3,6 +3,7 @@
 ## TODOS:
 - [ ] try virtual address translation example (from past exams)
 - [ ] try example with PIO (from past exams)
+- [ ] try example with page faults
 
 ## Topics
 - [x] Základní architektura počítače, reprezentace čísel, dat a programů.
