@@ -394,7 +394,37 @@ Disassembly of section __TEXT,__text:
 
 ## Parallelism 
 
-TODO: continue with this topic
+- race condition
+  - happens when the program is dependent on which thread gets to a certain part of the program first
+  - e.g. thread A reads data from variable X but B writes to that variable, then if A reads before B writes it maybe reads different value then what it would if B writes first
+
+- critical section
+  - part of code, where a race condition might occur
+  - should not be executed by more than one thread
+
+- mutual exclusion
+  - mechanism that ensures only one process or thread can execute a piece of code at any given time
+
+- basic synchronization primitives
+  - locks (mutexes)
+    - lock is an object that is held by the thread that is currently executing the critical section
+    - when the lock is held, no other thread can execute the code in the critical section
+    - when some thread wants to enter a section where the lock is held by some other thread -> goes into blocked state
+    - only the thread that called lock() can call unlock() to release the lock
+  - semaphores
+    - based on an integer, which tracks how many resources are available (how many threads can enter)
+    - calling wait() means, that we decrease the amount of resources
+    - calling signal() means, we increase the amount of resource
+    - when resources (the integer) is 0 and a thread calls wait(), it gets blocked until signal() is called by some thread
+
+- active vs busy waiting
+  - active (polling, busy waiting)
+    - means that we check until a condition is fulfilled inside a while loop 
+    - consumes CPU while waiting
+  - passive (blocking)
+    - we go to blocked mode
+    - when resource is released, somebody wakes us up
+    - does not consume CPU while waiting
 
 ### Subtopics
 
