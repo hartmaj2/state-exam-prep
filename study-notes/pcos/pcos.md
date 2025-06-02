@@ -443,3 +443,54 @@ Disassembly of section __TEXT,__text:
   - e.g. mutex, lock_mutex(), unlock_mutex()
 
 - focus on high level things that need to be done (don't get distracted by unnecessary details)
+
+## Spring 2023 - i
+
+1. Adresový prostor každého procesu je rozdělen na různé oblasti obsahující kód programu a data. Jaké hlavní oblasti pro
+data (lišící se životností dat a způsobem alokace a dealokace prostoru pro jejich uložení) bude adresový prostor procesu
+obsahovat?
+
+[mff-link](https://d3s.mff.cuni.cz/files/teaching/nswi004/text/ch03s02s01.html)
+
+- parts of the address space of a process:
+  - text segment (program)
+  - data segment (statically allocated data, lifetime = entire duration of the process)
+  - stack (automatically allocated)
+    - advantage: faster than heap, safer than heap
+    - disadvantage: smaller than heap
+    - no manual control over the lifetime of the object (lifetime depends on what happens on the stack)
+  - heap (dynamically allocated)
+    - advantage: we have control over the lifetime of the object (until we manually deallocate OR stop using it and garbage collector eats it), bigger than stack
+    - disadvantage: slower than stack, risk of memory leaks
+
+
+2. Pro každou takovou oblast vysvětlete, jaká data se zde typicky nacházejí, kdy v ní dochází k alokaci a dealokaci dat a
+kdo je za ni zodpovědný. Ve vašem vysvětlení ilustrujte alokaci a dealokaci na fragmentu kódu v C++, C# nebo Javě.
+
+- stack (automatically allocated)
+  - typically local variables inside functions
+  - deallocated when scope ends
+  - responsible: compiler and runtime system
+- heap (dynamically allocated)
+  - usually for long-lived objects
+  - allocated manually (or automatically in managed environments)
+  - deallocated manually (or by garbage collector in managed environments)
+  - responsible: programmer (C++), garbage collector (C#,Java)
+- data segment
+  - for variables living during the entire lifetime of the process
+  - allocated at start of program
+  - deallocated at end
+  - responsible: OS and compiler
+
+- example:
+```cpp
+int b = 14; // global variable -> data segment
+
+int func() {
+    int a = 1; // local variable -> stack
+
+    int* array = new int[a]; // dynamic allocation -> heap
+
+    delete[] array; // manual deallocation (required in C++)
+}
+```
