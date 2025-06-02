@@ -363,6 +363,14 @@ Disassembly of section __TEXT,__text:
   - now look at address C and count B entries away from it to find the first part of the physical address ... D
   - combine D and O ... your final physical address
 
+- counting page faults
+  - if not contiguous block of code -> we would be screwed (any byte could need a different page potentially)
+  - if contiguous -> look at page size, how many pages must be needed to fit the whole contiguous block inside? let his number be ... P
+    - remember that the contiguous block does not have to start aligned with a page
+  - for two level paging:
+    - look at num of 2nd level pages contained in 1st level page
+    - how many tables do we need to contain a contiguous block of P entries?
+
 ### Storage sharing
 
 - analogy filesystem vs address space
