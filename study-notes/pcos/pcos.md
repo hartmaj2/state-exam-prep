@@ -421,8 +421,8 @@ Disassembly of section __TEXT,__text:
     - only the thread that called lock() can call unlock() to release the lock
   - semaphores
     - based on an integer, which tracks how many resources are available (how many threads can enter)
-    - calling wait() means, that we decrease the amount of resources
-    - calling signal() means, we increase the amount of resource
+    - calling wait() means, that we decrease the amount of resources (P - Probeer - try)
+    - calling signal() means, we increase the amount of resource (V - Verhoog - increase)
     - when resources (the integer) is 0 and a thread calls wait(), it gets blocked until signal() is called by some thread
 
 - active vs busy waiting
