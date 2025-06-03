@@ -444,7 +444,7 @@ Disassembly of section __TEXT,__text:
 
 - focus on high level things that need to be done (don't get distracted by unnecessary details)
 
-## Spring 2023 - i
+## Spring 2023 - i (processor memory organization)
 
 1. Adresový prostor každého procesu je rozdělen na různé oblasti obsahující kód programu a data. Jaké hlavní oblasti pro
 data (lišící se životností dat a způsobem alokace a dealokace prostoru pro jejich uložení) bude adresový prostor procesu
