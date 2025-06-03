@@ -20,11 +20,11 @@
   - číselné a výčtové typy
   - Ⓥ hodnotové a referenční typy v C#
   - Ⓥ reference, imutabilní typy a boxing v C#
-- [ ] Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
+- [x] Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
   - Ⓥ generické typy v C# (bez omezení typových parametrů)
   - Ⓥ typy reprezentující funkce v C#
   - lambda funkce a funkcionální rozhraní
-- [ ] Manipulace se zdroji a mechanizmy pro ošetření chyb.
+- [x] Manipulace se zdroji a mechanizmy pro ošetření chyb.
   - správa životního cyklu zdrojů v případě výskytu chyb
     - Ⓥ using v C#
   - konstrukce pro obsluhu a propagaci výjimek
@@ -191,11 +191,6 @@
 
 ## Generic types, functional elements of programming languages
 
-- Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
-  - Ⓥ generické typy v C# (bez omezení typových parametrů)
-  - Ⓥ typy reprezentující funkce v C#
-  - lambda funkce a funkcionální rozhraní
-
 - delegates (reference type)
   - data type for passing functions as parameters or storing them as data
   - **built-in delegates**
@@ -221,6 +216,33 @@
     - implicitly typed: `(par1, par2) => { \* some code here *\ }`
 
 ## Resource manipulation, error handling mechanisms
+
+- resource manipulation
+  - manipulating files, network connections, database connections etc.
+  - why care:
+    - resources like this are non-memory-managed (the GC does not know about them; we want it that way to have control over these things?)
+    - must be explicitly released (because it is hard to automate this, GC would not know when to release?)
+  - using
+    - allows to use a reasors inside a block and then have it automatically closed at the end of the block (equivalent to with keyword in Python)
+    - the object for which we use it must implement **IDisposable**
+    - syntax: `using (var disposableObj = new DisposableClass) { \* use the disposable class *\ }`
+
+- exceptions
+  - structured object representing a runtime error and its metadata (type, message, stack trace)
+  - why:
+    - programs don't always work as expected
+    - it is good to have well structured information about what went wrong and where it went wrong
+    - allows separation of program (business) logic vs error handling logic (catching can be done at a further place from where the error actually happened)
+    - more readable code (we clearly show intent; try -> what should happen, catch -> what to do when it goes wrong)
+  - are thrown using the keyword `throw`
+    - if not catched using `try-catch-finally` syntax, they cause the program to crash
+
+- exception handling
+  - stopping the propagation of an exception and acting in accordance to it
+  - why:
+    - we don't want the program to crash (especially with applications which run a long time)
+      - crash could mean we lose some data
+      - it can be annoying for the user
 
 ## Object lifecycle, memory management
 
