@@ -161,14 +161,16 @@
   - backed by an integer
 
 - primitive vs object types in C#
+  
   - primitive (value types)
     - variable points directly to the data
     - get passed to functions by value
-    - e.g. integral types, enum, struct
+    - e.g. integral types, enum, **struct**
+
   - object types (reference types)
     - **reference**: address that points to a heap
     - variable only stores a reference to the actual data of the object
-    - classes, interfaces, strings, arrays, delegates, wrapper types
+    - classes, interfaces, strings, **arrays**, delegates, wrapper types
     - passed by reference
 
 - immutable types
@@ -176,7 +178,7 @@
   - e.g. strings, record types (by default, but can be mutable as well)
   - typical misconception: you can assign new value to an immutable variable, you just cannot change the state of the immutable object inside
 
-- nullable types (value type)
+- **nullable types** (value type)
   - not allocated on heap
   - small overhead (just an additional bool)
 
@@ -184,8 +186,8 @@
   - when we pass a primitive value type to a parameter/variable of type object 
   - object is created which wraps the value inside of itself
   - conversions:
-    - value -> object is implicit
-    - object -> value must be done explicitly
+    - value -> object: is implicit
+    - object -> value: **must be done explicitly**
 
 ## Generic types, functional elements of programming languages
 
@@ -195,6 +197,7 @@
   - lambda funkce a funkcionální rozhraní
 
 - delegates (reference type)
+  - data type for passing functions as parameters or storing them as data
   - **built-in delegates**
     - `Action<in T1, in T2, ...>` for procedures (no return type)
     - `Func<in T1, in T2, ... ,out TResult>` for functions with return types
@@ -211,10 +214,11 @@
   }
   ```
 
-TODO: finish lambdas
 - lambdas
   - anonymous functions (no need to name the function which we are passing to a parameter of delegate type)
-  - syntax: ``
+  - syntax
+    - explicitly typed: `(T1 par1, T2 par2, ... ) => { \* some code here *\ }`
+    - implicitly typed: `(par1, par2) => { \* some code here *\ }`
 
 ## Resource manipulation, error handling mechanisms
 
