@@ -169,6 +169,31 @@
 
 ### Spring 2025 (matrix calculation library)
 
+- [example solution](../../study-notes/prg/MtxLib/Program.cs)
+
+- naming conventions
+  - `interface INeco`
+  - Pascal case for functions
+
+- inheritance
+  - `class SUB : SUPER`
+
+- generic type syntax:
+  - `class NECO<T> where T : INecoJineho<T>`
+
+- overloaded operators
+  - `public static RETURN_TYPE operator SYMBOL(T1, T2)`
+  - need to be declared in the class of the parameter (unary types)
+
+- idioms
+  - `record`
+    - provides you with default implementations of field
+    - provides basic functions like ToString etc.
+  - `=>`
+    - allows you to write a one-liner body of your function
+  - `var`
+    - automatically derives type of whatever goes into the variable
+
 ### Summer 2024 (semaphores)
 
 ### Autumn 2024 (representation of types)
