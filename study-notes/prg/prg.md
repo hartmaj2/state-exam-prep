@@ -228,7 +228,9 @@
 - using
   - allows to use a reasors inside a block and then have it automatically closed at the end of the block (equivalent to with keyword in Python)
   - the object for which we use it must implement **IDisposable**
-  - syntax: `using (var disposableObj = new DisposableClass) { \* use the disposable class *\ }`
+  - syntax: `using (var disposableObj = new DisposableClass()) { \* use the disposable class *\ }`
+  - improved syntax: `using var disposableObj = new DisposableClass();`
+    - then the object gets disposed when the current block ends
 
 ### Exceptions
 - structured object representing a runtime error and its metadata (type, message, stack trace)
