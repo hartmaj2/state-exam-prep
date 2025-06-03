@@ -142,11 +142,6 @@
 
 ## Primitive and object types, their representation
 
-- Primitivní a objektové typy a jejich reprezentace.
-  - číselné a výčtové typy
-  - Ⓥ hodnotové a referenční typy v C#
-  - Ⓥ reference, imutabilní typy a boxing v C#
-
 - numeric types (value type)
   ```cs
   // integral types
@@ -193,6 +188,33 @@
     - object -> value must be done explicitly
 
 ## Generic types, functional elements of programming languages
+
+- Generické typy a funkcionální prvky (procedurálních programovacích jazyků).
+  - Ⓥ generické typy v C# (bez omezení typových parametrů)
+  - Ⓥ typy reprezentující funkce v C#
+  - lambda funkce a funkcionální rozhraní
+
+- delegates (reference type)
+  - **built-in delegates**
+    - `Action<in T1, in T2, ...>` for procedures (no return type)
+    - `Func<in T1, in T2, ... ,out TResult>` for functions with return types
+  - user declared delegates (when we want more control than what the built-in delegates offer)
+    - `delegate TResult DELEGATE_NAME(T1 par1, T2 par2)`
+
+- for example you can create a foreach loop over functions and invoke all of them
+  ```cs
+  static void TestFunction(Func<string, string> func, string str) { /* do domething */;}
+
+  foreach (var func in functions)
+  {
+      TestFunction(func,name);
+  }
+  ```
+
+TODO: finish lambdas
+- lambdas
+  - anonymous functions (no need to name the function which we are passing to a parameter of delegate type)
+  - syntax: ``
 
 ## Resource manipulation, error handling mechanisms
 
