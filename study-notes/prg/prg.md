@@ -6,7 +6,7 @@
 
 ## Topics
 
-- [ ] Koncepty pro abstrakci, zapouzdření a polymorfismus.
+- [x] Koncepty pro abstrakci, zapouzdření a polymorfismus.
   - související konstrukty programovacích jazyků
     - třídy, rozhraní, metody, datové položky, dědičnost, viditelnost
   - (dynamický) polymorfismus, statické a dynamické typování
@@ -16,7 +16,7 @@
     - Ⓥ interfaces v C#
   - implementace rozhraní (interface)
   - vhodné použití uvedených konceptů
-- [ ] Primitivní a objektové typy a jejich reprezentace.
+- [x] Primitivní a objektové typy a jejich reprezentace.
   - číselné a výčtové typy
   - Ⓥ hodnotové a referenční typy v C#
   - Ⓥ reference, imutabilní typy a boxing v C#
@@ -50,17 +50,6 @@
   - běhové prostředí procesu a vazba na operační systém
 
 ## Concepts for abstraction, encapsulation and polymorphism
-
-- [ ] Koncepty pro abstrakci, zapouzdření a polymorfismus.
-  - související konstrukty programovacích jazyků
-    - třídy, rozhraní, metody, datové položky, dědičnost, viditelnost
-  - (dynamický) polymorfismus, statické a dynamické typování
-  - jednoduchá dědičnost
-    - Ⓥ virtuální a nevirtuální metody v C#
-  - vícenásobná dědičnost a její problémy
-    - Ⓥ interfaces v C#
-  - implementace rozhraní (interface)
-  - vhodné použití uvedených konceptů
 
 ### Concepts for abstraction
 
@@ -152,6 +141,56 @@
       - **dynamic dispatch**: the method by which overriden method calls are resolved at runtime (what concrete implementation should be called?)
 
 ## Primitive and object types, their representation
+
+- Primitivní a objektové typy a jejich reprezentace.
+  - číselné a výčtové typy
+  - Ⓥ hodnotové a referenční typy v C#
+  - Ⓥ reference, imutabilní typy a boxing v C#
+
+- numeric types (value type)
+  ```cs
+  // integral types
+  sizeof(byte); // 8-bit
+  sizeof(short); // 16-bit
+  sizeof(int); // 32-bit
+  sizeof(long); // 64-bit
+
+  // floating point types
+  sizeof(float); // 32-bit
+  sizeof(double); // 64-bit
+  sizeof(decimal); // 128-bit (for precise floating calculations in decadic numeral system)
+  ```
+
+- enumeration types (value type)
+  - `enum MY_ENUM { VALUE1, VALUE2, ... }`
+  - backed by an integer
+
+- primitive vs object types in C#
+  - primitive (value types)
+    - variable points directly to the data
+    - get passed to functions by value
+    - e.g. integral types, enum, struct
+  - object types (reference types)
+    - **reference**: address that points to a heap
+    - variable only stores a reference to the actual data of the object
+    - classes, interfaces, strings, arrays, delegates, wrapper types
+    - passed by reference
+
+- immutable types
+  - not possible to change their internal state
+  - e.g. strings, record types (by default, but can be mutable as well)
+  - typical misconception: you can assign new value to an immutable variable, you just cannot change the state of the immutable object inside
+
+- nullable types (value type)
+  - not allocated on heap
+  - small overhead (just an additional bool)
+
+- boxing
+  - when we pass a primitive value type to a parameter/variable of type object 
+  - object is created which wraps the value inside of itself
+  - conversions:
+    - value -> object is implicit
+    - object -> value must be done explicitly
 
 ## Generic types, functional elements of programming languages
 
