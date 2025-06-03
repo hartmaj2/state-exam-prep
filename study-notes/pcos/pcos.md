@@ -434,7 +434,11 @@ Disassembly of section __TEXT,__text:
     - when resource is released, somebody wakes us up
     - does not consume CPU while waiting
 
-## Practical coding problem
+## Past exams
+
+### Spring 2024 (driver for disk controller)
+
+- [solution](../../study-notes/pcos/driver_commented_sol.cpp)
 
 - decompose
   - add own functions that were not needed if necessary (don't have to stick with just the functions I am given to implement)
@@ -442,9 +446,9 @@ Disassembly of section __TEXT,__text:
 - possible to use functions and types that are normally assumed to exist
   - e.g. mutex, lock_mutex(), unlock_mutex()
 
-- focus on high level things that need to be done (don't get distracted by unnecessary details)
+- focus on high level things that need to be done (don't get distracted by unnecessary details) 
 
-## Spring 2023 - i (processor memory organization)
+### Spring 2023 - i (processor memory organization)
 
 1. Adresový prostor každého procesu je rozdělen na různé oblasti obsahující kód programu a data. Jaké hlavní oblasti pro
 data (lišící se životností dat a způsobem alokace a dealokace prostoru pro jejich uložení) bude adresový prostor procesu
@@ -494,3 +498,7 @@ int func() {
     delete[] array; // manual deallocation (required in C++)
 }
 ```
+
+### Summer 2022 - one (translation of high level language constructions)
+
+### Autumn 2022 (virtual memory)
