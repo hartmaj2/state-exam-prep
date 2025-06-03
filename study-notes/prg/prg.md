@@ -191,13 +191,14 @@
 
 ## Generic types, functional elements of programming languages
 
-- delegates (reference type)
-  - data type for passing functions as parameters or storing them as data
-  - **built-in delegates**
-    - `Action<in T1, in T2, ...>` for procedures (no return type)
-    - `Func<in T1, in T2, ... ,out TResult>` for functions with return types
-  - user declared delegates (when we want more control than what the built-in delegates offer)
-    - `delegate TResult DELEGATE_NAME(T1 par1, T2 par2)`
+### Delegates (reference type)
+
+- data type for passing functions as parameters or storing them as data
+- **built-in delegates**
+  - `Action<in T1, in T2, ...>` for procedures (no return type)
+  - `Func<in T1, in T2, ... ,out TResult>` for functions with return types
+- user declared delegates (when we want more control than what the built-in delegates offer)
+  - `delegate TResult DELEGATE_NAME(T1 par1, T2 par2)`
 
 - for example you can create a foreach loop over functions and invoke all of them
   ```cs
@@ -209,33 +210,35 @@
   }
   ```
 
-- lambdas
-  - anonymous functions (no need to name the function which we are passing to a parameter of delegate type)
-  - syntax
-    - explicitly typed: `(T1 par1, T2 par2, ... ) => { \* some code here *\ }`
-    - implicitly typed: `(par1, par2) => { \* some code here *\ }`
+### Lambdas
+
+- anonymous functions (no need to name the function which we are passing to a parameter of delegate type)
+- syntax
+  - explicitly typed: `(T1 par1, T2 par2, ... ) => { \* some code here *\ }`
+  - implicitly typed: `(par1, par2) => { \* some code here *\ }`
 
 ## Resource manipulation, error handling mechanisms
 
-- resource manipulation
-  - manipulating files, network connections, database connections etc.
-  - why care:
-    - resources like this are non-memory-managed (the GC does not know about them; we want it that way to have control over these things?)
-    - must be explicitly released (because it is hard to automate this, GC would not know when to release?)
-  - using
-    - allows to use a reasors inside a block and then have it automatically closed at the end of the block (equivalent to with keyword in Python)
-    - the object for which we use it must implement **IDisposable**
-    - syntax: `using (var disposableObj = new DisposableClass) { \* use the disposable class *\ }`
+### Resource manipulation
 
-- exceptions
-  - structured object representing a runtime error and its metadata (type, message, stack trace)
-  - why:
-    - programs don't always work as expected
-    - it is good to have well structured information about what went wrong and where it went wrong
-    - allows separation of program (business) logic vs error handling logic (catching can be done at a further place from where the error actually happened)
-    - more readable code (we clearly show intent; try -> what should happen, catch -> what to do when it goes wrong)
-  - are thrown using the keyword `throw`
-    - if not catched using `try-catch-finally` syntax, they cause the program to crash
+- manipulating files, network connections, database connections etc.
+- why care:
+  - resources like this are non-memory-managed (the GC does not know about them; we want it that way to have control over these things?)
+  - must be explicitly released (because it is hard to automate this, GC would not know when to release?)
+- using
+  - allows to use a reasors inside a block and then have it automatically closed at the end of the block (equivalent to with keyword in Python)
+  - the object for which we use it must implement **IDisposable**
+  - syntax: `using (var disposableObj = new DisposableClass) { \* use the disposable class *\ }`
+
+### Exceptions
+- structured object representing a runtime error and its metadata (type, message, stack trace)
+- why:
+  - programs don't always work as expected
+  - it is good to have well structured information about what went wrong and where it went wrong
+  - allows separation of program (business) logic vs error handling logic (catching can be done at a further place from where the error actually happened)
+  - more readable code (we clearly show intent; try -> what should happen, catch -> what to do when it goes wrong)
+- are thrown using the keyword `throw`
+  - if not catched using `try-catch-finally` syntax, they cause the program to crash
 
 - exception handling
   - stopping the propagation of an exception and acting in accordance to it
@@ -245,6 +248,27 @@
       - it can be annoying for the user
 
 ## Object lifecycle, memory management
+
+- Životní cyklus objektů a správa paměti.
+  - alokace (alokace statická, na zásobníku, na haldě)
+  - inicializace (konstruktory, volání zděděných konstruktorů)
+  - destrukce (destruktory, finalizátory)
+  - explicitní uvolňování objektů, reference counting, garbage collector
+
+### Allocation and deallocation
+
+- automatic -> for objects on stack
+- manual or automatic using garbage collection -> object on heap
+- manual for whole lifetime of program -> statically allocated objects
+
+### Initialization
+
+- done using constructors
+
+- constructors
+  - why:
+    - enforce that objects get created with a valid internal state
+    - define a kind of contract how an object should be created
 
 ## Threads and synchronization
 
