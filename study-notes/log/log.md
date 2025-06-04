@@ -137,14 +137,27 @@
 - rekurzivně si teď můžeme definovat pro libovolnou formuli $\varphi$ její pravdivostní funkci $f_\varphi$
   - ta funkce by měla jako v případě výrokové logiky vracet buď 0 nebo 1 (lež či pravda)
   1. mějmě atomickou formuli $\varphi = R(x_1,\ldots,x_n)$ definujeme pravdivostní funkci jako:
-       - $f_\varphi(e) = 1$ fff $(x_1[e],\ldots,x_n[e]) \in R^\mathcal{A}$ 
-       - $f_\varphi(e) = 0$ fff $(x_1[e],\ldots,x_n[e]) \not\in R^\mathcal{A}$ 
+       - $f_\varphi(e) = 1$ iff $(x_1[e],\ldots,x_n[e]) \in R^\mathcal{A}$ 
+       - $f_\varphi(e) = 0$ iff $(x_1[e],\ldots,x_n[e]) \not\in R^\mathcal{A}$ 
    2. pro formuli vzešlou použitím logických spojek se bude chovat jako ve výrokové logice
    3. nechť máme formuli $\varphi = (\forall x)\varphi'$ potom $f_\varphi(e)$ definujeme jako:
         - $\min_{a \in A}(f'_\varphi(e_{x\rightarrow a}))$ kde $e_{x\rightarrow a} = (e - {(x,b)} )\cup {(x,a)}$ pro nějakou $(x,b) \in e$
         - analogicky s max pro $(\exists x)\varphi'$
 
+- o formuli $\varphi$ pak říkáme, že je pravdivá nebo lživá v nějaké struktuře $\mathcal{A}$
+  - pravdivá: platí v každém ohodnocení
+  - lživá: neplatí v žádném ohodnocení
 
+- generální uzávěr formule $\varphi$
+  - je to formule vzniklá přidáním všeobecného kvantifikátoru pro každou volnou proměnnou z $\varphi$
+
+- struktura $\mathcal{A}$ je modelem teorie $T$ pokud pro každý $\varphi \in T$ máme $\mathcal{A} \models \varphi$
+  - třída všech modelů teorie $T$ má pěkné značení $M(T)$
+
+- s touto terminologií už jsme připraveni definovat si, co znamená, že nějaká formule $\varphi$ platí v teorii $T$
+  - $\varphi$ je pravdiva v teorii $T$ kdyz plati v kazdem modelu $\mathcal{A} \in M(T)$
+  - $\varphi$ je lziva v teorii $T$ kdyz neplati v zadnem modelu $\mathcal{A} \in M(T)$
+  - jinak je formule $\varphi$ nezavisla v teorii $T$
 
 ### Past exams
 
