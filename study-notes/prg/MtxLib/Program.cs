@@ -1,40 +1,54 @@
-﻿class Program
+﻿using System.Runtime.CompilerServices;
+
+static void OperateOn(Element elem, Operation op)
 {
-    private static Semaphore sem1;
-    private static Semaphore sem2;
-    private static void f1()
+    op.Call(elem);
+    switch (elem)
     {
-        Console.Write("One");
-        sem1.Release();
-        sem2.WaitOne();
-        Console.Write("Three");
-        sem1.Release();
-        sem2.WaitOne();
-        Console.Write("Five");
+        case Type type:
+            foreach (var field in type.fields) { OperateOn(field, op); }
+            foreach (var method in type.methods) { OperateOn(method, op); }
+            break;
     }
+}
 
-    private static void f2()
-    {
-        Thread.Sleep(1000);
-        sem1.WaitOne();
-        Console.Write("Two");
-        sem2.Release();
-        sem1.WaitOne();
-        Console.Write("Four");
-        sem2.Release();
-        
-    }
+Type cislo = new Type("Cislo", [], []);
+Type typ1 = new Type("Hovno", [new Method("Smrdim",null,null)], [new Field("smrdivost",cislo)]);
 
-    static void Main(string[] args)
+PrintName printitko = new PrintName();
+
+OperateOn(typ1, printitko);
+
+interface Operation
+{
+    public void Call(Element el);
+}
+
+
+abstract record class Element(string name);
+
+record class Type(string name, List<Method>? methods, List<Field>? fields) : Element(name);
+
+record class Method(string name, Type? returnType, List<Type>? parameterTypes) : Element(name);
+
+record class Field(string name, Type? type) : Element(name);
+
+class PrintName : Operation
+{
+    public void Call(Element el)
     {
-        sem1 = new Semaphore(0, 1);
-        sem2 = new Semaphore(0, 1);
-        Thread t1 = new Thread(f1);
-        
-        Thread t2 = new Thread(f2);
-        t1.Start();
-        t2.Start();
-        t1.Join();
-        t2.Join();
+        switch (el)
+        {
+            case Type t:
+                Console.WriteLine($"I am {el.name}");
+                break;
+            case Field f:
+                Console.WriteLine($"I am {el.name}");
+                break;
+            case Method m:
+                Console.WriteLine($"I perform {el.name}");
+                break;
+
+        }
     }
- }
+}
