@@ -251,26 +251,55 @@
 
 ## Object lifecycle, memory management
 
-- Životní cyklus objektů a správa paměti.
-  - alokace (alokace statická, na zásobníku, na haldě)
-  - inicializace (konstruktory, volání zděděných konstruktorů)
-  - destrukce (destruktory, finalizátory)
-  - explicitní uvolňování objektů, reference counting, garbage collector
-
 ### Allocation and deallocation
 
 - automatic -> for objects on stack
 - manual or automatic using garbage collection -> object on heap
-- manual for whole lifetime of program -> statically allocated objects
+- static -> objects with lifetime of the entire program
+  - in C# keyword `static`
 
 ### Initialization
 
-- done using constructors
+- for classes, initialization done using constructors
 
 - constructors
   - why:
     - enforce that objects get created with a valid internal state
     - define a kind of contract how an object should be created
+
+- base class (inherited) constructor calling
+  - when we want to use the parent class constructor
+  - syntax: `public MY_CLASS(T1 par1, ...) : base(arg1, arg2, ...)`
+
+### Destruction
+
+- no destructors in C#?
+  - but we can implement IDisposable and implement some logic for disposal
+
+### Memory management
+
+- in C# memory cannot be freed explicitly
+
+- reference counting
+  - GC counts how many references point to an object
+  - when no reference points to it -> gets garbage collected
+  - problem: cycles in reference pointers
+    - I guess C# GC has some mechanism to detect these cycles
+  - NOT USED IN C#, **C# GC uses tracing -> cycles are not a problem**
+  - tracing
+    - start with roots (statically allocated vars, stack vars, CPU Registers)
+    - mark all references reachable from the roots
+    - sweep all unreachable objects
+
+- garbage collector
+  - takes care of automatic deallocation of object on the heap
+  - why:
+    - heap is big but still limited
+    - since we cannot deallocate manually in C#, we need this to be done automatically
+  - only run when necessary (if we don't allocate much, it doesn't need to run at all)
+  - the heap is split into three layers
+    - one for short lived object, medium lived object, long lived objects
+    - the difference between the layers is, how often they get garbage collected
 
 ## Threads and synchronization
 
