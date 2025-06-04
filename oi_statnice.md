@@ -79,8 +79,17 @@ Studijni program: Informatika
 
 Umělá inteligence - 24
 Programování a vývoj software - 10
+Počítačová grafika, vidění a vývoj her - 7
 Obecná informatika - 6
 Databáze a web - 3
 Systémové programování - 3
 
+### Počty lidí u státnic dle oborů (4.6.2025)
+
+Umělá inteligence - 32
+Programování a vývoj software - 22
+Obecná informatika - 13
+Počítačová grafika, vidění a vývoj her - 8
+Systémové programování - 7
+Databáze a web - 6
 
