@@ -401,6 +401,26 @@
 
 ### Autumn 2024 (representation of types)
 
+- design set of classes and interfaces
+- store information about types for showcase in IDE
+  - type name, kind of the types (class/interface/struct/method etc), methods, signatures, data field, inner types
+
+```cs
+interface Operation
+{
+    public void Call(Element el);
+}
+
+
+abstract record class Element(string name);
+
+record class Type(string name, List<Method>? methods, List<Field>? fields) : Element(name);
+
+record class Method(string name, Type? returnType, List<Type>? parameterTypes) : Element(name);
+
+record class Field(string name, Type? type) : Element(name);
+```
+
 ### Spring 2023 - i (object design)
 
 ### Autumn 2023 (architecture of pc's and os's)
