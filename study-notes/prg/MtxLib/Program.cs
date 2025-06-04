@@ -1,112 +1,96 @@
-﻿using System.Numerics;
-using static System.Console;
+﻿using static System.Console;
+using System.Diagnostics;
+using System.Threading;
 
-IMatrix<int> sparseMtx = new SparseMatrix<int>(10, 10);
+var sem = new SemaphoreSlim(5);
 
-WriteLine(sparseMtx.GetElem(1, 1));
+int tasks_amount = 20;
+var rand = new Random();
 
-/// <summary>
-/// Matrix contract:
-/// - get height, width
-/// - getElem(x,y)
-/// - arithmetic operations (addition, subtraction, multiplicaiton etc.)
-/// </summary>
-interface IMatrix<T> where T : INumber<T>
+List<long> numbers_to_factorize = [23_567_385_546, 39_567_385_542, 47_567_385_547, 56_567_385_549];
+
+int fin = numbers_to_factorize.Count;
+for (int i = 0; i < tasks_amount - fin; ++i)
 {
-    int GetHeight();
-
-    int GetWidth();
-
-    T GetElem(int x, int y);
-
+    numbers_to_factorize.Add(rand.NextInt64(10_000_000_000, 100_000_000_000));
 }
 
-readonly record struct Coord(int X, int Y);
+Write($"{numbers_to_factorize.Count}\n");
 
-/// <summary>
-/// Represents a matrix that is sparse i.e. consists of mostly zeroes. 
-/// Comment the implementation.
-/// Implement only the interface methods.
-/// What is the big oh space complexity of this matrix representation
-/// </summary>
-/// <typeparam name="T"> Element of a field to be used inside the matrix </typeparam>
-record class SparseMatrix<T>(int Height, int Widht) : IMatrix<T> where T : INumber<T>
+static List<long> FactorizeAndPrint(long number, SemaphoreSlim sem)
 {
+    sem.Wait();
 
-    // will have a list with mapping -> location to value
-    private readonly Dictionary<Coord, T> _elems = [];
+    Write($"{Thread.CurrentThread.ManagedThreadId} entered \n");
 
-    public T GetElem(int x, int y)
+    List<long> factors = [];
+    long i = 2; // if this is an integer I get an overflow :)
+    while (number != 1)
     {
-        return T.AdditiveIdentity; // this is BEAUTIFUUUUUL
-    }
-
-    public void SetElem(int x, int y, T val) => _elems.Add(new Coord(x, y), val);
-
-    public int GetHeight() => Height;
-
-    public int GetWidth() => Widht;
-
-    public static int operator !(SparseMatrix<T> mtx)
-    {
-        return 14;
-    }
-
-
-}
-
-/// <summary>
-/// Factory pattern:
-/// - class that creates instances of other classes
-/// - why is it useful?
-///     - uses polymorphism so we can have just a single method with return type of the superclass
-///     - then the factory can decide which concrete implementation of the supertype it should return
-/// </summary>
-static class MatrixFactory
-{
-
-    public static IMatrix<int> GetIdealMatrix(string mtxFilename)
-    {
-        var coords = GetCoords(mtxFilename);
-        if (IsSparse(mtxFilename))
+        if (number % i == 0)
         {
-            return new SparseMatrix<int>(coords.X, coords.Y);
+            factors.Add(i);
+            number /= i;
+            continue;
         }
-        return new DenseMatrix<int>(coords.X, coords.Y);
+        i++;
     }
 
-    private static Coord GetCoords(string mtxFilename)
-    {
-        throw new NotImplementedException();
-    }
+    PrintList(factors);
 
-    private static bool IsSparse(string mtxFilename)
-    {
-        throw new NotImplementedException();
-    }
+    sem.Release();
+
+    Write($"{Thread.CurrentThread.ManagedThreadId} exited \n");
+    return factors;
 }
 
-// HYPOTHETICAL CODE WITH NO IMPLEMENTATION PROVIDED
-record class DenseMatrix<T>(int Height, int Widht) : IMatrix<T> where T : INumber<T>
+static void PrintList<T>(List<T> list)
 {
-    public T GetElem(int x, int y)
+    foreach (T elem in list)
     {
-        throw new NotImplementedException();
+        Write($"{elem}, ");
+    }
+    WriteLine();
+}
+
+static void FactorizeWithThreading(List<long> nums_to_fact, SemaphoreSlim sem)
+{
+    List<Thread> threads = [];
+
+    foreach (var num in nums_to_fact)
+    {
+        var t = new Thread(() => FactorizeAndPrint(num, sem));
+        threads.Add(t);
+        t.Start();
     }
 
-    public int GetHeight()
+    foreach (var t in threads)
     {
-        throw new NotImplementedException();
-    }
-
-    public int GetWidth()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Print()
-    {
-        throw new NotImplementedException();
+        t.Join();
     }
 }
 
+static void FactorizeUsingThreadPool(List<long> nums_to_fact, SemaphoreSlim sem)
+{
+    CountdownEvent countdown = new CountdownEvent(nums_to_fact.Count);
+    foreach (var num in nums_to_fact)
+    {
+        ThreadPool.QueueUserWorkItem(state =>
+        {
+            FactorizeAndPrint(num, sem);
+            countdown.Signal();
+        });
+    }
+    countdown.Wait();
+}
+
+var stopwatch = new Stopwatch();
+
+stopwatch.Start();
+
+FactorizeWithThreading(numbers_to_factorize,sem);
+
+stopwatch.Stop();
+Write($"{stopwatch.ElapsedMilliseconds}\n"); // took 12907 milliseconds
+
+delegate void MyCoolFunc();
