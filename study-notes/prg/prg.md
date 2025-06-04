@@ -33,7 +33,7 @@
   - inicializace (konstruktory, volání zděděných konstruktorů)
   - destrukce (destruktory, finalizátory)
   - explicitní uvolňování objektů, reference counting, garbage collector
-- [ ] Vlákna a podpora synchronizace.
+- [x] Vlákna a podpora synchronizace.
   - reprezentace vláken v programovacích jazycích
   - specifikace funkce vykonávané vláknem a základní operace na vlákny
   - časově závislé chyby a mechanizmy pro synchronizaci vláken
@@ -344,6 +344,7 @@
       - slower
       - allows for cross-process coordination
     - syntax:
+      - create a semaphore: `var sem = new Semaphore(initialCount,maximumCount)` (same with SemaphoreSlim)
       - P - `sem.WaitAsync()` or `sem.Wait()` (probeer)
       - V - `sem.Release()` (verhoog)
 
@@ -359,8 +360,6 @@
 ## Past exams
 
 ### Spring 2025 (matrix calculation library)
-
-- [example solution](../../study-notes/prg/MtxLib/Program.cs)
 
 - naming conventions
   - `interface INeco`
@@ -386,6 +385,19 @@
     - automatically derives type of whatever goes into the variable
 
 ### Summer 2024 (semaphores)
+
+(1)
+- "One" will be written first for sure
+- but then if thread t1 calls WaitOne() earlier than t1, then "Three" gets printed before "Two" (also "Five" can be printed earlier as well)
+
+(2)
+- I think yes since hypothetically, all of f1() could be finished before f2() gets to the first line of code
+
+(3)
+
+- we use semaphore A and B
+- f1 releases semaphore A only and waits for semaphore B only
+- f2  --||--            B       --||--                A
 
 ### Autumn 2024 (representation of types)
 
