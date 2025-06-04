@@ -28,7 +28,7 @@
   - správa životního cyklu zdrojů v případě výskytu chyb
     - Ⓥ using v C#
   - konstrukce pro obsluhu a propagaci výjimek
-- [ ] Životní cyklus objektů a správa paměti.
+- [x] Životní cyklus objektů a správa paměti.
   - alokace (alokace statická, na zásobníku, na haldě)
   - inicializace (konstruktory, volání zděděných konstruktorů)
   - destrukce (destruktory, finalizátory)
@@ -302,6 +302,31 @@
     - the difference between the layers is, how often they get garbage collected
 
 ## Threads and synchronization
+
+- [ ] Vlákna a podpora synchronizace.
+  - reprezentace vláken v programovacích jazycích
+  - specifikace funkce vykonávané vláknem a základní operace na vlákny
+  - časově závislé chyby a mechanizmy pro synchronizaci vláken
+
+### Representation of threads in C#
+
+- Thread built-in class
+- in threading module
+
+- how to pass a function to be worked on to the thread?
+  - usually done using some lambda or delegate variable?
+
+- thread pool
+  - collection of threads to which we can assign tasks to be done
+  - the thread pool assigns the task to some thread when available
+
+- thread synchronization mechanisms
+  - locks
+    - section can be locked by a thread and must be ulocked by exactly the same thread
+    - lock is usually some object which represents the ownership of the lock
+    - syntax: `Monitor.Enter(_lockObj); and then Monitor.Exit(_lockObj); OR lock(_lockObj){}`
+  - semaphores
+    - don't represent ownership but instead how much of a certain resource is available
 
 ## Implementation of basic elements of object oriented languages
 
