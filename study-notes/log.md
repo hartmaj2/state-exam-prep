@@ -93,12 +93,34 @@
     - pro formuli tvaru negace je její pravdivostní funkce složením booleovské negace po aplikaci pravdivostní funkce na neznegovanou formuli
     - pro formuli tvaru spojky -> p.f. je složením booleovské funkce pro danou spojku po aplikaci pravdivostní funkce na oba podvýroky
 
-- model
+- model ve výrokové logice
   - vektor nul a jedniček udávající, jaké jsou hodnoty jednotlivých proměnných
 
 - když máme pravdivostní funkci $f$ pro nějaký výrok $\varphi$ a model $m$, tak můžeme spočítat $f_\varphi(m)$ a podle výsledku určit, zda výrok $\varphi$ platí v modelu $m$
   - $\varphi$ platí v $m$ právě tehdy když $f_\varphi(m) = 1$ 
     - jelikož v případě logiky chceme modely vždy prohánět naší krásnou pravdivostní funkcí $f$ a žádnou jinou, tak ji můžeme v zápisu vynechat a píšeme $m \models \varphi$
+
+- stuktura
+  - definuje se vzhledem k nějaké předem dané struktuře
+  - obsahuje množinu prvků - univerzum $\mathcal{A}$ (objekty, které se cpou do proměnných)
+  - pro každý relační symbol ze signatury poskytuje relaci arity daného symbolu nad množinou $\mathcal{A}$
+  - podobně pro každý funkční symbol ze signatury poskytuje funkci dané arity tedy $f : \mathcal{A}^n \rightarrow \mathcal{A}$
+
+- model v predikátové logice
+  - je to nějaká struktura
+
+- pravdivostní funkce teď určitě už musí vypadat nějak jinak, protože naše proměnné nyní samy o sobě už nemají pravdivostní hodnotu nula nebo jedna
+
+- nejprve chceme umět vypreparovat z proměnné (syntax) konkrétní prvek univerza (sémantika)
+  - to presně dělá **ohodnocení proměnných**: libovolná funkce $e: Var \rightarrow \mathcal{A}$
+
+- když už máme nějaké ohodnocení, tak můžeme získávat tzv. **hodnotu termu**, ta je definována rekurzivně pro pevnou strukturu $\mathcal{A}$ a ohodnocení proměnných $e$
+  - pro samostatnou proměnnou $x$ je hodnota tohoto termu jednodušše $e(x)$
+  - pro term který vzešel z funkčního symbolu je jeho hodnota výsledkem aplikace funkce, která odpovídá danému symbolu, na rekurzivně spočtené hodnoty termů v jejích parametrech
+
+- dobré by bylo začít od atomických formulí
+
+- 
 
 ### Past exam
 
