@@ -303,22 +303,29 @@
 
 ## Threads and synchronization
 
-- [ ] Vlákna a podpora synchronizace.
-  - reprezentace vláken v programovacích jazycích
-  - specifikace funkce vykonávané vláknem a základní operace na vlákny
-  - časově závislé chyby a mechanizmy pro synchronizaci vláken
-
 ### Representation of threads in C#
 
 - Thread built-in class
 - in threading module
 
-- how to pass a function to be worked on to the thread?
-  - usually done using some lambda or delegate variable?
+- working with threads in C#
+  - creating a thread: `var t = new Thread(ThreadStart or ParametrizedThreadStart object)`
+    - built-in delegates:
+      - ThreadStart: functions with no parameter and void return type
+      - ParametrizedThreadStart: functions with one parameter (worker object) and void return type
+    - lambdas and functions get automatically cast to the built-in delegates (but no cast from custom delegates)
+  - starting a thread
+    - ThreadStart: `t.Start()`
+    - ParametrizedThreadStart: `t.Start(arg)`
+  - waiting for a thread to finish at given point in program
+    - `t.Join()`  
 
 - thread pool
-  - collection of threads to which we can assign tasks to be done
-  - the thread pool assigns the task to some thread when available
+  - collection of threads (worker threads) to which we can assign tasks to be done
+  - no direct control over individual threads (cannot call Join() on specific thread)
+  - why:
+    - threads are automatically reused
+    - simplicity of use
 
 - thread synchronization mechanisms
   - locks
@@ -327,6 +334,23 @@
     - syntax: `Monitor.Enter(_lockObj); and then Monitor.Exit(_lockObj); OR lock(_lockObj){}`
   - semaphores
     - don't represent ownership but instead how much of a certain resource is available
+    - why:
+      - used when there is a traffic limit for example on amount of DB accessing threads etc.
+    - SemaphoreSlim
+      - faster
+      - in-process only 
+      - **use this most of the time**
+    - Semaphore
+      - slower
+      - allows for cross-process coordination
+    - syntax:
+      - P - `sem.WaitAsync()` or `sem.Wait()` (probeer)
+      - V - `sem.Release()` (verhoog)
+
+- time dependent errors
+  - deadlock - two or more threads in blocked state waiting on each other's resources (passively)
+  - livelock - like deadlock but the threads are switching turns yielding (too polite)
+  - starvation - a thread never gets to the CPU because it is always passed by some other thread
 
 ## Implementation of basic elements of object oriented languages
 
