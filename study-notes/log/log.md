@@ -348,6 +348,8 @@
 
 ## Past exams
 
+### Summer 2024 (model of a theory)
+
 ### Jaro 2023 (skolemizace a modely)
 
 - $\varphi_1$ - “Každý zajíc je rychlejší než nějaká želva.”
