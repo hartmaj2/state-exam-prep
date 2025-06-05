@@ -113,6 +113,10 @@
   - literal je promenna **nebo jeji negace**
   - prazdny vyrok v CNF je true
 
+> Formuli v CNF si muzeme predstavit takto: 
+>
+> Mame proud vody, ktery chceme aby mohl protect z jedne strany na druhou. Kazda klauzule je prekazka na tomto proudu. Promenne jsou jednotlive skulinky v teto prekazce, kterymi se muze dostat voda dale. Staci, aby se v kazde prekazce mohla dostat alespon jednou skulinkou.
+
 - DNF (Disjunctive Normal From)
   - formule je v DNF pokud je disjunkci elementarnich konjunkci
   - elementarni konjunkce je konjunkce literalu
@@ -142,11 +146,34 @@
 - chceme tedy mit nejaky algoritmus, ktery toto overi za nas
 - proto se nam hodi normalni formy, se kterymi algoritmus dokaze hezky pracovat
 
-- SAT (Satisfiability)
+#### SAT (Satisfiability)
   - algoritmus, ktery pro danou formuli v CNF ma rici, zda je splnitelna ci nikoliv
   - tedy: $\varphi$ v CNF -> | SAT solver | -> TRUE/FALSE (existuje model $v$ s.t. $v \models \varphi$ ?)
+  - resi se v praxi casto pomoci DPLL
 
-- Rezoluce
+#### DPLL Algoritmus (Davis-Putnam-Logemann-Loveland)
+
+- jednotkova propagace
+  - jednotkova klauzule nam totiz vynucuje primo konkretni hodnotu promenne
+  - pro jednotkovou klauzuli $x$ je nova klauzule $\varphi^x$ nova klauzule, ktera vznikne z $\varphi$ nasledujicim zpusobem:
+    - pokud klauzule $C$ obsahuje $\bar{x}$, tak $\bar{x}$ vyhodime z $C$ -> pokud je $\bar{x}$ posledni, tak vratime FALSE
+    - pokud klauzule $C$ obsahuje $x$, tak vyhodime celou klauzuli $C$ -> pokud nam takto vznikne prazdna klauzule, tak vratime TRUE
+
+- cisty vyskyt
+  - promenna $x$ ma cisty vyskyt ve formuli $\varphi$ iff neexistuje klauzule $C \in \varphi$, ktera obsahuje $\bar{x}$
+  - opacne muze mit i $\bar{x}$ cisty vyskyt
+  - cisteho vyskytu se muzeme zbavit tak, ze odstranime vsechny klauzule, ktere obsahuji promennou $x$ (tim de fakto promennou $x$ nastavujeme na 1)
+
+- algoritmus DPLL pro formuli $\varphi$ v CNF:
+  1. dokud muzes, tak jednotkove propaguj
+  2. dokud muzes, tak odstranuj ciste vyskyty
+  3. uz ti nezbyla zadna klauzule -> vyrok je TRUE
+  4. dospel jsi k prazdne klauzuli -> vyrok je FALSE
+  5. pokud jsi se dostal az sem, tak vem libovolnou promennou $x$ a zavolej se rekurzivne na $\varphi \wedge x$ a $\varphi \wedge \bar{x}$, 
+  6. pokud aspon jedna z vetvi vratila TRUE, tak vrat TRUE 
+
+
+#### Rezoluce
 
 ## Sémantika
 
