@@ -56,18 +56,20 @@
 
 - formule výrokové se definuje rekurzivně:
   1. každá proměnná je formule
-  2. **uzávorkované** spojení formulí nějakou logickou spojkou (nebo negace jedné formule) je zase formule
+  2. pro formule $\varphi_1, \varphi_2$ je $(\varphi_1 \wedge \varphi_2)$ take formule
+  3. pro formuli $\varphi_1$ je $(\neg \varphi_1)$ take formule
 
 - formule v predikátové logice:
-  - definujeme si term rekurzivně (term je symbol, který se dá strkat do atomických formulí):
+  - definujeme si **term** rekurzivně (term je symbol, který se dá strkat do atomických formulí):
     1. každá proměnná je term
-    2. funkční symbol ve kterém jsou proměnné je také term
-  - definujeme si nejprve atomické formule
+    2. funkční symbol ve kterém jsou **termy** je také term
+  - definujeme si nejprve **atomické formule**
     - atomická formule je relační symbol s vloženými **termy**
-  - poté z atomických formulí definujeme obecnou formuli rekurzivně:
+  - poté z atomických formulí definujeme **obecnou formuli** rekurzivně:
     1. každá atomická formule je formule
-    2. formule spojená logickými spojkami a uzavřená v závorkách je formule
-    3. okvantifikovaná formule jakoukoliv proměnnou je zase formule
+    2. pro formuli $\varphi$ je $(\neg \varphi)$ take formule
+    3. pro formule $\varphi_1, \varphi_2$ je $(\varphi_1 \wedge \varphi_2)$ take formule
+    4. pro forumi $\varphi$ a lib. prom $x$ jsou $((\forall x)\varphi)$ a $((\exists x)\varphi)$ take formule
 
 - stromy formulí
   - protože formule mají takovou hezkou rekurzivní strukturu, tak je můžeme reprezentovat stromečkem
@@ -82,6 +84,52 @@
     - formule která **nemá žádný kvantifikátor**
   - uzavřená formule (sentence)
     - nemá žádnou volnou proměnnou
+
+- instance formule $\varphi$
+  - je to formule vznikla dosazenim nejakeho termu $t$ za nejakou volnou promennou $x$ ve formuli $\varphi$
+  - dosazovani vsak nemuzeme delat uplne libovolne
+    - je nutne aby se term $t$ (nebo nejaka promenna v jeho listech) nenavazal na nejaky kvantifikator uvnitr formule $\varphi$
+
+- varianta formule $\varphi$
+  - vznikne, pokud prejmenujeme promennou kvantifikatoru a vsechny vyskyty promennych na nej navazanych
+  - prejmenovani take nemuzeme delat uplne hlava nehlava
+    - promenna, na kterou prejmenovavame nesmi byt volna ve $\varphi$
+    - promenna, na kterou prejmenovavame nesmi byt ve $\varphi$ vazana na nejaky jiny kvantifikator (vsimneme si, ze to je stejna podminka jako u instance formule, rikame ji **substituovatelnost**)
+
+### Normalni formy
+
+- muze se stat, ze dve syntakticky ruzne formule maji stejnou mnozinu modelu, ktere tyto formule modeluji
+  - e.g. $x \rightarrow y$ ma stejne modely jako $\neg x \vee y$
+  - abychom se zbavili teto mnohoznacnosti, tak si zavedeme tzv. normalni formy
+
+- CNF (Conjunctive Normal Form)
+  - formule je v CNF pokud je konjunkci klauzuli
+  - klauzule je disjunkce literalu
+  - literal je promenna **nebo jeji negace**
+  - prazdny vyrok v CNF je true
+
+- DNF (Disjunctive Normal From)
+  - formule je v DNF pokud je disjunkci elementarnich konjunkci
+  - elementarni konjunkce je konjunkce literalu
+  - prazdny vyrok v DNF je false
+
+- ! porad jsme se vsak jednoznacnosti nezbavili, ke kazde formul $\varphi$ v DNF, obsahujici elementarni konjunkci $E$ muzeme vytvorit formuli $\varphi \vee E$, ktera ma stejnou mnozinu modelu (podobny spinavy trik muzeme udelat i s CNF)
+
+- PNF (Prenex Normal Form)
+  - jen pro predikatovou logiku
+  - formule $\varphi$ je v PNF kdyz je tvaru $(Q_1 x_1)\ldots(Q_n x_n)\varphi'$ kde $\varphi'$ uz neobsahuje zadny kvantifikator
+
+- jak vypada strom formule, ktera je v PNF
+  - v PNF ten strom musi mit od korene same kvantifikatory az po nejaky nekvantifikator, pak uz mame jen logicke spojky az po listy, kterymi jsou atomicke formule
+  - atomicke formule muzeme rozvinout dale do stromu, ve kterych uz jsou jen termy (v listech jsou pak konstanty nebo promenne)
+
+- mejme tedy nejaky strom, ktery neni v PNF
+  - to znamena, ze nad nejakym kvantifikatorem mame spojku $\neg$ nebo $\wedge$
+  - v tom pripade musime kvantifikator "probublavat" stromem, dokud uz nad nim nebude zadna spojka
+  - kdyz mame vyraz $(\neg ((\forall x)\varphi))$ tak ho muzeme prevest na $(\exists x)(\neg \varphi)$ a naopak, kdyz jsou prohozene kvantifikatory
+  - take muze nastat $((\forall x)\varphi_1) \wedge \varphi_2$, to je trochu zajimavejsi pripad
+    - nejprve prejmenujeme promenne v $\varphi_2$ tak, aby neobsahovali promennou $x$
+    - dale uz muzeme tuto formuli prevest na $(\forall x)(\varphi_1 \wedge \varphi_2)$
 
 ## Sémantika
 
@@ -110,6 +158,15 @@
 - když máme pravdivostní funkci $f$ pro nějaký výrok $\varphi$ a model $m$, tak můžeme spočítat $f_\varphi(m)$ a podle výsledku určit, zda výrok $\varphi$ platí v modelu $m$
   - $\varphi$ platí v $m$ právě tehdy když $f_\varphi(m) = 1$ 
     - jelikož v případě logiky chceme modely vždy prohánět naší krásnou pravdivostní funkcí $f$ a žádnou jinou, tak ji můžeme v zápisu vynechat a píšeme $m \models \varphi$
+
+- tautologie
+  - vyrok, ktery plati v kazdem modelu (nehlede na teorii)
+
+- splnitelna formule
+  - vyrok, ktery plati v nejakem modelu
+
+- dusledek teorie $T$
+  - $\varphi$ je dusledek teorie $T$ pokud pro kazdy model $m$ teorie $T$ mame take $m \models \varphi$
 
 ### Model v predikátové logice
 
