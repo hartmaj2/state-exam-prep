@@ -1,5 +1,10 @@
 # Preparation for logic part of the state exam
 
+## TODOs
+
+- [ ] solve problem from past exam Spring 2023
+  - [ ] how resolution method works?
+
 ## Topics
 
 - [ ] Syntaxe
@@ -131,6 +136,18 @@
     - nejprve prejmenujeme promenne v $\varphi_2$ tak, aby neobsahovali promennou $x$
     - dale uz muzeme tuto formuli prevest na $(\forall x)(\varphi_1 \wedge \varphi_2)$
 
+### Normalni formy a algoritmy
+
+- casto bychom byli radi, kdybychom mohli overit splnitelnost logicke formule nejak automaticky a nemuseli to delat rucne
+- chceme tedy mit nejaky algoritmus, ktery toto overi za nas
+- proto se nam hodi normalni formy, se kterymi algoritmus dokaze hezky pracovat
+
+- SAT (Satisfiability)
+  - algoritmus, ktery pro danou formuli v CNF ma rici, zda je splnitelna ci nikoliv
+  - tedy: $\varphi$ v CNF -> | SAT solver | -> TRUE/FALSE (existuje model $v$ s.t. $v \models \varphi$ ?)
+
+- Rezoluce
+
 ## Sémantika
 
 - popisuje objekty, o kterých náš jazyk ze sekce syntaxe mluví
@@ -217,7 +234,7 @@
   - $\varphi$ je lziva v teorii $T$ kdyz neplati v zadnem modelu $\mathcal{A} \in M(T)$
   - jinak je formule $\varphi$ nezavisla v teorii $T$
 
-### Past exams
+## Past exams
 
 ### Jaro 2023 (skolemizace a modely)
 
