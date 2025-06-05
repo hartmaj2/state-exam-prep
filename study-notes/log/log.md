@@ -173,8 +173,55 @@
   6. pokud aspon jedna z vetvi vratila TRUE, tak vrat TRUE 
 
 
-#### Rezoluce
+### Dokazovaci systemy
 
+- dokazovaci system
+  - formalizuje proces dokazovani
+  - dokazovani je:
+    - algoritmicky popis procedury, kterou muzeme z nejake teorie postupne dokazat vsechny mozne vyroky
+
+- dukaz formule $\varphi$
+  - posloupnost kroku deterministickeho algoritmu, kterymi z nejakych formuli dojdeme k vysledne formuli $\varphi$
+  - chceme umet efektivne overit pro nejaky dukaz, zda je korektni
+
+- dokazatelnost
+  - pokud z teorie $T$ muzeme dokazat vyrok $\varphi$, pak piseme $T \vdash \varphi$
+
+- pro dokazovaci systemy mame dve dulezite vlastnosti, ktere bychom idealne od dokazovaciho systemu pozadovali
+
+- korektnost
+  - chceme pro kazdou $\varphi$ aby $T \vdash \varphi \rightarrow T \models \varphi$
+  - tedy, kdyz existuje dukaz formule, tak formule plati ve vsech modelech teorie $T$
+
+- uplnost
+  - chceme pro kazdou $\varphi$ aby $T \models \varphi \rightarrow T \vdash \varphi$
+  - tedy, pokud nejaka formule plati ve vsech modelech (je dusledkem teorie $T$), tak chceme, aby existoval dukaz, ktery toto dosvedcuje
+
+-  korektnost chceme vzdy
+-  dokazovaci system ale muze byt zajimavy i kdyz neni uplny.
+
+
+#### Tablo 
+
+- je zalozene na dukazu sporem
+- je to strom, ktery zacina formuli $\varphi$ o ktere rikame, ze je FALSE (piseme $F\varphi$)
+- tablo pak rozsirujeme od korene pomoci pravidel (dana atomickymi tably) dokud kazda vetev neni dokoncena
+  - dokoncena vetev muze byt sporna nebo redukovana a bezesporna
+- pravidla jsou vymyslena tak, aby kazdy model, ktery se shoduje s korenem tabla, tak aby se shodoval alespon s jednou vetvi tabla po aplikaci libovolneho pravidla
+
+### Rezolucni Metoda
+
+- vhodna pro prakticke aplikace
+- funguje pro vyroky v CNF (podobne jako SAT)
+- zalozena na dukazu sporem
+  - vezmeme teorii $T$ ve ktere chceme dokazat vyrok $\varphi$ a uvazime $T \cup \{\neg \varphi \}$
+  - ukazeme, ze takova teorie by byla sporna
+
+- pouziva jedine inferencni pravidlo -> **rezolucni pravidlo**
+
+- pravidlo řezu
+  - $$\frac{\varphi \vee \psi , \neg \varphi \vee \chi}{\psi \vee \chi}$$
+  - co se v tom pravidle řeže?
 ## Sémantika
 
 - popisuje objekty, o kterých náš jazyk ze sekce syntaxe mluví
@@ -243,7 +290,7 @@
        - $f_\varphi(e) = 0$ iff $(t_1[e],\ldots,t_n[e]) \not\in R^\mathcal{A}$ 
    2. pro formuli vzešlou použitím logických spojek se bude chovat jako ve výrokové logice
    3. nechť máme formuli $\varphi = (\forall x)\varphi'$ potom $f_\varphi(e)$ definujeme jako:
-        - $\min_{a \in A}(f'_\varphi(e_{x\rightarrow a}))$ kde $e_{x\rightarrow a} = (e - {(x,b)} )\cup {(x,a)}$ pro nějakou $(x,b) \in e$
+        - $\min_{a \in A}(f'_\varphi(e_{x\rightarrow a}))$ kde $e_{x\rightarrow a} = (e \setminus {(x,b)} )\cup {(x,a)}$ pro nějakou $(x,b) \in e$
         - analogicky s max pro $(\exists x)\varphi'$
 
 - o formuli $\varphi$ pak říkáme, že je pravdivá nebo lživá v nějaké struktuře $\mathcal{A}$
@@ -256,10 +303,16 @@
 - struktura $\mathcal{A}$ je modelem teorie $T$ pokud pro každý $\varphi \in T$ máme $\mathcal{A} \models \varphi$
   - třída všech modelů teorie $T$ má pěkné značení $M(T)$
 
+### Platnost v teorii
+
 - s touto terminologií už jsme připraveni definovat si, co znamená, že nějaká formule $\varphi$ platí v teorii $T$
   - $\varphi$ je pravdiva v teorii $T$ kdyz plati v kazdem modelu $\mathcal{A} \in M(T)$
+    - zapisujeme jako $T \models \varphi$
   - $\varphi$ je lziva v teorii $T$ kdyz neplati v zadnem modelu $\mathcal{A} \in M(T)$
   - jinak je formule $\varphi$ nezavisla v teorii $T$
+
+- ekvivalentni vyroky $\varphi_1, \varphi_2$
+  - pro kazdy model $v$ mame $v \models \varphi_1$ iff $v \models \varphi_2$
 
 ## Past exams
 
