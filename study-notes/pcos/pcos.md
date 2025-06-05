@@ -499,6 +499,8 @@ int func() {
 }
 ```
 
+### Autumn 2023 (architecture of pc's and os's)
+
 ### Summer 2022 - one (translation of high level language constructions)
 
 ### Autumn 2022 (virtual memory)
