@@ -56,11 +56,10 @@
 
 - formule výrokové se definuje rekurzivně:
   1. každá proměnná je formule
-  2. **uzávorkovaná** negace formule je zase formule
-  3. **uzávorkované** spojení formulí nějakou spojkou je zase formule
+  2. **uzávorkované** spojení formulí nějakou logickou spojkou (nebo negace jedné formule) je zase formule
 
 - formule v predikátové logice:
-  - definujeme si term rekurzivně:
+  - definujeme si term rekurzivně (term je symbol, který se dá strkat do atomických formulí):
     1. každá proměnná je term
     2. funkční symbol ve kterém jsou proměnné je také term
   - definujeme si nejprve atomické formule
@@ -80,26 +79,28 @@
 
 - otevřené vs uzavřené formule
   - otevřená formule
-    - formule která nemá žádný kvantifikátor
+    - formule která **nemá žádný kvantifikátor**
   - uzavřená formule (sentence)
     - nemá žádnou volnou proměnnou
 
 ## Sémantika
 
-- popisuje objekty, které splňují danou teorii
+- popisuje objekty, o kterých náš jazyk ze sekce syntaxe mluví
 
-- co to znamená, splnit nějakou teorii?
-- napřed bychom asi měli vědět, co znamená splnit nějakou formuli
+- naším cílem je, umět nějak popsat objekty, které splňují nějakou teorii a odlišit je od těch, které ji nesplňují
+  - k tomu si potřebujeme nadefinovat, co to znamená, že formule platí v nějakém modelu
+  - model pak platí v teorii, když platí v každé formuli teorie
 
-- chtěli bychom umět o výroku říct, jestli je pravdivý nebo ne při daném ohodnocení proměnných -> zadefinujeme si pravdivostní funkci
+- jelikož formule může buď platit nebo neplatit, máme dva možné stavy, které budeme simulovat 0 a 1
+  - zavedeme si tedy pravdivostní funkci, která z modelu bude vyrábět 0 a 1
 
 ### Pravdivostní funkce ve výrokové logice
 
 - pravdivostní funkce formule se definuje rekurzivně
-  - báze je pokud je formule prvovýrok -> vrátíme jen hodnotu na pozici vektoru nul a jedniček, který odpovídá tomu danému prvovýroku (proměnné)
-  - jinak používáme booleovské funkce
-    - pro formuli tvaru negace je její pravdivostní funkce složením booleovské negace po aplikaci pravdivostní funkce na neznegovanou formuli
-    - pro formuli tvaru spojky -> p.f. je složením booleovské funkce pro danou spojku po aplikaci pravdivostní funkce na oba podvýroky
+  1. báze je pokud je formule prvovýrok -> vrátíme jen hodnotu na pozici vektoru nul a jedniček, který odpovídá tomu danému prvovýroku (proměnné)
+  2. jinak používáme booleovské funkce
+       - pro formuli tvaru negace je její pravdivostní funkce složením booleovské negace po aplikaci pravdivostní funkce na neznegovanou formuli
+       - pro formuli tvaru spojky -> p.f. je složením booleovské funkce pro danou spojku po aplikaci pravdivostní funkce na oba podvýroky
 
 ### Model ve výrokové logice
 
@@ -136,9 +137,9 @@
 
 - rekurzivně si teď můžeme definovat pro libovolnou formuli $\varphi$ její pravdivostní funkci $f_\varphi$
   - ta funkce by měla jako v případě výrokové logiky vracet buď 0 nebo 1 (lež či pravda)
-  1. mějmě atomickou formuli $\varphi = R(x_1,\ldots,x_n)$ definujeme pravdivostní funkci jako:
-       - $f_\varphi(e) = 1$ iff $(x_1[e],\ldots,x_n[e]) \in R^\mathcal{A}$ 
-       - $f_\varphi(e) = 0$ iff $(x_1[e],\ldots,x_n[e]) \not\in R^\mathcal{A}$ 
+  1. mějmě atomickou formuli $\varphi = R(t_1,\ldots,t_n)$ definujeme pravdivostní funkci jako:
+       - $f_\varphi(e) = 1$ iff $(t_1[e],\ldots,t_n[e]) \in R^\mathcal{A}$ 
+       - $f_\varphi(e) = 0$ iff $(t_1[e],\ldots,t_n[e]) \not\in R^\mathcal{A}$ 
    2. pro formuli vzešlou použitím logických spojek se bude chovat jako ve výrokové logice
    3. nechť máme formuli $\varphi = (\forall x)\varphi'$ potom $f_\varphi(e)$ definujeme jako:
         - $\min_{a \in A}(f'_\varphi(e_{x\rightarrow a}))$ kde $e_{x\rightarrow a} = (e - {(x,b)} )\cup {(x,a)}$ pro nějakou $(x,b) \in e$
