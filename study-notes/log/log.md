@@ -222,6 +222,22 @@
 - pravidlo řezu
   - $$\frac{\varphi \vee \psi , \neg \varphi \vee \chi}{\psi \vee \chi}$$
   - co se v tom pravidle řeže?
+  - pravidlo zakládá na tom, že nemůže zároveň platit $\varphi$ a $\neg \varphi$ -> tedy abychom splnili obe formule v predpokladu, tak musi prijit napomoc bud $\psi$ nebo $\chi$
+
+- mnozinova reprezentace
+  - zjednoduseny zapis formule v CNF
+  - jako mnozina klauzuli, kde kazda klauzule je mnozina
+  - v podstate tedy akorat misto carek mezi mnozinami si predstavime $\wedge$ a misto carek mezi literaly si predstavime $\vee$
+
+- pro mnozinovou reprezentaci si pak definujeme ohodnoceni $\mathcal{V}$:
+  - je to mnozina literalu neobsahujici pro nejakou promennou $x$ jak literal $x$ tak i $\bar{x}$
+  - je to uplne ohodnoceni, pokud obsahuje pro kazdy literal $x$ bud $x$ nebo $\bar{x}$
+  - pro formuli $S$ je to splnujici ohodnoceni, pokud pro kazdou $C \in S$ plati: $\mathcal{V} \cap C \neq \emptyset$ (tuto krasnou udalost, nastane-li, zapisujeme $\mathcal{V} \models S$)
+
+- rezolucni pravidlo
+  - muzeme ho pouzit, pokud mame klauzule $C_1,C_2$ takove, ze $x \in C_1$ a $\bar{x} \in C_2$
+  - z techto klauzuli pak odvodime novou klauzuli $C' = (C_1 \setminus \{x\}) \cup (C_2 \setminus \{\bar{x}\})$
+
 ## Sémantika
 
 - popisuje objekty, o kterých náš jazyk ze sekce syntaxe mluví
