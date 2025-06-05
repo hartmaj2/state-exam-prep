@@ -209,7 +209,7 @@
   - dokoncena vetev muze byt sporna nebo redukovana a bezesporna
 - pravidla jsou vymyslena tak, aby kazdy model, ktery se shoduje s korenem tabla, tak aby se shodoval alespon s jednou vetvi tabla po aplikaci libovolneho pravidla
 
-### Rezolucni Metoda
+### Rezolucni metoda ve vyrokove logice
 
 - vhodna pro prakticke aplikace
 - funguje pro vyroky v CNF (podobne jako SAT)
@@ -237,6 +237,22 @@
 - rezolucni pravidlo
   - muzeme ho pouzit, pokud mame klauzule $C_1,C_2$ takove, ze $x \in C_1$ a $\bar{x} \in C_2$
   - z techto klauzuli pak odvodime novou klauzuli $C' = (C_1 \setminus \{x\}) \cup (C_2 \setminus \{\bar{x}\})$
+
+### Rezolucni metoda v predikatove logice
+
+- chteli bychom idealne, aby fungoval podobny postup i v predikatove logice
+- tam ale mame kvantifikatory a ty nam mohou delat paseku
+
+- pravidlo rezu funguje pro vseobecne kvantifikatory
+  - $$\frac{(\forall x)(\varphi(x) \vee \psi(x)), (\forall x)(\neg \varphi(x) \vee \chi(x))}{(\forall x)(\psi(x) \vee \chi(x))}$$
+
+- vsimneme si, ze pro existencni kvantifikator by to nemuselo platit
+
+- budeme tedy chtit dostat co mozna nejvice klauzuli do formy, ze maji pouze univerzalni kvantifikator
+  - kdyby univerzalni kvantifikator meli vsechny formule, tak dokonce muzeme postupovat s rezoluci uplne identicky jako ve vyrokove logice
+
+- ne vzdy se vsak dokazeme existencniho kvantifikatoru zbavit
+  - co budeme delat v takovem pripade?
 
 ## Sémantika
 
