@@ -86,3 +86,41 @@
 
 - $\frac{4}{9} + \frac{8}{27} + \frac{16}{81} + \cdots = 3 - 1 - \frac{2}{3} = \frac{4}{3}$
 
+### Summer 2022 - one (integral)
+
+#### (1)
+
+- $I$ je otevreny interval (s kazdym $x \in I$ existuje $\delta > 0$ t.z. $\{y , | x - y | < \delta \} \subseteq I$)
+
+1. mame-li funkce $F_1$, $F_2$ primitivni k $f$, tak plati, ze $(\forall x \in I)( F_1'(x) = f(x) = F_2'(x))$
+
+- chceme ukazat, ze potom $(\exists c \in \mathbb{R})(\forall x \in I)(F_1(x) = F_2(x) + c)$
+  - podminka (vztah) nahore je urcite postacujici k tomu, aby obe dve byly primitivni k te stejne funkci $f$
+  - je to ale nutna podminka?
+    - neplati-li vztah nahore, pak zvolme libovolne $c$
+
+#### (2)
+
+- to je per partes : $\int f \cdot G = F \cdot G - \int F \cdot g$
+
+#### (3)
+
+- pouziju vzorec tak, ze $x$ se zderivuje a $\sin(x)$ se zintegruje, coz mi nezkomplikuje vysledek
+
+### Autumn 2022 - (sequences)
+
+#### (1)
+
+- (K) poslooupnost je konvergentni: $\lim(a_n)_{n \rightarrow \infty} = k \equiv (\forall \epsilon > 0)(\exists n_0 \in \mathbb{N})(\forall n > n_0)(|a_n - k| < \epsilon)$
+
+#### (2)
+
+- (N) posloupnost $(a_n) = (a_0,a_1,\ldots)$ je neomezena ... $(\forall k)(\exists n)(\exists m)(|a_n - a_m | > k)$
+
+- oficialne: $(\forall k)(\exists n \in \mathbb{N})(|a_n| > k)$
+
+#### (3)
+
+- dokazat $(N) \rightarrow \neg (K)$
+  - uplne mi neni jasne, jak napasovat (N) na tvrzeni $(\forall k \in R)(\exists \epsilon > 0)(\forall n \in \mathbb{N})(\exists m > n)(|a_m - k| > \epsilon)$
+  - napada me ale pouzit fakt, ze pokud je $(a_n)_{n=0}^\infty$ unbounded, tak pro kazde $m \in \mathbb{N}$ mame $(a_n)_{n=m}^\infty$ unbounded
