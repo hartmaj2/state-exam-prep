@@ -326,7 +326,7 @@
         - analogicky s max pro $(\exists x)\varphi'$
 
 - o formuli $\varphi$ pak říkáme, že je pravdivá nebo lživá v nějaké struktuře $\mathcal{A}$
-  - pravdivá: platí v každém ohodnocení
+  - pravdivá: platí v každém ohodnocení (znacime $\mathcal{A} \models \varphi$)
   - lživá: neplatí v žádném ohodnocení
 
 - generální uzávěr formule $\varphi$
@@ -349,6 +349,46 @@
 ## Past exams
 
 ### Summer 2024 (model of a theory)
+
+#### (1)
+
+- struktura jazyka $L=\langle\mathcal{R},\mathcal{F}\rangle$
+  - mnozina $A$ ... univerzum
+  - pro kazdy $R \in \mathcal{R}$ mame $R^{\mathcal{A}} \subseteq A^{ar(R)}$ ... realizace relacnich symbolu
+  - pro kazdy $F \in \mathcal{F}$ mame $F^{\mathcal{A}} : A^{ar(F)} \rightarrow A$ ... realizace funkcniho symbolu
+
+- model teorie $T$ je $L$-struktura $\mathcal{M}$ t.z. $\forall \varphi \in T : \mathcal{M} \models \varphi$
+  - zda $\mathcal{M} \models \varphi$ se urci dle pravdivostni hodnoty formule $\varphi$ vzhledem k modelu $\mathcal{M}$
+
+#### (2)
+
+(a) $\varphi_1 : \neg(\forall x)(Z(x) \rightarrow S(x)) \wedge (\forall x)(S(x) \rightarrow Z(x))$
+
+(b) $\varphi_2 : (\forall x)(P(x) \rightarrow S(x))$
+
+(c) $\varphi_3 : (\exists x)(P(x) \wedge \neg Z(x))$
+
+
+#### (3)
+
+$T = \{\varphi_1, \varphi_2\}$ ma model:
+- nelze vzit prazdny model jelikoz musi $A \neq \emptyset$
+- mozny model je $A = \{a\}$ t.z. $Z(a)$ a nic vice
+
+$T = \{\varphi_1, \varphi_2, \varphi_3\}$ nema model
+- budeme postupovat rezoluci -> musime prevest do CNF
+  - $\varphi_0 : (\exists x)(Z(x) \wedge \neg S(x))$
+  - $\varphi_1 : (\forall x)(\neg S(x) \vee Z(x))$
+  - $\varphi_2 : (\forall x)(\neg P(x) \vee S(x))$
+  - $\varphi_3 : (\exists x)(P(x) \wedge \neg Z(x))$
+- nyni je potreba provest skolemizaci
+  - zavedeme konstantni symboly $c_1,c_2$
+  - budeme mit nasledujici mnoziny
+    - $\{Z(c_1)\},\{\neg S(c_1)\},\{\neg S(x),Z(x)\},\{\neg P(x),S(x)\},\{P(c_2)\},\{\neg Z(c_2)\}$
+- nyni budeme opakovane pouzivat pravidlo rezu a chceme ziskat spor (prazdnou mnozinu)
+  - odovdime nejprve $\{S(c_2)\}$
+  - pote odvodime $\{Z(c_2)\}$
+  - diky tomu uz mame spor s $\{\neg Z(c_2)\}$
 
 ### Jaro 2023 (skolemizace a modely)
 
