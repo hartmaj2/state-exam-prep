@@ -30,6 +30,18 @@
         – objemy a povrchy rotačních útvarů v prostoru
         – délka křivky
 
+## Sequences and their limits
+
+- sequence definition
+  - sequence is a mapping $\mathbb{N} \rightarrow \mathbb{R}$
+
+- sequence has limit at $k$ 
+  - for every $\epsilon$ exists natural number $n$ s.t. any element of the sequence after $n$ is closer to $k$ than $\epsilon$
+
+- two policemen theorem
+  - suppose we have sequences $(a_n),(b_n),(c_n)$ s.t. for every natural number $n \geq m$, $a_n \leq b_n \leq c_n$ (where $m$ is some fixed natural number)
+  - then if $\lim_{n \rightarrow \infty}a_n = \lim_{n \rightarrow \infty}c_n = k$ then we have $\lim_{n \rightarrow \infty}b_n = k$
+
 ## Past Exams
 
 ### Spring 2024 (discontinuity of a function)
