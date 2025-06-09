@@ -1,34 +1,41 @@
 # Preparation for state exam mathematical analysis topic
 
+## TODOs
+
+- [ ] Taylor polynomial (limit form)
+- [ ] computation of integrals using substitution
+- [ ] Riemann integral definition
+- [ ] curve length using Riemann integral
+
 ## Topics
 
-– [ ] Posloupnosti reálných čísel a jejich limity
-    – definice, aritmetika limit
-    – věta o dvou policajtech, limity a uspořádání
-– [ ] Řady
-    – definice částečného součtu a součtu
-    – geometrická řada, harmonická řada
-– [ ] Reálné funkce jedné reálné proměnné
-    – limita funkce v bodě
-        – definice, aritmetika limit
-        – vztah s uspořádáním
-        – limita složené funkce
-    – funkce spojité na intervalu
-        – nabývání mezihodnot
-        – nabývání maxima
-– [ ] Derivace a její aplikace
-    – definice a základní pravidla pro výpočet
-    – l’Hospitalovo pravidlo
-    – vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
-– [ ] Taylorův polynom (limitní forma)
-– [ ] Integrály a jejich aplikace
-    – primitivní funkce: definice a metody výpočtu (substituce, per-partes)
-– [ ] Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
-    – aplikace
-        – odhady součtu řad (konečných i nekonečných)
-        – obsahy rovinných útvarů
-        – objemy a povrchy rotačních útvarů v prostoru
-        – délka křivky
+- [x] Posloupnosti reálných čísel a jejich limity
+    - definice, aritmetika limit
+    - věta o dvou policajtech, limity a uspořádání
+- [x] Řady
+    - definice částečného součtu a součtu
+    - geometrická řada, harmonická řada
+- [ ] Reálné funkce jedné reálné proměnné
+    - limita funkce v bodě
+        - definice, aritmetika limit
+        - vztah s uspořádáním ???
+        - limita složené funkce
+    - funkce spojité na intervalu
+        - nabývání mezihodnot
+        - nabývání maxima
+- [x] Derivace a její aplikace
+    - definice a základní pravidla pro výpočet
+    - l’Hospitalovo pravidlo
+    - vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
+- [ ] Taylorův polynom (limitní forma)
+- [ ] Integrály a jejich aplikace
+    - primitivní funkce: definice a metody výpočtu (substituce, per-partes)
+- [ ] Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
+    - aplikace
+        - odhady součtu řad (konečných i nekonečných)
+        - obsahy rovinných útvarů
+        - objemy a povrchy rotačních útvarů v prostoru
+        - délka křivky
 
 ## Sequences and their limits
 
@@ -41,6 +48,14 @@
 - two policemen theorem
   - suppose we have sequences $(a_n),(b_n),(c_n)$ s.t. for every natural number $n \geq m$, $a_n \leq b_n \leq c_n$ (where $m$ is some fixed natural number)
   - then if $\lim_{n \rightarrow \infty}a_n = \lim_{n \rightarrow \infty}c_n = k$ then we have $\lim_{n \rightarrow \infty}b_n = k$
+
+## Series
+
+- series
+  - expression in form $a_0 + a_1 + \ldots$ denoted by $\sum_{n=0}^{\infty}a_n$ where $(a_n)_{n=0}^\infty$ is a sequence
+
+- partial sum
+  - given an infinite sum for $(a_n)_{n\geq0}$ the partial sum for a given $m$ denoted by $S_m$ is $a_0 + \cdots + a_m$
 
 ## Past Exams
 
