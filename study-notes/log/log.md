@@ -7,7 +7,7 @@
 
 ## Topics
 
-- [ ] Syntaxe
+- [x] Syntaxe
   - znalost a práce se základními pojmy syntaxe výrokové a predikátové logiky (jazyk, otevřená a uzavřená
   formule, instance formule, apod.)
   - normální tvary výrokových formulí
@@ -15,7 +15,7 @@
     - znalost základních normálních tvarů (CNF, DNF, PNF)
     - převody na normální tvary
     - použití pro algoritmy (SAT, rezoluce)
-- [ ] Sémantika
+- [x] Sémantika
   - pojem modelu teorie
   - pravdivost, lživost, nezávislost formule vzhledem k teorii
   - splnitelnost, tautologie, důsledek
@@ -23,7 +23,7 @@
 - [ ] Extenze teorií
   - schopnost porovnat sílu teorií
   - konzervativnost, skolemizace
-- [ ] Dokazatelnost:
+- [x] Dokazatelnost:
   - pojem formálního důkazu, zamítnutí
   - schopnost práce v některém z formálních dokazovacích systémů (např. tablo metoda, rezoluce, Hilbertovský
   kalkul)
