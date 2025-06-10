@@ -2,10 +2,11 @@
 
 ## TODOs
 
+- [x] Riemann integral definition
 - [ ] Taylor polynomial (limit form)
 - [ ] computation of integrals using substitution
-- [ ] Riemann integral definition
 - [ ] curve length using Riemann integral
+- [ ] Riemann integral and Newton integral relationship
 
 ## Topics
 
@@ -56,6 +57,24 @@
 
 - partial sum
   - given an infinite sum for $(a_n)_{n\geq0}$ the partial sum for a given $m$ denoted by $S_m$ is $a_0 + \cdots + a_m$
+
+## Riemann integral
+
+- done by approximating the area from below and above by taking supremum/infimum of lower/upper bounds on this area
+
+- partition of interval $[a,b]$
+  - is a sequence $D=(a_0,a_1,\ldots,a_k)$ s.t. $a=a_0<a_1<\ldots<a_k=b$
+  - interval on the partition: $I_i = [a_i,a_i+1]$
+
+- define lower and upper sums
+  - length of interval $|I_i| = a_{i+1} - a_i$
+  - lower sum: $s(f,D)=\sum_{i=0}^{k-1}|I_i|\cdot m_i$ where $m_i = \inf\{f(x), x \in I_i\}$
+  - upper sum: $S(f,D)=\sum_{i=0}^{k-1}|I_i|\cdot M_i$ where $M_i = \sup\{f(x), x \in I_i\}$
+
+- then we define $\overline{\int_a^b}f=\sup\{S(f,D) , D \text{ is partition of } [a,b]\}$
+- similarly $\underline{\int_a^b}f$
+- if $\overline{\int_a^b}f = \underline{\int_a^b}f = r \in \mathbb{R}$
+  - then we have Riemann integral $\int_a^bf(x) dx = r$
 
 ## Past Exams
 
