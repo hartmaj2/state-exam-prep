@@ -5,8 +5,8 @@
 - [x] Riemann integral definition
 - [x] Limit relation to orderings
 - [x] Limit arithmetics
-- [ ] Limit of composite functions
-- [ ] Taylor polynomial (limit form)
+- [x] Limit of composite functions
+- [x] Taylor polynomial (limit form)
 - [ ] computation of integrals using substitution
 - [ ] curve length using Riemann integral
 - [ ] Riemann integral and Newton integral relationship
@@ -93,7 +93,10 @@
 ### Limit of composite functions
 
 - let $f$, $g$ be functions in real variable s.t. $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow K}g(x) = L$
-  - 
+  - ❗one of following conditions must be fulfilled
+    - (1) exists $\delta$ s.t. $f(x) \neq K$ for all $x \in P(a,\delta)$
+      - because $g$ can be undefined at point $K$ even if the limit exists
+    - (2) $g$ is continuous at $K$, this means that $g(K) = L$
   - then $\lim_{x \rightarrow a}g(f(x)) = L$
 
 ## Series
@@ -103,6 +106,29 @@
 
 - partial sum
   - given an infinite sum for $(a_n)_{n\geq0}$ the partial sum for a given $m$ denoted by $S_m$ is $a_0 + \cdots + a_m$
+
+## Taylor polynomial
+
+- it is a polynomial (wow!)
+- used to approximate a function around some point on the domain
+
+- parameters:
+  - $f$ the function for which we evaluate the polynomial
+  - $a$ the point at which we approximate it
+  - $n$ amount of degrees to which we write out the polynomial
+
+- how is it constructed?
+  - we want the polynomial to have same derivatives up to $n$
+  - so for $i \in [n]$ we want:
+    - $(T_{f,a}^{n})^{(i)}(a) = f(a)^{(i)}$
+
+- special case for $0$
+  - $T(x) = f(0) + x \cdot f'(0) + \frac{x^2 \cdot f''(0)}{2!} + \ldots$
+  - main idea:
+    - lower terms disappear when differentiated $i$ times
+    - according to the power rule, we get a constant $k = i!$ in front of our coefficient
+
+- $T_{n}^{f,a}=f(a) + \frac{(x-a) \cdot f'(a)}{1!}+ \frac{(x-a)^2 \cdot f''(a)}{2!} + \ldots$
 
 ## Riemann integral
 
