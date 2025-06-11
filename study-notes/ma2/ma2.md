@@ -1,5 +1,9 @@
 # Prep for state exam in multidimensional mathematical analysis
 
+## TODO
+
+- [ ] how to compute Hessian
+
 ## Topics
 
 - [ ] Riemannův integrál jedno- i vícerozměrný
@@ -35,6 +39,16 @@
 - set $X$ is closed
   - for every $a \in X$ there exists $\delta$ s.t. $U(a,\delta) \subseteq X$
 
+## Open and closed sets
+
+- open set $X \subseteq M$ in space $(M,d)$
+  - for every $x \in X$ there exists $\delta > 0$ s.t. $U(x,\delta) \subseteq X$
+
+- closed set $X \subseteq M$ in space $(M,d)$
+  - the set $M \setminus X$ is open
+
+- equivalent characteristic of closed set
+  - for every convergent sequence $(a_n)_{n=0}^\infty \subseteq X$ we have $\lim_{n \rightarrow \infty}a_n \in X$
 
 ## Past exams
 
@@ -71,3 +85,22 @@
   - inflection point can only be at $p = (1,-1)$
 
 - ❗should use hessian to prove that it indeed is an inflection point 
+
+### Spring 2024 (metric spaces)
+
+### Summer 2024 (multivariate functions)
+
+### Autumn 2024 (closed sets in metric spaces)
+
+#### (1) 
+
+- just learn the definitions
+
+#### (2)
+
+- (a) $X_a = [0,+\infty)$
+  - it is closed because $\mathbb{R} \setminus X_a = (-\infty,0)$ is open
+    - for $x < 0$ we can choose $\delta = - \frac{x}{2}$
+- (b) $X_b = \{ \frac{1}{n}; n \in \mathbb{N} \} = \{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \}$
+  - it is closed
+    - ❗I guess we have to use the equivalent characteristic of a closed set
