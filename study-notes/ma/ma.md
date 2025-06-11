@@ -55,19 +55,25 @@
 
 ## Real functions in single variable
 
+### Limit of a function
+
+- function $f$ has limit $K$ in point $a$ iff
+  - $\forall \epsilon \ \exists \delta$ s.t. $x \in P(a,\delta) \rightarrow U(K,\epsilon)$ where $\epsilon,\delta > 0$
+  - ❗ exact usage of $P$ vs $U$ neighborhoods is important
+
 ### Relation to ordering <
 
 - relation of limit with ordering (1)
   - let us have functions $f$, $g$ s.t. $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow a}g(x) = L$ and $K < L$
-  - then there exists $\delta > 0$ s.t. $\forall x \in U(a,\delta)$ we have $f(x) < g(x)$ 
+  - then there exists $\delta > 0$ s.t. $\forall x \in P(a,\delta)$ we have $f(x) < g(x)$ 
 
 - relation of limit with ordering (2)
   - let us have functions $f$, $g$ s.t. they have limit at point $a$
-  - if there exists $\delta > 0$ s.t. $\forall x \in U(\delta,a)$ we have $f(x) \leq g(x)$ then $\lim_{x \rightarrow a}f(x) \leq \lim_{x \rightarrow a}g(x)$
+  - if there exists $\delta > 0$ s.t. $\forall x \in P(\delta,a)$ we have $f(x) \leq g(x)$ then $\lim_{x \rightarrow a}f(x) \leq \lim_{x \rightarrow a}g(x)$
 
 - relation of limit with ordering (3)
   - let us have functions $f$, $g$, $h$ s.t. $\lim_{x \rightarrow a}f(x) = \lim_{x \rightarrow a}g(x) = A$
-  - if there exists $\delta > 0$ s.t. $\forall x \in U(\delta,a)$ we have $f(x) \leq h(x) \leq g(x)$, then $\lim_{x \rightarrow a}h(x) = A$
+  - if there exists $\delta > 0$ s.t. $\forall x \in P(\delta,a)$ we have $f(x) \leq h(x) \leq g(x)$, then $\lim_{x \rightarrow a}h(x) = A$
 
   - note that we have $A \in \mathbb{R}^*$ so it is possible that $A = \infty$ or $A = - \infty$
 
@@ -77,12 +83,18 @@
 - let $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow b}g(x) = L$
 
 - sum of limits
-    - &#x2757; can't do : sum opposite infinities
+  - ❗ can't do : sum opposite infinities
 
 - sum of products
-  - &#x2757; can't multiply infinity by zero
-  - &#x2757; divide infinities by each other
+  - ❗can't multiply infinity by zero
+  - ❗can't divide infinities by each other
   - divide by zero (quite obvious)
+
+### Limit of composite functions
+
+- let $f$, $g$ be functions in real variable s.t. $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow K}g(x) = L$
+  - 
+  - then $\lim_{x \rightarrow a}g(f(x)) = L$
 
 ## Series
 
