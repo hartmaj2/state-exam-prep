@@ -3,6 +3,9 @@
 ## TODOs
 
 - [x] Riemann integral definition
+- [x] Limit relation to orderings
+- [x] Limit arithmetics
+- [ ] Limit of composite functions
 - [ ] Taylor polynomial (limit form)
 - [ ] computation of integrals using substitution
 - [ ] curve length using Riemann integral
@@ -19,7 +22,7 @@
 - [ ] Reálné funkce jedné reálné proměnné
     - limita funkce v bodě
         - definice, aritmetika limit
-        - vztah s uspořádáním ???
+        - vztah s uspořádáním
         - limita složené funkce
     - funkce spojité na intervalu
         - nabývání mezihodnot
@@ -49,6 +52,37 @@
 - two policemen theorem
   - suppose we have sequences $(a_n),(b_n),(c_n)$ s.t. for every natural number $n \geq m$, $a_n \leq b_n \leq c_n$ (where $m$ is some fixed natural number)
   - then if $\lim_{n \rightarrow \infty}a_n = \lim_{n \rightarrow \infty}c_n = k$ then we have $\lim_{n \rightarrow \infty}b_n = k$
+
+## Real functions in single variable
+
+### Relation to ordering <
+
+- relation of limit with ordering (1)
+  - let us have functions $f$, $g$ s.t. $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow a}g(x) = L$ and $K < L$
+  - then there exists $\delta > 0$ s.t. $\forall x \in U(a,\delta)$ we have $f(x) < g(x)$ 
+
+- relation of limit with ordering (2)
+  - let us have functions $f$, $g$ s.t. they have limit at point $a$
+  - if there exists $\delta > 0$ s.t. $\forall x \in U(\delta,a)$ we have $f(x) \leq g(x)$ then $\lim_{x \rightarrow a}f(x) \leq \lim_{x \rightarrow a}g(x)$
+
+- relation of limit with ordering (3)
+  - let us have functions $f$, $g$, $h$ s.t. $\lim_{x \rightarrow a}f(x) = \lim_{x \rightarrow a}g(x) = A$
+  - if there exists $\delta > 0$ s.t. $\forall x \in U(\delta,a)$ we have $f(x) \leq h(x) \leq g(x)$, then $\lim_{x \rightarrow a}h(x) = A$
+
+  - note that we have $A \in \mathbb{R}^*$ so it is possible that $A = \infty$ or $A = - \infty$
+
+### Arithmetic of limits
+
+- let $f$,$g$ be functions in real variable
+- let $\lim_{x \rightarrow a}f(x) = K$ and $\lim_{x \rightarrow b}g(x) = L$
+
+- sum of limits
+    - &#x2757; can't do : sum opposite infinities
+
+- sum of products
+  - &#x2757; can't multiply infinity by zero
+  - &#x2757; divide infinities by each other
+  - divide by zero (quite obvious)
 
 ## Series
 
