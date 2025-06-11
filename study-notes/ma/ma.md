@@ -19,7 +19,7 @@
 - [x] Řady
     - definice částečného součtu a součtu
     - geometrická řada, harmonická řada
-- [ ] Reálné funkce jedné reálné proměnné
+- [x] Reálné funkce jedné reálné proměnné
     - limita funkce v bodě
         - definice, aritmetika limit
         - vztah s uspořádáním
@@ -31,8 +31,8 @@
     - definice a základní pravidla pro výpočet
     - l’Hospitalovo pravidlo
     - vyšetření průběhu funkcí: extrémy, monotonie a konvexita/konkavita
-- [ ] Taylorův polynom (limitní forma)
-- [ ] Integrály a jejich aplikace
+- [x] Taylorův polynom (limitní forma)
+- [x] Integrály a jejich aplikace
     - primitivní funkce: definice a metody výpočtu (substituce, per-partes)
 - [ ] Riemannův integrál: definice, souvislost s primitivní funkcí (Newtonovým integrálem)
     - aplikace
@@ -129,6 +129,18 @@
     - according to the power rule, we get a constant $k = i!$ in front of our coefficient
 
 - $T_{n}^{f,a}=f(a) + \frac{(x-a) \cdot f'(a)}{1!}+ \frac{(x-a)^2 \cdot f''(a)}{2!} + \ldots$
+
+## Computing integrals
+
+### General hints
+
+- rewrite roots in terms of powers
+
+### Substitution rule
+
+- when do we use it?
+  - when we notice that the function $h$ we need to integrate can be rewritten as some $f$ and $g$ s.t. $h(x) = f(g(x)) \cdot g'(x) \cdot k$ where $k$ is some constant
+    - ❗ note the $k$
 
 ## Riemann integral
 
