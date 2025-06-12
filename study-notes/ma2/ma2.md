@@ -85,7 +85,14 @@
   - the set $M \setminus X$ is open
 
 - equivalent characteristic of closed set
-  - for every convergent sequence $(a_n)_{n=0}^\infty \subseteq X$ we have $\lim_{n \rightarrow \infty}a_n \in X$
+  - for every convergent sequence $(a_n) \subset X$ we have $\lim_{n \rightarrow \infty}a_n \in X$
+
+## Compact sets
+
+- compact set $X \subseteq M$
+  - every sequence $(a_n) \subset X$ has a subsequence $(a_{n_k})$ s.t. it converges to a point inside $X$
+
+- on a compact set a continuous function has global minimum and maximum
 
 ## Past exams
 
@@ -115,8 +122,8 @@
 - $g(x,y) = x^2 - 2x + y^2 + 2y + 4$
 
 - what criterion does the minimum need to fulfill?
-  - $\frac{\partial g}{\partial x} = 2x - 2$
-  - $\frac{\partial g}{\partial y} = 2y + 2$  
+  - $\frac{\partial g}{\partial x}(x,y) = 2x - 2$
+  - $\frac{\partial g}{\partial y}(x,y) = 2y + 2$  
 
 - partial derivatives are independent of the second variable
   - inflection point can only be at $p = (1,-1)$
@@ -126,6 +133,35 @@
 ### Spring 2024 (metric spaces)
 
 ### Summer 2024 (multivariate functions)
+
+#### (1)
+
+- $f$ is continuous at point $x$
+  - $\forall \epsilon, \exists \delta, y \in U(x,\delta) \implies f(y) \in U(f(x),\epsilon)$
+  - ❗ $U(x,\delta) = \{ y \ ; \ d_n(x,y) < \delta\}$
+
+#### (2)
+
+- $f(x,y) = \exp(x^2) \cdot \ln(2 + y^2)$
+
+- $\frac{\partial f}{\partial x}(x,y)=\exp(x^2) \cdot 2x \cdot \ln(2 + y^2)$
+
+- $\frac{\partial^2 f}{\partial x \partial y}(x,y)=\exp(x^2) \cdot 2x \cdot (2 + y^2)^{-1} \cdot 2y$
+
+- $\frac{\partial^2 f}{\partial x^2}(x,y)= (\exp(x^2) \cdot 2 + \exp(x^2) \cdot 4x^2) \cdot \ln(2 + y^2) = \exp(x^2) ( 2 +  4x^2) \cdot \ln(2 + y^2)$
+
+#### (3)
+
+- $f$ is continuous on its whole domain so it must have global maximum and minimum
+
+- $\frac{\partial f}{\partial y}(x,y)= \exp(x^2) \cdot (2 + y^2)^{-1} \cdot 2y$
+
+- look where we have $\frac{\partial f}{\partial x}(x,y)=\frac{\partial f}{\partial y}(x,y)=0$
+  - when $x=0$ and $y=0$
+
+- compute Hessian to see if it is not an inflection point without min/max
+
+- ❗show that the function is unbounded when $x \rightarrow \infty$
 
 ### Autumn 2024 (closed sets in metric spaces)
 
