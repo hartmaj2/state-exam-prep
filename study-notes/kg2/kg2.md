@@ -80,3 +80,30 @@
 
 ### Spring 2025 (catalan numbers and generating sequences)
 
+#### (1)
+
+- these are the catalan numbers
+  - $C_n = \frac{1}{n+1} \cdot \binom{2n}{n}$
+
+- $D_n = | \{ (a_i)_{i=1}^n \subset \mathbb{N} \ ; \ a_1=1 \wedge a_{i+1} \leq a_i + 1\} |$
+  - number of sequences of natural numbers s.t. they are not allowed to increase by more than 1 between two elements
+
+- ❗use the fact that they ask for definition of **parentheses** version of Catalan
+  - try to map the sequences to parentheses
+  - each valid sequence corresponds to a valid parenthesizing
+
+- $a_i$ describes how many parentheses were already open (including this one) when we opened the $i$-th parenthesis
+
+#### (2)
+
+- $\mathcal{A} = \{ \alpha^n ; \alpha \in \{ a,b \} \}$
+- $\mathcal{C} = \{ \alpha^n ; \alpha \in \{ c,d \} \}$
+- $\mathcal{S} = \{ s ; s = a' \cdot c \cdot a'' \}$
+
+- ❗if not mentioned all sequences, it can be just a subset
+
+### Autumn 2023 (graphs without triangles)
+
+- 
+
+
