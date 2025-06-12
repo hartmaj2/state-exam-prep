@@ -3,21 +3,22 @@
 ## TODO
 
 - [ ] how to compute Hessian
+- [ ] definition of partial derivative
 
 ## Topics
 
 - [x] Riemannův integrál jedno- i vícerozměrný
-- [ ] Funkce více proměnných
-  - parciální derivace: definice a výpočet
-  - výpočet extrémů pomocí paricálních derivací
-  - existence extrémů pro funkce několika reálných proměnných
-  - vázané extrémy: výpočet pomocí Lagrangeových multiplikátorů
-- [ ] Metrický prostor
-  - definice a základní příklady
-  - otevřené a uzavřené množiny: definice, příklady
-  - spojitost funkce na metrickém prostoru
-  - kompaktnost: definice a důsledky pro extrémy funkcí více proměnných
-  - stejnoměrná spojitost
+- [x] Funkce více proměnných
+  - [x] parciální derivace: definice a výpočet
+  - [x] výpočet extrémů pomocí paricálních derivací
+  - [x] existence extrémů pro funkce několika reálných proměnných
+  - [ ] vázané extrémy: výpočet pomocí Lagrangeových multiplikátorů
+- [x] Metrický prostor
+  - [x] definice a základní příklady
+  - [x] otevřené a uzavřené množiny: definice, příklady
+  - [x] spojitost funkce na metrickém prostoru
+  - [x] kompaktnost: definice a důsledky pro extrémy funkcí více proměnných
+  - [x] stejnoměrná spojitost
 
 ## Riemann integral in multiple dimensions
 
