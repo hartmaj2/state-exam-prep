@@ -6,7 +6,7 @@
 
 ## Topics
 
-- [ ] Riemannův integrál jedno- i vícerozměrný
+- [x] Riemannův integrál jedno- i vícerozměrný
 - [ ] Funkce více proměnných
   - parciální derivace: definice a výpočet
   - výpočet extrémů pomocí paricálních derivací
@@ -18,6 +18,43 @@
   - spojitost funkce na metrickém prostoru
   - kompaktnost: definice a důsledky pro extrémy funkcí více proměnných
   - stejnoměrná spojitost
+
+## Riemann integral in multiple dimensions
+
+### Definitions
+
+- $n$-dimensional compact interval
+  - for pairs of points $(a_1,b_1),\ldots,(a_n,b_n)$
+  - is $J = \langle a_1,b_1 \rangle \times \ldots \times \langle a_n,b_n \rangle$
+
+- multi-partition of $J$
+  - is a sequence of partitions $P=(P_1,\ldots,P_n)$ where
+    - $P_i$ is a partition of $\langle a_i,b_i \rangle$
+    - $P_i = (a_i = t_{i,1} < \ldots < t_{i,k_i} = b_i)$
+
+- brick is $B = [t_{1,j_1},\ldots,t_{1,j_1+1}] \times \ldots \times [t_{n,j_n},\ldots,t_{n,j_n+1}]$
+  - ❗notice double indexes of the second coefficient, that's because the offset can be starting at different point for each partition
+
+- set of all bricks in $P$ is $\mathcal{B}(P)$
+
+- brick volume $vol(B)$
+  - product of sizes of all the intervals that the brick is composed of
+
+- upper and lower sums
+  - parametrized by $n$-dimensional compact interval $J$ and its multi-partition $P$
+  - go over all bricks and compute the sum of their infima/suprema times volumes 
+
+## Mutlivariate functions
+
+### Partial derivatives
+
+- fix everything except a single variable
+
+### Finding extrema
+
+1. compute the gradient $\nabla f$ - see where it is $o$
+2. look at edges of the set $M$
+3. look where partial derivatives are undefined
 
 ## Metric spaces
 
