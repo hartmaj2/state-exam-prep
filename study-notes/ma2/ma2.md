@@ -36,7 +36,7 @@
   - $U(a,\delta) = \{ y\in M , d(y,a) < \delta \}$
   - ❗for $\delta > 0$
 
-- set $X$ is closed
+- set $X$ is open
   - for every $a \in X$ there exists $\delta$ s.t. $U(a,\delta) \subseteq X$
 
 ## Open and closed sets
