@@ -175,5 +175,13 @@
   - it is closed because $\mathbb{R} \setminus X_a = (-\infty,0)$ is open
     - for $x < 0$ we can choose $\delta = - \frac{x}{2}$
 - (b) $X_b = \{ \frac{1}{n}; n \in \mathbb{N} \} = \{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \}$
-  - it is closed
-    - ❗I guess we have to use the equivalent characteristic of a closed set
+  - ❗ it is open since the sequence $(a_n)$ where $a_i = \frac{1}{i}$ converges to $0 \notin X_b$ 
+
+#### (3)
+
+- ❗always try use every assumption!
+  - think about intuition why the assumption is necessary
+  - what exactly would go wrong if the assumption did not hold
+- the straightforward solution works here
+  - write out definitions of the assumption and the set involved
+- use WLOG
