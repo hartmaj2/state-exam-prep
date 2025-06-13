@@ -6,10 +6,10 @@
 
 ## Topics
 
-- [ ] Vytvořující funkce
-  - [ ] použití vytvořujících funkcí k řešení lineárních rekurencí
-  - [ ] zobecněná binomická věta (formulace)
-  - [ ] Catalanova čísla (příklad kombinatorické interpretace, odvození vzorce v uzavřeněm tvaru)
+- [x] Vytvořující funkce
+  - [x] použití vytvořujících funkcí k řešení lineárních rekurencí
+  - [x] zobecněná binomická věta (formulace)
+  - [x] Catalanova čísla (příklad kombinatorické interpretace, odvození vzorce v uzavřeněm tvaru)
 - [ ] Odhady faktoriálu a kombinačních čísel
   - [ ] formulace základních odhadů
     - [ ] $(n/e)^n \leq n! \leq en (n/e)^n$
@@ -56,6 +56,29 @@
 
 ### Generalised binomial theorem
 
+#### Normal binomial theorem
+
+$(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
+
+#### Generalized binomial theorem
+
+- how does it generalize the previous one?
+  - sum goes to infinity?
+- the $n$ exponent can be $n \in \mathbb{R}$
+
+- then we need a **generalized binomial coefficient**
+
+- $(1+x)^r = \sum_{k=0}^{\infty}\binom{r}{k}x^k$
+  - so it is generalized only in some way
+  - ❗inside parentheses is $1+x$
+  - ❗we must have $|x| < 1$
+
+#### Generalized binomial coefficient
+
+- $\binom{r}{k} = \frac{r \cdot (r-1) \cdot \ldots \cdot (r-k+1)}{k!}$ where $r \in \mathbb{R}$
+  - ❗beware that $k \in \mathbb{N}_0$
+
+
 ### Catalan numbers
 
 - count of rooted ordered binary trees
@@ -101,6 +124,17 @@
 - $\mathcal{S} = \{ s ; s = a' \cdot c \cdot a'' \}$
 
 - ❗if not mentioned all sequences, it can be just a subset
+
+
+### Spring 2024 (generating functions and bounds)
+
+#### (1)
+
+$$\frac{1}{n+1} \cdot \binom{2n}{n}$$
+
+#### (2)
+
+- ❗if we have generating function which looks like $\frac{a_1x + b_1}{(a_2x+b_2)(a_3x+b_3)}$ we use the decomposition into sum of fractions using $\frac{A}{a_2x+b_2} + \frac{B}{a_3x+b_3}$
 
 ### Autumn 2023 (graphs without triangles)
 
