@@ -10,11 +10,11 @@
   - [x] použití vytvořujících funkcí k řešení lineárních rekurencí
   - [x] zobecněná binomická věta (formulace)
   - [x] Catalanova čísla (příklad kombinatorické interpretace, odvození vzorce v uzavřeněm tvaru)
-- [ ] Odhady faktoriálu a kombinačních čísel
-  - [ ] formulace základních odhadů
-    - [ ] $(n/e)^n \leq n! \leq en (n/e)^n$
-    - [ ] $(n/k)^n \leq \binom{n}{k} \leq (en/k)^k$
-    - [ ] $2^{2m}/(2 \sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
+- [x] Odhady faktoriálu a kombinačních čísel
+  - [x] formulace základních odhadů
+    - [x] $(n/e)^n \leq n! \leq en (n/e)^n$
+    - [x] $(n/k)^k \leq \binom{n}{k} \leq (en/k)^k$
+    - [x] $2^{2m}/(2 \sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
 - [ ] Ramseyovy věty
   - [ ] Ramseyova věta (formulace konečné a nekonečné verze pro p-tice, důkaz verze p=2 pro 2 barvy)
   - [ ] Ramseyova čísla (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodob-
@@ -97,7 +97,13 @@ $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
 - then use the generating function to find the explicit formula
 
 
+## Combinatorial bounds
 
+- $(\frac{n}{e})^n \leq n! \leq en (\frac{n}{e})^n$
+
+- $(\frac{n}{k})^k \leq \binom{n}{k} \leq (\frac{en}{k})^k$ 
+
+- $\frac{2^{2n}}{2\sqrt{n}}\leq \binom{2n}{n}\leq\frac{2^{2n}}{\sqrt{2n}}$
 
 ## Past exams
 
