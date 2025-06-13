@@ -105,6 +105,31 @@ $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
 
 - $\frac{2^{2n}}{2\sqrt{n}}\leq \binom{2n}{n}\leq\frac{2^{2n}}{\sqrt{2n}}$
 
+## Ramsey theorems
+
+### 2 colors and 2-tuples version
+
+- for every choice of number $k$, there exists a number $n$ s.t. for each $2$-coloring (of edges) $c$ of graph $K_n$ there exists a single color clique of size $k$
+
+- subset $S \in V$ is a single color clique in hypergraph with edges of arity $p$ 
+  - if there exists color $k$ s.t. for every $s \in \binom{S}{p}$ we have $c(s) = k$
+
+### 2 colors and p-tuples version
+
+- let $H = (V,F)$ be $p$-hypergraph
+  - $V$ set of vertices
+  - $F$ is a subset of $\binom{V}{p}$
+
+- for every choice of number $k$ and $p$, there exists a number $n$ s.t. for every $2$-coloring of $K_{n}^p$ there exists a subset of size $k$ s.t. it has only edges of single color between the vertices in the subset
+
+### Infinite version
+
+- for every $k$ there exists a monochromatic infinite complete graph inside of any coloring of an infinite complete graph
+
+### Proof of 2 colors and 2-tuples version
+
+- proof is done by induction
+
 ## Past exams
 
 ### Spring 2025 (catalan numbers and generating sequences)
