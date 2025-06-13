@@ -104,6 +104,17 @@
 
 ### Autumn 2023 (graphs without triangles)
 
-- 
+#### (1)
+
+- use the fact that maximal graph without triangle is a complete bipartite graph
+
+
+- argument why it should be bipartite?
+  - what if there is more partite graph that is not complete but still has more edges than the complete bipartite with partition size $\frac{n}{2}$
+
+#### (2)
+
+- graph without triangle has independent set of size at least $\sqrt{n}$
+  
 
 
