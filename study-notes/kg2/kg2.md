@@ -184,6 +184,20 @@ $$\frac{1}{n+1} \cdot \binom{2n}{n}$$
 
 - ❗if we have generating function which looks like $\frac{a_1x + b_1}{(a_2x+b_2)(a_3x+b_3)}$ we use the decomposition into sum of fractions using $\frac{A}{a_2x+b_2} + \frac{B}{a_3x+b_3}$
 
+### Autumn 2024 
+
+#### (1)
+
+- let $K_{\infty}$ be an infinite complete graph
+- for any $k,b$ and $c : E(K_\infty) \rightarrow [b]$ there exists $i \in [b]$ and ❗**infinite** $S \subseteq V(K_\infty)$ s.t. $\forall e \in \binom{S}{2} : c(e) = i$
+  - ❗the subset $S$ has to be infinite not of fixed size
+
+#### (2) fun with infinite bipartite graphs
+
+- ❗think about also disproving stuff
+
+- TODO: try to disprove it
+
 ### Autumn 2023 (graphs without triangles)
 
 #### (1)
