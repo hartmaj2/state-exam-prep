@@ -128,7 +128,24 @@ $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
 
 ### Proof of 2 colors and 2-tuples version
 
+- precise formulation
+  - $\forall k, \exists n, \forall c : \binom{[n]}{2} \rightarrow \{1,2\}, \exists i \in \{1,2\},\exists S \in \binom{[n]}{k}, \forall e \in \binom{S}{2} : c(e) = i$
+    - ❗$S \in \binom{[n]}{k}$ not $S \in \binom{k}{2}$
+      - $S$ is not an edge bro!
+    - ❗$e \in \binom{S}{2}$ not $e \in S$
+      - edges are colored not $k$-tuples
+
 - proof is done by induction
+  - induction is on $s = k + l$
+  - base case $R(k,1) = R(1,l) = 1$
+  - inductive case:
+    - we get $R(k,l)$
+    - ❗from I.H. we know $R(k-1,l)=A$ and also $R(k,l-1)=B$
+    - take $N=A+B$ and prove $N \geq R(k,l)$ and graph $G$ on $N$ vertices
+    - ❗take any $x \in V$ and analyse $S=N(x)$ and $T = V \setminus S \setminus \{x\}$ (neighbors and non-neighbors)
+    - show that $|S| + |T| \geq A + B - 1$ implies that:
+      - $|S| \geq A$ or $|T| \geq B$
+      - the rest you can figure out
 
 ## Past exams
 
