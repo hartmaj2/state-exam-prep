@@ -14,7 +14,7 @@
 - [x] Metoda rozděl a panuj
   - [x] princip rekurzivního dělení problému na podproblémy
   - [x] výpočet složitosti pomocí rekurentních rovnic
-  - [ ] Master theorem (kuchařková věta) (bez důkazu)
+  - [x] Master theorem (kuchařková věta) (bez důkazu)
   - [ ] aplikace
     - [x] Mergesort
     - [ ] násobení dlouhých čísel
