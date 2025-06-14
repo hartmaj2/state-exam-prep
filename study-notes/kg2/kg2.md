@@ -20,13 +20,13 @@
   - [x] Ramseyova čísla (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodob-
   nostní konstrukcí)
 - [ ] Extremální kombinatorika
-  - [ ] obecné povědomí co extremální kombinatorika studuje
-  - [ ] Turánova věta (formulace, Turánovy grafy)
-  - [ ] Erdös-Ko-Radoova věta (formulace)
-- [x] Samoopravné kódy
+  - [x] obecné povědomí co extremální kombinatorika studuje
+  - [x] Turánova věta (formulace, Turánovy grafy)
+  - [x] Erdös-Ko-Radoova věta (formulace)
+- [ ] Samoopravné kódy
   - [x] přehled o používané terminologii
   - [x] vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
-  - [x] Hammingův odhad (formulace a důkaz)
+  - [ ] Hammingův odhad (formulace a důkaz)
   - [ ] perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukce)
 
 ## Generating functions
@@ -146,6 +146,48 @@ $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
     - show that $|S| + |T| \geq A + B - 1$ implies that:
       - $|S| \geq A$ or $|T| \geq B$
       - the rest you can figure out
+
+## Extremal combinatorics
+
+### Turan theorem
+
+- deals with questions about what is the largest number of edges $m$, when we are given the number of vertices $n$ and a banned graph $H$ that should not be present in our graph $G$ as an induced subgraph
+  - e.g. what is the largest $m$ for a graph that has no induced triangle as a subgraph (with respect to given $n$)
+  - $ex(n,H)$ is the number defined above
+
+- Turan graph $T_k(n)$
+  - complete graph with $k$ partitions
+  - each partition has size $\lfloor \frac{n}{k} \rfloor$ or $\lceil \frac{n}{k} \rceil$ (almost equal sizes)
+
+- $t_{k}(n)$ number of edges of corresponding Turan graph
+
+- Turan's theorem
+  - let $r$ be natural number $\geq 2$
+  - let $n$ be a given number of vertices
+  - then $ex(n,K_r) = t_{r-1}(n)$
+    - the largest possible amount of edges of a graph that cannot have $K_r$ as induced subgraph is exactly equal to
+      - the amount of edges of complete $r-1$ partite graph where the partitions are almost same sized (floor or ceil)
+
+### Erdos-Ko-Rado
+
+- $k$-uniform hypergraph $H=(V,E)$
+  - $E \subseteq \binom{V}{k}$
+  - the edges are sets of $k$ vertices
+
+- $E$ is intersecting system of sets 
+  - for each $e,e' \in E$ we have $e \cap e' \neq \emptyset$
+
+- cool function $f(k,n) = m$
+  - largest $m$ s.t. there exists $k$-uniform hypergraph $H=(V,E)$ s.t. $E$ is an intersecting system of sets and $m = |E|$ and $n = |V|$
+
+- Erdos-Ko-Rado theorem
+  - for every $k,n \in \mathbb{N}$ we have $f(k,n)=\binom{n-1}{k-1}$
+    - i.e. no matter what is the amount of vertices $n$ and restricted set size $k$
+      - the maximal amount of edges we can have so that every pair intersects is the same as the one using the sunflower construction
+
+- sunflower construction
+  - all sets in $E$ of the $k$-uniform hypergraph $H=(V,E)$ have a shared vertex $x$ which is the middle of the sunflower
+  - than we can choose any subset of size $k-1$ from the surrounding $n-1$ vertices and we still have the property, that they are all overlapping since $x \in e' \cap e$ for every $e,e' \in E$
 
 ## Error correcting codes
 
