@@ -40,6 +40,12 @@
   - function takes size of input $n$
   - returns time of slowest algorithm run over all inputs of size $n$
 
+## Asymptotic notation
+
+- let $f,g$ be functions $\mathbb{N} \rightarrow \mathbb{R}$
+  - we say $f \in \mathcal{O}(g)$ iff
+    - exists a positive constant s.t. in long term $g$ is bigger than $f$ no matter how we multiply $f$
+
 ## Binary search trees
 
 ### BVS
