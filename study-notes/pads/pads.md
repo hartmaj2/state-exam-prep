@@ -5,7 +5,7 @@
 ## Topics
 
 - [ ] Dynamické programování
-    - [ ] princip dynamického programování (řešení podproblémů od nejmenších k největším)
+    - [x] princip dynamického programování (řešení podproblémů od nejmenších k největším)
     - [ ] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
 - [ ] Grafové algoritmy
     - [ ] komponenty silné souvislosti orientovaných grafů
@@ -29,6 +29,26 @@
 ### Idea
 
 - kind of like recursion because we start solving smaller problems and then compose the solution of bigger problems out of the results for the smaller problem solutions
+
+### Longest increasing subsequence
+
+#### Setting
+
+- we have sequence $a_1,\ldots,a_n$
+- we want to find subsequence $a_{i_1},\ldots,a_{i_j}$ s.t.
+- $j$ is maximum possible
+- $i_k < i_l$ for $k < l$
+- $a_{i_k} > a_{i_l}$ if $i_k > i_l$
+
+#### Solution
+
+- stupid solution $\mathcal{O}(2^n)$
+  - enumerate all $2^n$ possible subsequences, compute their sums and find the maximum
+
+- better solution $\mathcal{O}(n^2)$
+  - for each position $i$ calculate $l_i$ (lenght of the longest increasing subsequence) as maximum of all $l_j$'s for $j < i$ and $a_j < a_i$
+
+- use solution of smaller problems to find the solution of the whole big problem
 
 ## Past exams
 
@@ -98,3 +118,5 @@
     - $C_{i,j}= \min(C_{i-1,j};C_{i-1,j-a_i}+c_i)$
 
 - ❗space complexity can be reduced because we only need the previous row for each computation
+
+### Autumn 2023 (discrete fourier transform)
