@@ -7,17 +7,17 @@
   - [x] měření velikosti dat
   - [x] složitost v nejlepším, nejhorším a průměrném případě
   - [x] asymptotická notace
-- [ ] Třídy složitosti
-  - [ ] třídy P a NP
-  - [ ] převoditelnost problémů, NP-těžkost a NP-úplnost
-  - [ ] příklady NP-úplných problémů a převodů mezi nimi
-- [ ] Metoda rozděl a panuj
-  - [ ] princip rekurzivního dělení problému na podproblémy
-  - [ ] výpočet složitosti pomocí rekurentních rovnic
-- [ ] Master theorem (kuchařková věta) (bez důkazu)
+- [x] Třídy složitosti
+  - [x] třídy P a NP
+  - [x] převoditelnost problémů, NP-těžkost a NP-úplnost
+  - [x] příklady NP-úplných problémů a převodů mezi nimi
+- [x] Metoda rozděl a panuj
+  - [x] princip rekurzivního dělení problému na podproblémy
+  - [x] výpočet složitosti pomocí rekurentních rovnic
+  - [ ] Master theorem (kuchařková věta) (bez důkazu)
   - [ ] aplikace
-- [x] Mergesort
-  - [ ] násobení dlouhých čísel
+    - [x] Mergesort
+    - [ ] násobení dlouhých čísel
 - [x] Binarní vyhledávací stromy
   - [x] definice vyhledávacího stromu
   - [x] operace s nevyvažovanými stromy
@@ -46,6 +46,51 @@
   - we say $f \in \mathcal{O}(g)$ iff
     - exists a positive constant s.t. in long term $g$ is bigger than $f$ no matter how we multiply $f$
 
+## Complexity classes
+
+- class $P$ of problems
+  - a problem $L \in P$
+  - exists algorithm $A$ and polynomial $f$ s.t. 
+    - for every input $x$ we have 
+      - $t(A(x)) \leq f(|x|)$
+      - $A(x) = L(x)$
+  - where $t(A(x))$ is time how long the algorithm ran
+
+- class $NP$ of problems
+  - a problem $L \in NP$
+  - problem $K \in P$ and polynomial $g$ s.t.
+    - for every input $x$ we have
+      -  $L(x)=1$ iff there exists $y$ s.t. $|y| \leq g(x)$ s.t. $K(x,y)=1$
+
+- convertibility $A \rightarrow B$
+  - if exists $f : \{0,1\}^* \rightarrow \{0,1\}^*$ s.t.
+    - for every input $x$
+      - $A(x) = B(f(x))$
+      - $f(x)$ is poly time computable in terms of $|x|$
+  - ❗$A$ cannot be harder than $B$
+
+- $NP$-hard problem $A$
+  - for every $B$ in $NP$ we have $B \rightarrow A$
+
+- $NP$-complete problem $A$
+  - $A$ is in $NP$ and $A$ is $NP$-hard
+
+### NP-complete problem examples
+
+- SAT
+  - input: formula $\varphi$ in CNF
+  - objective: exists valuation of variables $x$ s.t. $\varphi(x)=1$
+
+- independent set
+  - input: graph $G$, number $k$
+  - objective: find set $S \subseteq V$ s.t. $S$ is independent set
+
+- graph coloring
+  - input: graph $G$, number $k$
+  - objective: exists $k$-coloring of $G$ ?
+
+- knapsack problem
+
 ## Binary search trees
 
 ### BVS
@@ -72,3 +117,18 @@
   - $l(x)$ is the left subtree of $x$
   - $r(x)$ is the right subtree of $x$
   - $h(T)$ is height of the tree
+
+## Divide and conquer
+
+### Master theorem
+
+- recursive problem parameters
+  - $a$ how many subproblems we need to compute for each problem
+  - $b$ how does the size of the subproblems increase/decrease
+  - $c$ complexity ❗**exponent** of solving a single problem
+
+- we have recursive formula $T(n) = a \cdot T(\frac{n}{b}) + \Theta(n^c)$
+  - we determine what happens based on ratio $\frac{a}{b^c} = r$
+    - $r < 1$ ... $\Theta(n^c)$
+    - $r = 1$ ... $\Theta(\log n\cdot n^c)$
+    - $r > 1$ ... $\Theta(n^{\log_ba})$
