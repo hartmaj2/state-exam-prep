@@ -149,6 +149,31 @@
 - input: start vertex $x$
 - objective: calculate $d(y)$ for every $y$
 
+## Spanning tree algorithms
+
+- Jarnik
+- Kruskal
+- Boruvka
+
+## Finding minimal flow
+
+### Ford-Fulkerson algorithm
+
+- finds unsaturated paths and pushes as much as it can through those paths
+
+- unsaturated path
+  - all edges on the path are unsaturated
+    - their reserve $r(u,v) = c(u,v) - f(u,v) + f(v,u)$
+
+- while exists unsaturated path $P$
+  - find $\epsilon$ which is the $\min\{r(e) \ ; \ e \in P\}$
+  - for each $uv \in P$
+    - if $\epsilon < f(v,u)$
+      - $f(v,u) = f(v,u) - \epsilon$
+    - else
+      - $f(u,v) = f(u,v) + \epsilon - f(v,u)$
+      - $f(v,u) = 0$
+
 ## Past exams
 
 ### Summer 2024 (divide and conquer)
