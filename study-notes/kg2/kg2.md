@@ -15,18 +15,18 @@
     - [x] $(n/e)^n \leq n! \leq en (n/e)^n$
     - [x] $(n/k)^k \leq \binom{n}{k} \leq (en/k)^k$
     - [x] $2^{2m}/(2 \sqrt{m}) \leq \binom{2m}{m} \leq 2^{2m}/\sqrt{2m}$
-- [ ] Ramseyovy věty
-  - [ ] Ramseyova věta (formulace konečné a nekonečné verze pro p-tice, důkaz verze p=2 pro 2 barvy)
-  - [ ] Ramseyova čísla (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodob-
+- [x] Ramseyovy věty
+  - [x] Ramseyova věta (formulace konečné a nekonečné verze pro p-tice, důkaz verze p=2 pro 2 barvy)
+  - [x] Ramseyova čísla (definice, pro 2 barvy horní odhad z důkazu Ramseyovy věty a dolní odhad pravděpodob-
   nostní konstrukcí)
 - [ ] Extremální kombinatorika
   - [ ] obecné povědomí co extremální kombinatorika studuje
   - [ ] Turánova věta (formulace, Turánovy grafy)
   - [ ] Erdös-Ko-Radoova věta (formulace)
-- [ ] Samoopravné kódy
-  - [ ] přehled o používané terminologii
-  - [ ] vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
-  - [ ] Hammingův odhad (formulace a důkaz)
+- [x] Samoopravné kódy
+  - [x] přehled o používané terminologii
+  - [x] vzdálenost kódu a její vztah k počtu opravitelných a detekovatelných chyb
+  - [x] Hammingův odhad (formulace a důkaz)
   - [ ] perfektní kódy (definice a příklady, Hammingův kód bez přesné konstrukce)
 
 ## Generating functions
@@ -147,6 +147,23 @@ $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^kb^{n-k}$
       - $|S| \geq A$ or $|T| \geq B$
       - the rest you can figure out
 
+## Error correcting codes
+
+- we have function $Enc : \{0,1\}^m \rightarrow C$ that maps messages to codewords
+
+- we define $d$ as the distance of code $C$
+  - $d := \min \{ d(x,y) \ | \ x \neq y , x \in C , y \in C \}$
+
+- we want to choose the mapping so that when $c=Enc(x)$ is sent and is bit-flipped to $y$ using less than $t=\frac{d-1}{2}$ bitflips, then there exists a unique $c'$ s.t. $d_H(c',y) \leq t$ 
+  - that is because causing $d/2$ bitflips could make us closer to a different codeword
+
+- Hamming code
+  - has control matrix $H_r$ for some $r \in \{2,3,\ldots\}$
+    - $H_r \in \{0,1\}^{r \times 2^r-1}$
+  - control matrix $K$
+    - for code $C$, $K$ is the basis of $C^\perp$ (the orthogonal complement of $C$)
+    - we have $Kx = 0$ iff $x \in C$
+
 ## Past exams
 
 ### Spring 2025 (catalan numbers and generating sequences)
@@ -183,6 +200,54 @@ $$\frac{1}{n+1} \cdot \binom{2n}{n}$$
 #### (2)
 
 - ❗if we have generating function which looks like $\frac{a_1x + b_1}{(a_2x+b_2)(a_3x+b_3)}$ we use the decomposition into sum of fractions using $\frac{A}{a_2x+b_2} + \frac{B}{a_3x+b_3}$
+
+### Summer 2024 (binary self correcting codes)
+
+#### (1) defining stuff
+
+- Hamming distance
+  - for two strings $a,b \in \{0,1\}^k$ where $k \in \mathbb{N}$
+  - maybe sum of $a \oplus b$
+    - $d(x,y) :=$ # of $i$'s s.t. $x_i \neq y_i$
+
+- self-correcting code
+  - encoding of information so that when we send it, we are certain that a bit flip happened and know where as long as at most $n$ bit-flips happened 
+  - ❗the naming is shitty, it does not have to be self-correcting
+  - definition
+    - any set $C \subseteq \{0,1\}^n$ for any naturan number $n$
+    - $n$ is the length of the code
+    - $|C|$ is the size of the code
+
+- distance of code $C$
+  - $$\min_{x,y \in C, x \neq y}d(x,y)$$
+  - the minimum over all pairs of **words** in the code
+
+#### (2)
+
+- we have code $C$ with size $k \geq 2$ and length $n$
+- let $x \in \{0,1\}^m$ for natural number $m$ ($x$ is a word of length $m$)
+
+
+- how to use $C$ to encode $x$ so that the result $y$ is smallest possible?
+
+- what will be length of $y$ with respect to $k,n,m$?
+
+- ❗we map shorter messages to longer codewords so $m \leq n$
+
+- solution
+  - ❗it has nothing to do with error correction, it is just about encoding information
+
+#### (3)
+
+- let $C$ be $(5,6,3)$-code
+  - codewords have length $n=5$
+  - $|C| = 6$
+  - $d= \min\{ d(x,y) \ | \ x \neq y \in C\} = 3$
+
+- can such code exist?
+
+- use Hamming bound
+  - uses the fact that if we have distance $d$ then the balls of size $\lfloor\frac{d-1}{2}\rfloor$
 
 ### Autumn 2024 
 
