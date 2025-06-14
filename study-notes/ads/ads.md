@@ -132,3 +132,23 @@
     - $r < 1$ ... $\Theta(n^c)$
     - $r = 1$ ... $\Theta(\log n\cdot n^c)$
     - $r > 1$ ... $\Theta(n^{\log_ba})$
+
+## Past exams
+
+### Summer 2024 (divide and conquer)
+
+#### (1)
+
+- ❗name $d=\max\{x,y\}$ and then just apply master theorem
+
+#### (2)
+
+- $x$ is a median of $a_1,\ldots,a_n$
+  - $|\{y \in (a_n) \ ; \ y \leq x \}| \geq \frac{n}{2}$ and $|\{y \in (a_n) \ ; \ y \geq x \}| \geq \frac{n}{2}$
+  - ❗they are multisets
+
+- compute medians of both $X$ and $Y$
+  - let $x,y$ be the medians
+  - compare $x$ and $y$
+
+- ❗what pieces of $X$ and $Y$ can you get rid of when you know $x < y$ ?
