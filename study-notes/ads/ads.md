@@ -26,11 +26,11 @@
   - [x] primitivní třídicí algoritmy (Bubblesort, Insertsort)
   - [x] Quicksort
   - [x] dolní odhad složitosti porovnávacích třídicích algoritmů
-- [ ] Grafové algoritmy
-  - [ ] prohledávání do šířky a do hloubky
-  - [ ] topologické třídění orientovaných grafů
-  - [ ] nejkratší cesty v ohodnocených grafech (Dijkstrův a Bellmanův-Fordův algoritmus)
-  - [ ] minimální kostra grafu (Jarníkův a Borůvkův algoritmus)
+- [x] Grafové algoritmy
+  - [x] prohledávání do šířky a do hloubky
+  - [x] topologické třídění orientovaných grafů
+  - [x] nejkratší cesty v ohodnocených grafech (Dijkstrův a Bellmanův-Fordův algoritmus)
+  - [x] minimální kostra grafu (Jarníkův a Borůvkův algoritmus)
   - [ ] toky v sítích (Ford-Fulkerson algoritmus)
 
 ## Time complexity
@@ -132,6 +132,22 @@
     - $r < 1$ ... $\Theta(n^c)$
     - $r = 1$ ... $\Theta(\log n\cdot n^c)$
     - $r > 1$ ... $\Theta(n^{\log_ba})$
+
+## Topological ordering
+
+- topological ordering $\prec$ of $V$ 
+  - for $G=(V,E)$
+  - ordered set $(V,\prec)$
+  - linear order s.t. for each $(u,v) \in E$ we have $u \prec v$
+
+## Relaxation algorithm
+
+- states: opened, closed, unseed
+- distance function: $d(x)$
+- length function: $l(xy)$
+
+- input: start vertex $x$
+- objective: calculate $d(y)$ for every $y$
 
 ## Past exams
 
