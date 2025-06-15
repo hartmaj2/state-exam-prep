@@ -188,6 +188,32 @@
 
 ## Discrete fourier transform
 
+- discrete fourier transform
+  - mapping $\mathcal{F} : \mathbb{C}^n \rightarrow \mathbb{C}^n$
+  - for vectors $a = (a_1,\ldots,a_n)$, $b = (b_1,\ldots,b_n)$
+  - $\mathcal{F}(a) = b$ iff
+    - $b_i = \sum_{k=0}^{n-1}a_k(\omega^i)^k$
+  - ❗$n$ determines what is $\omega$ ($n$ is in turn determined by the vector size)
+
+- $\omega$ is a primitive $n$-th root of $1$
+  - $\omega^n = 1$
+  - for every $i < n$ and ❗$i \neq 0$ we have $\omega^i \neq 1$
+  - this is the case for $e^{\frac{2\pi i}{n}}$
+
+## Fast Fourier Transform
+
+- input
+  - $n$ is the degree of the polynomial $+1$
+  - $\omega$ is $n$-th primitive root of $1$
+  - $p=(p_{n-1},\ldots,p_0)$
+
+- $FFT(n,\omega,(p_{n-1},\ldots,p_0))$
+  - $l \leftarrow FFT(\frac{n}{2},\omega^2,p_{n-1},\ldots,p_{1})$
+  - $s \leftarrow FFT(\frac{n}{2},\omega^2,p_{n-2},\ldots,p_{0})$
+  - for $j \in \{0,...,\frac{n}{2}-1\}$
+    - $y_j = s_j + \omega^j \cdot l_j$
+    - $y_{j+\frac{n}{2}} = s_j - \omega^j \cdot l_j$
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
