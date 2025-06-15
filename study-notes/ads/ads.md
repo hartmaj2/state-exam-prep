@@ -104,10 +104,9 @@
   - $k$ is a mapping
 
 - also for each $x$ in $T$ we have
-  - for each $y \in L(x)$ we have $k(y) < k(x)$
-  - for each $y \in R(x)$ we have $k(y) > k(x)$
-  - where $l(x)$ and $r(x)$ are left and right children of $x$
-  - where $L(x)$ is left subtree and $R(x)$ is the right subtree
+  - for each $y \in l(x)$ we have $k(y) < k(x)$
+  - for each $y \in r(x)$ we have $k(y) > k(x)$
+  - where $l(x)$ is left subtree and $r(x)$ is the right subtree
 
 ### AVL Trees
 
