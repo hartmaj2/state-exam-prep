@@ -83,6 +83,21 @@
       - run DFS from $v$ but only open vertices $w$ with $comp(w) = \emptyset$
       - if $comp(w) = \emptyset$ then set $comp(w) \leftarrow v$
 
+### Dinic's algorithm
+
+- repeat
+  - create network of reserves $R$ w.r.t. $f$ and reserves based on $c$
+  - ❗let $l$ be distance from $s$ to $t$
+  - if in $R$ no path from $s$ to $t$ then return $f$
+  - tidy up $R$ by running BFS
+    - ❗remove edges to previous layers
+    - ❗remove all layers after $l$ layers passed
+    - remove dead ends
+  - find blocking flow $g$ in $R$
+    - greedily find unsaturated paths and fill them
+    - when dead end would appear, remove it
+  - then set $f \leftarrow f + g$
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
