@@ -11,8 +11,8 @@
     - [x] komponenty silné souvislosti orientovaných grafů
     - [x] toky v sítích (Dinicův a Goldbergův algoritmus)
     - [x] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
-- [ ] Algoritmy vyhledávání v textu
-    - [ ] algoritmy Knuth-Morris-Pratt a Aho-Corasicková
+- [x] Algoritmy vyhledávání v textu
+    - [x] algoritmy Knuth-Morris-Pratt a Aho-Corasicková
 - [ ] Algebraické algoritmy
     - [ ] diskrétní Fourierova transformace a její aplikace
     - [ ] výpočet Fourierovy transformace algoritmem FFT
@@ -133,19 +133,7 @@
 - setting: text string $\sigma$, pattern string $\iota$
 - objective: find $n$ number of occurences of $\iota$ in $\sigma$
 
-### My pseudoalg (prly wrong)
-
-- algorithm
-  - set $n \leftarrow 0$
-  - set $s \leftarrow \epsilon$
-  - build prefix automaton $A$ from $\iota$
-    - $A : (x,y) \rightarrow (x)$
-    - $x$ current state
-    - $y$ character read
-  - go through every $l \in \sigma$
-    - set $s \leftarrow A(s,l)$
-
-### More official pseudoalg
+### Knuth-Morris-Pratt
 
 - prefix automaton definition
   - we have states $0,...,n$ where $n = |\iota|$
@@ -189,7 +177,7 @@
     - if $s = n$ 
       - we have occurence!
 
-## Aho-Korasick
+### Aho-Korasick
 
 - automaton representation
   - states $s \in \{0,...,m\}$ where $m \in \mathbb{N}$
@@ -197,6 +185,8 @@
   - $Shortcut(s)$ .. state $z$ whose word $w_z$ is a suffix of $w_s$ and also identical to some $\iota_i$
   - $Word(s)$ ... what word ends here or $\emptyset$
   - $Forward(s,x)$ ... what state we get to from state $s$ when we read letter $x$
+
+## Discrete fourier transform
 
 ## Past exams
 
