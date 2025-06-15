@@ -10,7 +10,7 @@
 
 - informatika
   - [ ] automaty a gramatiky
-  - [ ] algoritmy a datove struktury
+  - [x] algoritmy a datove struktury
   - [x] programovaci jazyky
   - [x] architektura pocitacu a operacnich systemu
 
