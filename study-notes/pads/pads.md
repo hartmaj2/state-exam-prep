@@ -189,6 +189,15 @@
     - if $s = n$ 
       - we have occurence!
 
+## Aho-Korasick
+
+- automaton representation
+  - states $s \in \{0,...,m\}$ where $m \in \mathbb{N}$
+  - $Back(s)$ ... state to which we can get by backward edge (or $\emptyset$ if no such state)
+  - $Shortcut(s)$ .. state $z$ whose word $w_z$ is a suffix of $w_s$ and also identical to some $\iota_i$
+  - $Word(s)$ ... what word ends here or $\emptyset$
+  - $Forward(s,x)$ ... what state we get to from state $s$ when we read letter $x$
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
