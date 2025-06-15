@@ -85,8 +85,10 @@
 
 ### Dinic's algorithm
 
+- $f \leftarrow 0$
 - repeat
   - create network of reserves $R$ w.r.t. $f$ and reserves based on $c$
+    - remove edges with reserve $0$
   - ❗let $l$ be distance from $s$ to $t$
   - if in $R$ no path from $s$ to $t$ then return $f$
   - tidy up $R$ by running BFS
