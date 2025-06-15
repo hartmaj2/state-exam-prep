@@ -7,10 +7,10 @@
 - [x] Dynamické programování
     - [x] princip dynamického programování (řešení podproblémů od nejmenších k největším)
     - [x] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
-- [ ] Grafové algoritmy
+- [x] Grafové algoritmy
     - [x] komponenty silné souvislosti orientovaných grafů
     - [x] toky v sítích (Dinicův a Goldbergův algoritmus)
-    - [ ] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
+    - [x] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
 - [ ] Algoritmy vyhledávání v textu
     - [ ] algoritmy Knuth-Morris-Pratt a Aho-Corasicková
 - [ ] Algebraické algoritmy
@@ -127,6 +127,67 @@
       - set $h(v) \leftarrow h(v) + 1$
 
 - runs in $\mathcal{O}(mn^2)$
+
+## Text searching algorithms
+
+- setting: text string $\sigma$, pattern string $\iota$
+- objective: find $n$ number of occurences of $\iota$ in $\sigma$
+
+### My pseudoalg (prly wrong)
+
+- algorithm
+  - set $n \leftarrow 0$
+  - set $s \leftarrow \epsilon$
+  - build prefix automaton $A$ from $\iota$
+    - $A : (x,y) \rightarrow (x)$
+    - $x$ current state
+    - $y$ character read
+  - go through every $l \in \sigma$
+    - set $s \leftarrow A(s,l)$
+
+### More official pseudoalg
+
+- prefix automaton definition
+  - we have states $0,...,n$ where $n = |\iota|$
+  - $z[s] = k$ iff $\iota[0:k]$ is the largest prefix of $\iota$ which is also a non-trivial suffix of $\iota[0:s]$
+
+- construct prefix automaton for $\iota$
+  - do this by searching $\iota$ in $\iota[1:]$
+
+- why the automaton works
+  - if we read a letter $x$ and are currently in state $s$ 
+    - we have $\iota[0:s]$ is a suffix of currently read $\sigma$
+    - we need to see if $\iota[0:s] \cdot x$ is maybe also a prefix of $\iota$
+    - if $\iota[s] = x$ 
+      - then just move to $s+1$
+    - if $\iota[s] \neq x$
+      - find largest prefix of $\iota$ in $\iota[0:s]$ and try to append $x$ to it
+      - repeat this until can append or $s = 0$
+
+- build automaton algorithm 
+  - $z(i) \leftarrow 0$ for each $i \in \{0,\ldots,n\}$
+    - where $n=|\iota|$
+  - $s \leftarrow 0$
+  - $i \leftarrow 0$
+  - for each $x \in \iota[1:]$
+    - ❗START OF KMP STEP (s,x)
+    - repeat
+        - if $\iota[s] = x$
+          - $s \leftarrow s + 1$
+          - break
+        - else
+          - $s \leftarrow z[s]$
+          - if $s = 0$ break
+    - ❗END OF KMP STEP
+    - $z[i] \leftarrow s$
+    - $i \leftarrow i + 1$
+
+- KMP algorithm for needle $\iota$ and straw $\sigma$
+  - build prefix automaton $z$
+  - for each $x \in \sigma$
+    - $s \leftarrow$ result of KMP step for $(s,x)$
+    - if $s = n$ 
+      - we have occurence!
 
 ## Past exams
 
