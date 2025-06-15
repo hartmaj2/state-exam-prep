@@ -13,14 +13,14 @@
     - [x] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
 - [x] Algoritmy vyhledávání v textu
     - [x] algoritmy Knuth-Morris-Pratt a Aho-Corasicková
-- [ ] Algebraické algoritmy
-    - [ ] diskrétní Fourierova transformace a její aplikace
-    - [ ] výpočet Fourierovy transformace algoritmem FFT
-- [ ] RSA
-    - [ ] šifrování, dešifrování a generování klíčů
-- [ ] Aproximační algoritmy
-    - [ ] aproximační poměr a relativní chyba
-    - [ ] aproximační schémata
+- [x] Algebraické algoritmy
+    - [x] diskrétní Fourierova transformace a její aplikace
+    - [x] výpočet Fourierovy transformace algoritmem FFT
+- [x] RSA
+    - [x] šifrování, dešifrování a generování klíčů
+- [x] Aproximační algoritmy
+    - [x] aproximační poměr a relativní chyba
+    - [x] aproximační schémata
     - [ ] příklady: obchodní cestující, batoh
 - [ ] Paralelní třidění pomocí komparátorových sítí
 
