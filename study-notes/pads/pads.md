@@ -9,7 +9,7 @@
     - [x] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
 - [ ] Grafové algoritmy
     - [x] komponenty silné souvislosti orientovaných grafů
-    - [ ] toky v sítích (Dinicův a Goldbergův algoritmus)
+    - [x] toky v sítích (Dinicův a Goldbergův algoritmus)
     - [ ] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
 - [ ] Algoritmy vyhledávání v textu
     - [ ] algoritmy Knuth-Morris-Pratt a Aho-Corasicková
@@ -99,6 +99,34 @@
     - greedily find unsaturated paths and fill them
     - when dead end would appear, remove it
   - then set $f \leftarrow f + g$
+
+- time complexity
+  - each phase increases $l$ for the next phase
+    - so we have at most $\mathcal{O}(n)$ phases
+  - in each phase, looking for blocking flow takes $\mathcal{O}(nm)$
+    - each saturated path removes at least $1$ edge
+      - we might run $\mathcal{O}(m)$ times
+    - each path has length $\mathcal{O}(n)$
+  - total time complexity $\mathcal{O}(mn^2)$
+
+### Goldberg's algorithm
+
+- vertices have heights $h : V \rightarrow \mathbb{N}$
+- each vertex has surplus $f^\Delta(v)$ defined as
+  - $f^\Delta(v) = f^+(v) - f^-(v)$ 
+
+- algorithm
+  - set $h(s) \leftarrow n$
+  - $h(v) \leftarrow 0$ for each other $v$
+  - ❗set $f \leftarrow 0$ everywhere
+  - set $f(su) = c(su)$ for each $su \in E$
+  - while exists $v \notin \{s,t\}$ s.t. $f^\Delta(v) > 0$
+    - if exists $w$ s.t. $r(vw) > 0$ and $h(v) > h(w)$
+      - transfer surplus on $w$
+    - else
+      - set $h(v) \leftarrow h(v) + 1$
+
+- runs in $\mathcal{O}(mn^2)$
 
 ## Past exams
 
