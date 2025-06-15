@@ -173,6 +173,10 @@
       - $f(u,v) = f(u,v) + \epsilon - f(v,u)$
       - $f(v,u) = 0$
 
+- time complexity for unit capacities is $\mathcal{O}(nm)$
+  - size of flow can be at most $n$ because there is at most $n$ neighbors around $s$
+  - each phase takes $m$ (because of BFS/DFS)
+
 ## Past exams
 
 ### Summer 2024 (divide and conquer)
