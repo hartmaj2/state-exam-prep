@@ -4,9 +4,9 @@
 
 ## Topics
 
-- [ ] Dynamické programování
+- [x] Dynamické programování
     - [x] princip dynamického programování (řešení podproblémů od nejmenších k největším)
-    - [ ] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
+    - [x] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
 - [ ] Grafové algoritmy
     - [ ] komponenty silné souvislosti orientovaných grafů
     - [ ] toky v sítích (Dinicův a Goldbergův algoritmus)
@@ -49,6 +49,21 @@
   - for each position $i$ calculate $l_i$ (lenght of the longest increasing subsequence) as maximum of all $l_j$'s for $j < i$ and $a_j < a_i$
 
 - use solution of smaller problems to find the solution of the whole big problem
+
+### Editational distance
+
+#### Setting
+
+- two strings $a,b \in \Sigma^n$
+  - for fixed $n$ and alphabet $\Sigma$
+
+- editational operation
+  - deletion of character
+  - addition of character
+  - change of character
+
+- for strings $x,y \in \Sigma^n$ the editational distance $L(x,y)$ is
+  - least amount of editational operations that need to be performed to make them equal
 
 ## Past exams
 
