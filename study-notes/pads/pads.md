@@ -8,7 +8,7 @@
     - [x] princip dynamického programování (řešení podproblémů od nejmenších k největším)
     - [x] aplikace: nejdelší rostoucí podposloupnost, editační vzdálenost
 - [ ] Grafové algoritmy
-    - [ ] komponenty silné souvislosti orientovaných grafů
+    - [x] komponenty silné souvislosti orientovaných grafů
     - [ ] toky v sítích (Dinicův a Goldbergův algoritmus)
     - [ ] toky v celočíselně ohodnocených grafech, aplikace na párování v bipartitních grafech
 - [ ] Algoritmy vyhledávání v textu
@@ -64,6 +64,24 @@
 
 - for strings $x,y \in \Sigma^n$ the editational distance $L(x,y)$ is
   - least amount of editational operations that need to be performed to make them equal
+
+
+## Graph algorithms
+
+### Components of strong connectivity
+
+- input: oriented graph $G=(V,E)$
+- objective: find components of strong connectivity (by labeling each of them by same label)
+
+- algorithm
+  - flip edge directions to create $G^T$
+  - set $comp(v) \leftarrow \emptyset$ undefined for each $v \in V$
+  - create❗stack $S \leftarrow \emptyset$
+  - run repeated DFS and place a vertex to $S$ when closing it
+  - while $S \neq \emptyset$ take vertex $v$ from $S$
+    - if $comp(v) = \emptyset$
+      - run DFS from $v$ but only open vertices $w$ with $comp(w) = \emptyset$
+      - if $comp(w) = \emptyset$ then set $comp(w) \leftarrow v$
 
 ## Past exams
 
