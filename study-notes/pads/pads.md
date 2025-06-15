@@ -214,6 +214,22 @@
     - $y_j = s_j + \omega^j \cdot l_j$
     - $y_{j+\frac{n}{2}} = s_j - \omega^j \cdot l_j$
 
+## RSA
+
+šifrování, dešifrování a generování klíčů
+
+- Euler's formula
+  - $a^{\varphi(n)} \equiv 1 \mod n$
+
+- pick $p,q$ big primes
+- set $N=pq$
+- we have $\varphi(N)=(p-1)(q-1)$
+- message $x$
+
+- pick $e \perp N$
+- $y = x^e$
+- decryption: $(x^e)^d=x^{ed}=x^{\varphi(N)}$
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
