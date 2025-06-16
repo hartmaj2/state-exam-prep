@@ -252,6 +252,28 @@
   - find a trail on $T_2$ (it is not a path)
   - to create a path, use shortcutting
 
+## Parallel sort using comparator networks
+
+- separator
+  - takes bitonic sequence and returns bitonic sequences $(a_n),(b_n)$ s.t. $\forall i,j : a_i < a_j$
+  - easy to construct 
+  - hard to prove that the construction works
+
+- bitonic sorter
+  - takes bitonic sequence and sorts it (returns a monotonic sequence)
+  - performs basically a quicksort using multiple separators
+  - from larger to smaller ones
+
+- merger
+  - takes two monotonic sequences and returns a monotonic sequence
+  - created by flipping the second input sequence
+  - then the combination is one bitonic sequence
+  - just feed it to bitonic sorter
+
+- sorter
+  - basically merge sort
+  - just connect multiple mergers like if doing a merge sort
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
