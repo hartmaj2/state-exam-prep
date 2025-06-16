@@ -21,7 +21,7 @@
 - [x] Aproximační algoritmy
     - [x] aproximační poměr a relativní chyba
     - [x] aproximační schémata
-    - [ ] příklady: obchodní cestující, batoh
+    - [x] příklady: obchodní cestující, batoh
 - [ ] Paralelní třidění pomocí komparátorových sítí
 
 ## Dynamic programming
