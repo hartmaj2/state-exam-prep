@@ -2,9 +2,9 @@
 
 ## Topics
 
-- [ ] Regulární jazyky
+- [x] Regulární jazyky
   - [ ] regulární gramatiky
-  - [ ] deterministický a nedeterministický konečný automat
+  - [x] deterministický a nedeterministický konečný automat
   - [ ] regulární výrazy
 - [ ] Bezkontextové jazyky
   - [ ] bezkontextové gramatiky, jazyk generovaný gramatikou
@@ -28,6 +28,12 @@ tomatu či gramatiky)
   - $q_0$ ... initial state
   - $F \subseteq Q$ ... final states
 
+#### Extended transition function
+
+- $\delta^* : Q \times \Sigma^* \rightarrow Q$
+  - $\delta^*(q,xa) = \delta(\delta^*(q,x),a)$
+  - $\delta^*(q,\epsilon) = q$
+
 ### Regular language
 
 - $L \subseteq \Sigma^*$ s.t. exists deterministic finite automaton $A$ with $L(A) = L$
@@ -38,6 +44,25 @@ tomatu či gramatiky)
   - $y$ is nonempty
   - $|xy| \leq n$
   - for each $k \in \mathbb{N}_0$ we have $xy^kz \in L$
+
+### Non-deterministic finite automaton
+
+- like DFA, but following differences:
+  - $\delta : Q \times (\Sigma \cup \{ \epsilon \}) \rightarrow \mathcal{P}(Q)$
+
+#### Extended transition function
+
+- $\delta^* : Q \times \Sigma^* \rightarrow \mathcal{P}(Q)$
+  
+- $\epsilon$-closure
+  - define by what belongs to it (inductively)
+  - $\epsilon(q) \subseteq Q$
+    - $q \in \epsilon(q)$
+    - $p \in \epsilon(q) \wedge r \in \delta(p,\epsilon) \implies r \in \epsilon(q)$
+
+- extended transition function
+  - $\delta^*(q,wx) = \epsilon(\bigcup_{p \in \delta^*(q,w)}\delta(p,x))$
+  - $\delta^*(q,\epsilon)=\epsilon(q)$
 
 ## Past exams
 
