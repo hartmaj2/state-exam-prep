@@ -64,6 +64,36 @@ tomatu či gramatiky)
   - $\delta^*(q,wx) = \epsilon(\bigcup_{p \in \delta^*(q,w)}\delta(p,x))$
   - $\delta^*(q,\epsilon)=\epsilon(q)$
 
+### Grammars
+
+#### Grammar in general
+
+- $G=(V,T,P,S)$
+  - $V$ ... variables
+  - $T$ ... terminals
+  - $P$ ... rewriting rules
+  - $S$ ... initial variable
+
+#### Regular grammar
+
+- only rules of type $A \rightarrow \omega B$ where $A,B \in V$ and $\omega \in T^*$
+- ❗also $A \rightarrow \omega$ (otherwise it could not terminate)
+
+#### Context-free grammar
+
+- only rules of type $A \rightarrow \omega$ where $A \in V$ and $\omega \in (V \cup T)^*$
+  - ❗is weaker than context-sensitive because it cannot generate something cool by sensing the surroundings
+
+#### Context-sensitive grammar
+
+- only rules of type $\alpha A \beta \rightarrow \alpha \omega \beta$ s.t. $\alpha,\beta \in (V \cup T)^*$ and ❗$\omega \in (V \cup T)^+$
+- ❗also allows for rule $S \rightarrow \lambda$
+
+#### Recursively enumerable language
+
+- rules of type $\alpha \rightarrow \beta$ where $\alpha,\beta \in (V \cup T)^*$
+- ❗there exists $A \in V$ s.t. $A \in \alpha$ (left side of the rule must contain at least one variable)
+
 ## Past exams
 
 ### Spring 2025 (intersection of context-free and regular grammars)
