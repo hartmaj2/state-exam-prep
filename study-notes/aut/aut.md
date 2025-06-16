@@ -6,9 +6,9 @@
   - [x] regulární gramatiky
   - [x] deterministický a nedeterministický konečný automat
   - [ ] regulární výrazy
-- [ ] Bezkontextové jazyky
-  - [ ] bezkontextové gramatiky, jazyk generovaný gramatikou
-  - [ ] zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
+- [x] Bezkontextové jazyky
+  - [x] bezkontextové gramatiky, jazyk generovaný gramatikou
+  - [x] zásobníkový automat, třída jazyků přijímaných zásobníkovými automaty
 - [ ] Rekurzivně spočetné jazyky
   - [ ] gramatika typu 0
   - [ ] Turingův stroj
