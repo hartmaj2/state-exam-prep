@@ -240,6 +240,13 @@
 
 ### Summer 2024 (components of strong connectivity)
 
+#### (1)
+
+- runs in $\mathcal{O}(m+n)$
+
+#### (3)
+
+- ❗create topological ordering on vertices
 
 ### Autumn 2024 (dynamic programming)
 
