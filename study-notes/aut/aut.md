@@ -123,9 +123,47 @@ tomatu či gramatiky)
   - or $(q_0,\alpha,Z_0) \vdash^* (q,\epsilon,\epsilon)$ 
     - ❗we need to get rid of $Z_0$ as well
 
+### From grammar to PDA
+
+- let $G=(V,T,P,S)$ be grammar
+- we construct PDA $P=(\{q\},T,V \cup T,\delta,q,S)$
+- the transition function will be as follows
+  - for every $a \in T$ we have $\{(q,\epsilon)\} = \delta(q,a,a)$
+  - for every $A \in V$ we have $\{ (q,\gamma) \ | \ A \rightarrow \gamma \in P \} = \delta(q,\epsilon,A)$
+  - ❗the results of the transition function are sets (not just single elements)
+
+### Intersection of PDA and FA
+
+- we have FA $A=(Q_1,\Sigma,\delta_1,q_1,F_1)$ and PDA $P=(Q_2,\Sigma,\delta_2,\Gamma,Z_0,q_2,F_2)$
+- we construct automaton $M = (Q_1 \times Q_2,\Sigma,\Gamma,\delta,Z_0,(q_1,q_2),F_1 \times F_2)$
+
+- we have $((r,s),\gamma) \in \delta((p,q),x,Z)$ iff
+  - $x=\epsilon$
+    - $r=s \wedge (s,\gamma) \in \delta_1(q,\epsilon,Z)$
+  - $x \neq \epsilon$
+    - $r = \delta_2(p,x) \wedge (s,\gamma) \in \delta_1(q,x,Z)$
+
 ## Past exams
 
 ### Spring 2025 (intersection of context-free and regular grammars)
+
+#### (2)
+
+- let $\Sigma = \{0,1\}$
+
+- we construct PDA $P$ accepting $L_1$
+- it is $P=(\{q\},\Sigma,\{0,1,S\},\delta,q,S)$
+  - the transition funciton $\delta$ is
+    - $\delta(q,\epsilon,S) = \{(q,\epsilon),(q,SS),(q,0S1)\}$
+    - $\delta(q,0,0)= \{(q,\epsilon)\}$
+    - $\delta(q,1,1)= \{(q,\epsilon)\}$
+
+- then we construct PDA $M=(Q_1 \times Q_2,\Sigma,\{0,1,S\},\delta_m,(q_0,q),S)$
+  - the transition function $\delta_m$ is
+    - if we have $\delta_1(p,a)=r \wedge (q,\epsilon) \in \delta(q,a,a)$ then
+      - $((r,q),\epsilon) \in \delta_m((p,q),a,a)$
+    - for every $(q,\gamma) \in \delta(q,\epsilon,S)$ we have
+      - $((r,q),\gamma) \in\delta((r,q),\epsilon,S)$
 
 ### Spring 2024 (representation of context-free grammar)
 
