@@ -230,6 +230,28 @@
 - $y = x^e$
 - decryption: $(x^e)^d=x^{ed}=x^{\varphi(N)}$
 
+## Approximation algs
+
+### Traveling salesman
+
+- setting
+  - graph $G=(V,E)$
+  - length $l : E \rightarrow \mathbb{R}$
+
+- objective
+  - find a ❗path❗$P$ that contains all vertices and has minimum $l(P)$
+
+- assumption
+  - use triangle inequality
+
+- algorithm
+  - take minimal spanning tree $T$
+    - show that $l(T) \leq l(OPT)$
+  - create $T_2$ which has duplicated edges
+    - we have $l(T_2) = 2 \cdot l(T)$
+  - find a trail on $T_2$ (it is not a path)
+  - to create a path, use shortcutting
+
 ## Past exams
 
 ### Spring 2025 (strong connectivity)
