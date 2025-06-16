@@ -94,6 +94,35 @@ tomatu či gramatiky)
 - rules of type $\alpha \rightarrow \beta$ where $\alpha,\beta \in (V \cup T)^*$
 - ❗there exists $A \in V$ s.t. $A \in \alpha$ (left side of the rule must contain at least one variable)
 
+### Push-down automaton
+
+- $P = (Q,\Sigma,\Gamma,\delta,q_0,Z_0,F)$ ❗$Z_0$
+  - $Q$ ... states
+  - $\Sigma$ ... symbols
+  - $\Gamma$ ... stack symbols
+  - $\delta : Q \times \Sigma \times \Gamma \rightarrow \mathcal{P}_{FIN}(Q \times \Gamma^*)$ 
+    - s.t. $(p,\alpha) \in \delta(q,x,Z)$ if from state $q$ with symbol $Z$ on top of stack, we can go to state $p$ when we read $x$ from the input and then we place $\alpha$ on the stack instead of $Z$
+
+- configuration $c \in Q \times \Sigma^* \times \Gamma^*$ (also called ID)
+  - $c = (p,\omega,\alpha)$ if
+    - $p$ ... state where we are at
+    - $\omega$ ... part of word that we still have to read
+    - $\alpha$ ... sequence of stack symbols that we have on the stack
+
+- if $(q,\gamma)\in \delta(p,x,Z)$ and $\alpha \in \Sigma^*$ (word) and $\beta \in \Gamma^*$
+  - where $x \in \Sigma \cup \{\epsilon\}$, $Z \in \Gamma$, $p,q \in Q$
+  - we have $(p,x\alpha,Z\beta) \vdash (q,\alpha,\gamma\beta)$
+
+- defining $\vdash^*$ inductively
+  - let $I,J$ configurations, then:
+    - $I \vdash^* I$
+    - $I \vdash^* J$ iff exists configuration $K$ s.t. $I \vdash K$ and $K \vdash^* J$
+
+- $P$ accepts word $\alpha$ if 
+  - $(q_0,\alpha,Z_0) \vdash^* (q,\epsilon,\gamma)$ and $q \in F$
+  - or $(q_0,\alpha,Z_0) \vdash^* (q,\epsilon,\epsilon)$ 
+    - ❗we need to get rid of $Z_0$ as well
+
 ## Past exams
 
 ### Spring 2025 (intersection of context-free and regular grammars)
