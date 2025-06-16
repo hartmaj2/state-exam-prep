@@ -17,5 +17,5 @@
 - obecna informatika
   - [x] kombinatorika
   - [x] dif. a int. pocet ve vice rozmerech
-  - [ ] pokrocile algoritmy a datove struktury
+  - [x] pokrocile algoritmy a datove struktury
   - [ ] pokrocila diskretni matematika
