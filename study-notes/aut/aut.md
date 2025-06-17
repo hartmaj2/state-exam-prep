@@ -195,6 +195,10 @@ tomatu či gramatiky)
   - $M$ achieved accepting state or
   - $M$ has no valid transition from current state
 
+- Turing machine $M$ decides a language $L$ iff
+  - for each $w \in L$ turing machine halts on $w$
+  - then we write $L = L(M)$
+
 ### Decidable problem
 
 - problem $P$
@@ -207,6 +211,22 @@ tomatu či gramatiky)
   - exists a TM $M$ s.t. $M$ halts on $w$ and accepts iff $P(w) = 1$
 
 - if problem is not decidable it is undecidable
+
+## Chomsky hierarchy
+
+- sequence of grammars by strength
+  - type $0$
+    - recursively enumerable
+    - Turing machine
+  - type $1$
+    - context-sensitive
+    - Linearly Bounded Automata
+  - type $2$
+    - context-free lanugage
+    - Push-Down Automaton
+  - type $3$
+    - regular language
+    - Deterministic Finite Automaton
 
 ## Past exams
 
