@@ -88,6 +88,18 @@
   - $k$ is a ❗positive integer
     - a field must have at least two elements (unlike a group)
 
+## Systems of linear equations
+
+### Matrix form
+
+- system of linear equations
+  - set of expressions in form
+    - $k_{1,1}x_1 + \ldots k_{1,n}x_n = b_1$
+    - $\ldots$
+    - $k_{m,1}x_1 + \ldots k_{m,n}x_n = b_m$
+
+### Elementary row operations
+
 ## Past exams
 
 ### Spring 2025 (matrices)
