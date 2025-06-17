@@ -198,6 +198,30 @@
   - $y_1,\ldots,y_k$
   - and $\{ x_1, \ldots,x_m,y_1,\ldots,y_k \}$ spans $V$
 
+- analogy to inclusion exclusion principle
+  - $\dim(U + V) = \dim(U) + \dim(V) - \dim(U \cap V)$
+
+- dimension of kernel and column/row spaces
+  - for matrix $A \in \mathbb{F}^{m \times n}$
+  - $\dim(\ker(A)) + rank(A) = n$
+  - kernel ... how many dimensions we lose when mapping
+  - rank ... how many dimensions we do not lose when mapping
+  - n ... arity of vectors that we are mapping (all available dimensions)
+
+## Linear mapping
+
+- $f : V \rightarrow W$ is linear mapping between spaces iff
+  - $f(\alpha \star u \oplus \beta \star v) = \alpha \cdot f(u) + \beta \cdot f(v)$
+
+- matrix $A$ of a linear mapping $f : U \rightarrow W$
+  - $B_U = \{u_1,\ldots,u_n\}$
+  - $B_W = \{w_1,\ldots,w_m\}$
+  - $A$ is a matrix s.t.
+    - $f(x_i) = \sum_{j=0}^m w_j \cdot a_{j,i}$
+
+- isomorphism
+  - linear mapping which is also a bijection
+
 ## Past exams
 
 ### Spring 2025 (matrices)
