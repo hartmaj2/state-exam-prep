@@ -2,9 +2,9 @@
 
 ## Topics
 
-- [ ] Algebraické struktury:
-  - [ ] grupy a podgrupy, permutace
-  - [ ] tělesa a speciálně konečná tělesa
+- [x] Algebraické struktury:
+  - [x] grupy a podgrupy, permutace
+  - [x] tělesa a speciálně konečná tělesa
 - [ ] Soustavy lineárních rovnic:
   - [ ] maticový zápis, elementární řádkové úpravy, odstupňovaný tvar matice
   - [ ] Gaussova a Gaussova-Jordanova eliminace, popis množiny řešení
@@ -39,6 +39,54 @@
   - [ ] charakterizace a vlastnosti, vztah se skalárním součinem, vlastními čísly
   - [ ] Choleského rozklad (znění věty a praktické použití)
 
+## Algebraic structures
+
+### Group
+
+- $\mathcal{G}=(G,\cdot,0)$ where 
+  - $\cdot : G \times G \rightarrow G$
+  - ❗$0 \in G$
+  - and we have for each $x,y,z \in G$
+    - associativity of $\cdot$
+    - neutrality of $0$ w.r.t. $\cdot$ 
+      - (when $0$ is multiplied with any elem $x$, then the result is $x$)
+    - invertibility of every element 
+      - (for each $x \in G$, there exists $y \in G$ s.t. $x \cdot y = 0$)
+
+- group can also be commutative
+
+### Subgroup
+
+- subgroup $\mathcal{H} = (H,+)$ of group $\mathcal{G} = (G,\cdot)$ is
+  - $H \subseteq G$
+  - for each $x,y \in H$ we have $x + y = x \cdot y$
+
+- characteristic of subgroup $\mathcal{H} = (H,+)$
+  - $H \subseteq G$
+  - $0 \in H$
+  - for $x,y \in H$ 
+    - we have $x \cdot y \in H$
+    - $x^{-1} \in H$
+
+### Permutation
+
+- is a mapping $\pi : V \rightarrow V$ s.t. it is a bijection
+
+- $S_n = \{ f: [n] \rightarrow [n] : \ f \ \text{ is bijection} \}$
+
+### Field
+
+- a tuple $\mathcal{F} = (F,\cdot,+)$ s.t.
+  - $(F,+)$ is a commutative group
+    - where $0$ is the neutral element for $+$
+  - ❗$(F \setminus \{0 \},\cdot)$ is a commutative group
+  - distributivity 
+    - $\forall x,y,z \in F$ we have $x \cdot (y + z) = x \cdot y + x \cdot z$
+
+- if $\mathcal{F}$ is a finite field, then $|F| = p^k$ where
+  - $p$ is a prime number
+  - $k$ is a ❗positive integer
+    - a field must have at least two elements (unlike a group)
 
 ## Past exams
 
