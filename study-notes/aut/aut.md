@@ -191,6 +191,23 @@ tomatu či gramatiky)
   - defined by writing what the related configurations can look like if we have $\delta(q,X) = (p,Y,D)$
   - $\vdash^*$ is defined analogously as for PDA
 
+- Turing Machine $M$ stops when
+  - $M$ achieved accepting state or
+  - $M$ has no valid transition from current state
+
+### Decidable problem
+
+- problem $P$
+  - mathematically formulated problem
+  - a question with an answer $\{0,1\}$
+  - using alphabet $\Sigma$
+
+- problem $P$ is **algorithmically** decidable if
+  - for every input $w \in P$
+  - exists a TM $M$ s.t. $M$ halts on $w$ and accepts iff $P(w) = 1$
+
+- if problem is not decidable it is undecidable
+
 ## Past exams
 
 ### Spring 2025 (intersection of context-free and regular grammars)
