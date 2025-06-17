@@ -136,7 +136,7 @@
 
 ### Vector space
 
-- vector space
+- vector space $\mathcal{V}$
   - set $V$ 
   - field $\mathbb{F}=(F,+,\cdot)$ s.t.
     - $e_1$ is neut. elem for $+$
@@ -145,10 +145,49 @@
   - operation $\star : F \times V \rightarrow V$
   - for every $\alpha,\beta \in F$ and every $v,w \in V$ we have:
     - $e_2 \star v = v$
+      - neutrality of $e_2$ w.r.t. $\star$
     - $(\alpha + \beta) \star v = \alpha \star v \oplus \beta \star v$
+      - distributivity of $\star$ over $+$
     - $\alpha \star (v \oplus w) = \alpha \star v \oplus \alpha \star w$
+      - distributivity of $\star$ over $\oplus$
     - $\alpha \star (\beta \star v) = (\alpha \cdot \beta) \star v$
+      - associativity of $\cdot$ and $\star$
   - ❗$(V,\oplus)$ is a commutative group
+    - $e_3$ is neutral element for $\oplus$
+
+- vector subspace $\mathcal{U}$ of $\mathcal{V}$
+  - $U \subseteq V$
+  - $\mathcal{U}$ is vector space over same field $\mathbb{F}$
+
+- span of set $X$
+  - for vector space with set $V$ s.t. $X \subseteq V$
+  - is $\bigcap_{U : X \subseteq U \subseteq V}U$ where $U$ is ground set of vector space with ground set $V$
+
+- generators of space $U$
+  - if we have $U$ is a span of $X$ 
+  - then every $x \in X$ is a generator of $U$
+  - we also say that $X$ generates $U$
+
+- linear combination
+  - for vectors $x_1,\ldots,x_n$ from vector space $V$ over $\mathbb{F}$
+  - for coefficients $\alpha_1,\ldots,\alpha_n$
+  - is an expression $\sum_{i=1}^n\alpha_i \star x_i$
+
+- linear independence
+  - we say that vectors $x_1,\ldots,x_n$ are linearly independent when
+    - for $\alpha_i,\ldots,\alpha_n$ we have 
+      - $\sum_{i=1}^n\alpha_i \star x_i = e_3$ 
+      - iff for every $i$ we have $\alpha_i = e_1$
+
+- basis $X$
+  - vectors $x_1,\ldots,x_n$ s.t. $X=(x_1,\ldots,x_n)$ form a basis of vector space $V$ iff
+    - they are linearly independent
+    - span of $X$ is $V$
+  - ❗it is a system because it is ordered
+
+- coordiantes with respect to basis $B=\{b_1,\ldots,b_n\}$
+  - let $u = \sum_{i=1}^n\alpha_i \star b_i$
+  - then $[u]_B = (\alpha_1,\ldots,\alpha_n)^T$
 
 ## Past exams
 
