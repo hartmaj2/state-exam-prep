@@ -156,6 +156,41 @@ tomatu či gramatiky)
   - for $\omega \in T^*$
   - $\omega \in L(G)$ iff $S \Rightarrow^* \omega$
 
+## Recursively enumerable languages
+
+### Type 0 grammars
+
+- type 0 grammar
+  - only rules of type $\alpha \rightarrow \beta$ where $\alpha$ must contain a variable
+  - ❗specify that $\alpha, \beta \in (V \cup T)^*$
+
+### Turing machine
+
+- has tape on which it can write
+
+- $M=(Q,\Sigma,\Gamma,\delta,q_0,B,F)$
+- ❗tape head can only move $L$ or $R$
+
+- $\delta : Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,R\}$
+  - ❗is deterministic again
+  - $\delta(q,X) = (p,Y,D)$
+  - $D \in \{L,R\}$
+  - $q$ ... starting state
+  - $X$ ... symbol that is under the head
+  - $p$ ... state to which the head moves to
+  - $Y$ ... symbol we write under the head
+  - $D$ ... direction into which we move after reading symbol $X$
+
+- configuration
+  - $X_1,\ldots,X_{i-1}qX_i\ldots,X_n$
+    - head is in state $q$ 
+    - head is above symbol $X_i$
+
+- step of Turing machine from config. to config.
+  - $\mathcal{I} \vdash \mathcal{J}$
+  - defined by writing what the related configurations can look like if we have $\delta(q,X) = (p,Y,D)$
+  - $\vdash^*$ is defined analogously as for PDA
+
 ## Past exams
 
 ### Spring 2025 (intersection of context-free and regular grammars)
