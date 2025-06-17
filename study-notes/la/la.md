@@ -44,6 +44,23 @@
 
 ### Spring 2025 (matrices)
 
+#### (1)
+
+- use the fact that row space of $A$ is perpendicular to kernel of $A$
+  - that can be shown by writing out what that means
+
+- we know that the kernel of $A$ is equal to span of two vectors
+  - so the span of those two vectors must be perpendicular to row space of $A$
+
+- we find out that what is perpendicular to span those two vectors can only be some multiple of a vector $v$
+
+- then $v$ generates the row space
+
+- so we know that the rows of the matrix we are looking for are just some multiples of $v$
+
+- but we want $A$ to be symmetric
+  - this can be done if we do $v \cdot v^T$ (we know that result of this expression will be a symmetric matrix)
+
 ### Spring 2024 (scalar product)
 
 ### Summer 2024 (basis of vector space)
