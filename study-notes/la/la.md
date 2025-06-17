@@ -189,6 +189,15 @@
   - let $u = \sum_{i=1}^n\alpha_i \star b_i$
   - then $[u]_B = (\alpha_1,\ldots,\alpha_n)^T$
 
+### Steinitz theorem
+
+- says that every system of linearly independent guys $X$ is at most as bit as any system of generators $Y$ of vector space $V$
+- so if $|X|=m$ and $|Y|=n$ we have $m \leq n$
+
+- but moreover, we can pick $n-m=k$ guys from $Y$ and name them
+  - $y_1,\ldots,y_k$
+  - and $\{ x_1, \ldots,x_m,y_1,\ldots,y_k \}$ spans $V$
+
 ## Past exams
 
 ### Spring 2025 (matrices)
