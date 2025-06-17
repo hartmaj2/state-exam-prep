@@ -221,12 +221,22 @@ tomatu či gramatiky)
   - type $1$
     - context-sensitive
     - Linearly Bounded Automata
+    - examples:
+      - $0^n1^n2^n$
   - type $2$
     - context-free lanugage
     - Push-Down Automaton
+    - examples:
+      - $0^n1^n$
+      - parentheses
+      - more $0$'s than $1$'s
+      - even palidromes
   - type $3$
     - regular language
     - Deterministic Finite Automaton
+    - examples:
+      - ending by set sequence of letters (KMP)
+      - amount of chars divisible by something
 
 ## Past exams
 
