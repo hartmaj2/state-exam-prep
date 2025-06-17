@@ -100,6 +100,56 @@
 
 ### Elementary row operations
 
+- multiply a row by $\alpha \neq 0$
+- add row $i$ to row $j$ where $i \neq j$
+
+### Row echelon form
+
+- pivot
+  - ❗non-zero element of a matrix with the lowest index in its row
+
+- matrix $A$ is in REF
+  - exists index $k$ s.t. 
+    - rows $r_1,\ldots,r_k$ are non-zero rows
+    - rows $r_{j+1},\ldots,r_n$ are all-zero rows
+  - we have $p_1 < \ldots < p_k$
+    - where $p_i = \min\{j ; a_{i,j} \neq 0\}$ 
+      - index of non-zero element of $i$-th row with the smallest column index
+
+- rank of $A$
+  - number of non-zero rows of $A$ in REF
+
+- matrix $A$ is in RREF
+  - $A$ is in REF
+  - we have for every non-zero row $i$ that $a_{i,p_i} = 1$
+  - ❗for every non-zero row $i$
+    - for every $j \in \{1,\ldots,i-1\}$
+      - we have $a_{j,p_i} = 0$
+
+### Regular matrix
+
+- matrix $A$ is regular iff
+  - $A \in \mathbb{F}^{n \times n}$ for some $n \in \mathbb{N}$
+  - $Ax = 0$ iff $x$ is the zero vector
+
+## Vector spaces
+
+### Vector space
+
+- vector space
+  - set $V$ 
+  - field $\mathbb{F}=(F,+,\cdot)$ s.t.
+    - $e_1$ is neut. elem for $+$
+    - $e_2$ is neut. elem for $\cdot$
+  - operation $\oplus : V \times V \rightarrow V$
+  - operation $\star : F \times V \rightarrow V$
+  - for every $\alpha,\beta \in F$ and every $v,w \in V$ we have:
+    - $e_2 \star v = v$
+    - $(\alpha + \beta) \star v = \alpha \star v \oplus \beta \star v$
+    - $\alpha \star (v \oplus w) = \alpha \star v \oplus \alpha \star w$
+    - $\alpha \star (\beta \star v) = (\alpha \cdot \beta) \star v$
+  - ❗$(V,\oplus)$ is a commutative group
+
 ## Past exams
 
 ### Spring 2025 (matrices)
