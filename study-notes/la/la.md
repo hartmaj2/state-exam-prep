@@ -308,6 +308,31 @@
   - i.o.w. the sum that we subtract is the representation of $x_k$ w.r.t. the orthonormal basis we made to far
   - we then subtract this representatino from $x_k$ to get him out of the dimensions of $z_1,\ldots,z_{k-1}$
 
+### Orthogonality
+
+- orthogonal complement of ❗**subset** $U$ of $W$ is $U^\perp$
+  - $U^\perp = \{ v \in W \ | \ \forall w \in U : \sigma(v,w) = 0 \}$
+
+- orthogonal projection of $v \in V$ to subspace $U$
+  - $p : V \rightarrow U$
+  - s.t. $p(v) = \argmin_{u \in U}(\mu(v-u))$
+    - where $\mu$ is norm on $V$
+
+- matrix $M$ is orthogonal 
+  - if $M^TM = I_n$
+  - nice to see when imagining what $M^TM$ does
+    - check the diagonal
+    - check the rest
+
+- characteristic of orthogonal matrices
+  - the columns are unit vectors that are pairwise perpendicular to themselves
+
+- product of orthonormal matrices is orthonormal
+
+- multiplying $x$ by orthonormal matrix does not change the norm of any $x$
+
+- applying orthonormal matrix to both $x,y$ does not change their scalar product 
+
 ## Past exams
 
 ### Spring 2025 (matrices)
