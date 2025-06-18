@@ -257,6 +257,8 @@
 
 ## Scalar product
 
+### Scalar product
+
 - scalar product $\lang \cdot, \cdot \rang : V \times V \rightarrow \mathbb{C}$
   - ❗$V$ is vector space on $\mathbb{C}$
   - for every $x,y,z \in V$ and $\alpha \in \mathbb{C}$ we have:
@@ -266,6 +268,29 @@
     - $\lang x,y \rang = \overline{ \lang y,x \rang}$
     - $\lang \alpha \star x,y \rang = \alpha \cdot \lang x, y \rang$
     - $\lang x \oplus y ,z \rang = \lang x,z \rang + \lang y,z \rang$
+
+### Norm
+
+- norm $\mu : V \rightarrow \mathbb{R}$
+  - $V$ is vector space over $\mathbb{C}$
+  - $\mu(x) \geq 0$
+  - $\mu(x) = 0$ iff $x = e_3$
+  - $\mu(\alpha \star x) = |\alpha| \cdot \mu(x)$
+    - scaling inside the vector spaces scales the resulting measurement in the same way
+  - $\mu(x \oplus y) = \mu(x) + \mu(y)$
+    - triangle inequality
+
+- norm induced by scalar product
+
+- Pythagorean theorem
+  - $c^2 = a^2 + b^2$
+  - $\mu(a \oplus b)^2 = \mu(a)^2 + \mu(b)^2$
+
+- Cauchy-Schwarz inequality
+  - $| \sigma(x,y) | \leq \mu(x) \cdot \mu(y)$
+
+- triangle inequality
+  - $\mu(a \oplus b) \leq \mu(a) + \mu(b)$
 
 ## Past exams
 
