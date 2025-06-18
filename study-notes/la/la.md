@@ -238,6 +238,7 @@
   - basis $B_V = \{y_1,\ldots,y_m\}$
   - basis $B_W = \{z_1,\ldots,z_k\}$
   - then matrix $C={}_{B_W}[g \circ f]_{B_U} = {}_{B_W}[g]_{B_V} \cdot {}_{B_V}[f]_{B_U}$
+  - i.o.w. matrix of composite mapping is just a matrix multiple of the corresponding matrices
 
 - for linear mapping $f : U \rightarrow V$ we have
   - $f(U) = \{ f(x) \ : x \in U \}$
@@ -245,6 +246,11 @@
 
 - isomorphism
   - linear mapping which is also a bijection
+
+- inverse of isomorphism $f$
+  - for linear isomorphism $f : U \rightarrow V$
+  - we have ${}_{B_U}[f^{-1}]_{B_V} = ({}_{B_V}[f]_{B_U})^{-1}$
+  - i.o.w. the matrix of mapping inverse to $f$ is exactly the inverse matrix of ${}_{B_U}[f]_{B_V}$
 
 ## Past exams
 
