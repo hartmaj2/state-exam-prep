@@ -1,5 +1,9 @@
 # Linear algebra state exam prep
 
+## TODOs
+
+- [ ] why we have closedness from Hladik's definition of subgroup?
+
 ## Topics
 
 - [x] Algebraické struktury:
@@ -77,9 +81,9 @@
 ### Field
 
 - a tuple $\mathcal{F} = (F,\cdot,+)$ s.t.
-  - $(F,+)$ is a commutative group
+  - $(F,+)$ is a **commutative** group
     - where $0$ is the neutral element for $+$
-  - ❗$(F \setminus \{0 \},\cdot)$ is a commutative group
+  - ❗$(F \setminus \{0 \},\cdot)$ is a **commutative** group
   - distributivity 
     - $\forall x,y,z \in F$ we have $x \cdot (y + z) = x \cdot y + x \cdot z$
 
@@ -101,7 +105,9 @@
 ### Elementary row operations
 
 - multiply a row by $\alpha \neq 0$
-- add row $i$ to row $j$ where $i \neq j$
+  - if $\alpha = 0$, then such operation would increase the solution set from $A$ to $A'$
+- add row $i$ to row $j$ 
+  - ❗but no multiplication allowed (we can simulate mult using sequence of these ops)
 
 ### Row echelon form
 
@@ -115,16 +121,16 @@
   - we have $p_1 < \ldots < p_k$
     - where $p_i = \min\{j ; a_{i,j} \neq 0\}$ 
       - index of non-zero element of $i$-th row with the smallest column index
+    - ❗not that from $p_i$'s we want strict inequality
 
 - rank of $A$
   - number of non-zero rows of $A$ in REF
 
 - matrix $A$ is in RREF
   - $A$ is in REF
-  - we have for every non-zero row $i$ that $a_{i,p_i} = 1$
-  - ❗for every non-zero row $i$
-    - for every $j \in \{1,\ldots,i-1\}$
-      - we have $a_{j,p_i} = 0$
+  - for every non-zero row $i$ we have 
+    - ❗$a_{1,p_i} = 0 \wedge \ldots \wedge a_{i-1,p_i} = 0$
+    - $a_{i,p_i} = 1$
 
 ### Regular matrix
 
