@@ -300,6 +300,14 @@
     - $x = \sum_{i=0}^n\alpha_i \star z_i$ but also
     - $x = \sum_{i=0}^n \sigma(x,z_i) z_i$
 
+### Gram-Schmidt orthonormalization
+
+- we have $z_1,\ldots,z_{k-1}$ orthonormal
+- $y_k = x_k - \sum_{i=1}^{k-1} \lang x_k,z_i \rang \cdot z_i$
+- $z_k = \frac{1}{\mu(y_k)} \star y_k$
+  - i.o.w. the sum that we subtract is the representation of $x_k$ w.r.t. the orthonormal basis we made to far
+  - we then subtract this representatino from $x_k$ to get him out of the dimensions of $z_1,\ldots,z_{k-1}$
+
 ## Past exams
 
 ### Spring 2025 (matrices)
