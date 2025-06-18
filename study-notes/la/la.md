@@ -292,6 +292,14 @@
 - triangle inequality
   - $\mu(a \oplus b) \leq \mu(a) + \mu(b)$
 
+### Fourier coefficients
+
+- for orthogonal basis $z_1,\ldots,z_n$ of $V$
+  - scalar product $\sigma$
+  - we have for $x \in V$ 
+    - $x = \sum_{i=0}^n\alpha_i \star z_i$ but also
+    - $x = \sum_{i=0}^n \sigma(x,z_i) z_i$
+
 ## Past exams
 
 ### Spring 2025 (matrices)
