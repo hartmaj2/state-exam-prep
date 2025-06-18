@@ -252,6 +252,9 @@
   - we have ${}_{B_U}[f^{-1}]_{B_V} = ({}_{B_V}[f]_{B_U})^{-1}$
   - i.o.w. the matrix of mapping inverse to $f$ is exactly the inverse matrix of ${}_{B_U}[f]_{B_V}$
 
+- dimension of domain vs dimensions of kernel and image
+  - $\dim(U) = \dim(\ker(f)) + \dim(f(U))$
+
 ## Past exams
 
 ### Spring 2025 (matrices)
