@@ -239,6 +239,10 @@
   - basis $B_W = \{z_1,\ldots,z_k\}$
   - then matrix $C={}_{B_W}[g \circ f]_{B_U} = {}_{B_W}[g]_{B_V} \cdot {}_{B_V}[f]_{B_U}$
 
+- for linear mapping $f : U \rightarrow V$ we have
+  - $f(U) = \{ f(x) \ : x \in U \}$
+  - $\ker(f) = \{ x \in U \ : \ f(x) = o \}$ where $o$ is neutral element in $U$
+
 - isomorphism
   - linear mapping which is also a bijection
 
