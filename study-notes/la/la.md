@@ -223,7 +223,8 @@
   - $B_U = \{u_1,\ldots,u_n\}$
   - $B_W = \{w_1,\ldots,w_m\}$
   - $A$ is a matrix s.t.
-    - $f(x_i) = \sum_{j=0}^m w_j \cdot a_{j,i}$
+    - $f(x_i) = \sum_{j=0}^m  a_{j,i} \cdot w_j$
+  - imagine that the $a_{j,i}$'s are just the coordinates of the image of $x_i$ w.r.t. $B_W$
 
 - isomorphism
   - linear mapping which is also a bijection
