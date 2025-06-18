@@ -220,6 +220,7 @@
   - $f(\alpha \star u \oplus \beta \star v) = \alpha \cdot f(u) + \beta \cdot f(v)$
 
 - matrix $A$ of a linear mapping $f : U \rightarrow W$
+  - notation: $A = {}_{B_V}[f]_{B_U}$
   - $B_U = \{u_1,\ldots,u_n\}$
   - $B_W = \{w_1,\ldots,w_m\}$
   - $A$ is a matrix s.t.
@@ -236,6 +237,7 @@
   - basis $B_U = \{x_1,\ldots,x_n\}$
   - basis $B_V = \{y_1,\ldots,y_m\}$
   - basis $B_W = \{z_1,\ldots,z_k\}$
+  - then matrix $C={}_{B_W}[g \circ f]_{B_U} = {}_{B_W}[g]_{B_V} \cdot {}_{B_V}[f]_{B_U}$
 
 - isomorphism
   - linear mapping which is also a bijection
