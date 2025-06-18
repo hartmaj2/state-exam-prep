@@ -226,6 +226,17 @@
     - $f(x_i) = \sum_{j=0}^m  a_{j,i} \cdot w_j$
   - imagine that the $a_{j,i}$'s are just the coordinates of the image of $x_i$ w.r.t. $B_W$
 
+- transition matrix $A$
+  - matrix of linear mapping $id$
+  - for two bases $B_1,B_2$ of the same vector space
+
+- matrix $C \in \mathbb{F}^{k \times n}$ of $(g \circ f)$
+  - lin. map. $f : U \rightarrow V$
+  - lin. map. $g : V \rightarrow W$
+  - basis $B_U = \{x_1,\ldots,x_n\}$
+  - basis $B_V = \{y_1,\ldots,y_m\}$
+  - basis $B_W = \{z_1,\ldots,z_k\}$
+
 - isomorphism
   - linear mapping which is also a bijection
 
