@@ -255,6 +255,18 @@
 - dimension of domain vs dimensions of kernel and image
   - $\dim(U) = \dim(\ker(f)) + \dim(f(U))$
 
+## Scalar product
+
+- scalar product $\lang \cdot, \cdot \rang : V \times V \rightarrow \mathbb{C}$
+  - ❗$V$ is vector space on $\mathbb{C}$
+  - for every $x,y,z \in V$ and $\alpha \in \mathbb{C}$ we have:
+    - $\lang x,x\rang \geq 0$
+      - $\geq$ is standard linear ordering on $\mathbb{R}$
+    - $\lang x,x \rang = 0$ iff $x = e_3$
+    - $\lang x,y \rang = \overline{ \lang y,x \rang}$
+    - $\lang \alpha \star x,y \rang = \alpha \cdot \lang x, y \rang$
+    - $\lang x \oplus y ,z \rang = \lang x,z \rang + \lang y,z \rang$
+
 ## Past exams
 
 ### Spring 2025 (matrices)
