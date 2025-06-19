@@ -310,6 +310,9 @@
 
 ### Orthogonality
 
+- $x$ is orthogonal to $y$ iff $\sigma(x,y) = 0$
+  - notation: $x \perp y$
+
 - orthogonal complement of ❗**subset** $U$ of $W$ is $U^\perp$
   - $U^\perp = \{ v \in W \ | \ \forall w \in U : \sigma(v,w) = 0 \}$
 
