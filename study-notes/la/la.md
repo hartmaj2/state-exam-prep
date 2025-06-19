@@ -277,7 +277,7 @@
   - $\mu(x) = 0$ iff $x = e_3$
   - $\mu(\alpha \star x) = |\alpha| \cdot \mu(x)$
     - scaling inside the vector spaces scales the resulting measurement in the same way
-  - $\mu(x \oplus y) = \mu(x) + \mu(y)$
+  - $\mu(x \oplus y) \leq \mu(x) + \mu(y)$
     - triangle inequality
 
 - norm induced by scalar product
