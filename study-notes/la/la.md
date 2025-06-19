@@ -259,15 +259,15 @@
 
 ### Scalar product
 
-- scalar product $\lang \cdot, \cdot \rang : V \times V \rightarrow \mathbb{C}$
+- scalar product $\sigma : V \times V \rightarrow \mathbb{C}$
   - ❗$V$ is vector space on $\mathbb{C}$
   - for every $x,y,z \in V$ and $\alpha \in \mathbb{C}$ we have:
-    - $\lang x,x\rang \geq 0$
+    - $\sigma(x,x) \geq 0$
       - $\geq$ is standard linear ordering on $\mathbb{R}$
-    - $\lang x,x \rang = 0$ iff $x = e_3$
-    - $\lang x,y \rang = \overline{ \lang y,x \rang}$
-    - $\lang \alpha \star x,y \rang = \alpha \cdot \lang x, y \rang$
-    - $\lang x \oplus y ,z \rang = \lang x,z \rang + \lang y,z \rang$
+    - $\sigma(x,x) = 0$ iff $x = e_3$
+    - $\sigma(x,y) = \overline{ \sigma(y,x)}$
+    - $\sigma(\alpha \star x,y)= \alpha \cdot \sigma(x, y)$
+    - $\sigma(x \oplus y ,z) \leq \sigma(x,z) + \sigma(y,z)$
 
 ### Norm
 
