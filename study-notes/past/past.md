@@ -2,18 +2,18 @@
 
 ## Topics
 
-- [ ] Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost
-  - [ ] definice těchto pojmů, příklady
-  - [ ] základní pravidla pro počítání s pravděpodobností
-  - [ ] nezávislost náhodných jevů, podmíněná pravděpodobnost
-  - [ ] Bayesův vzorec
-- [ ] Náhodné veličiny a jejich rozdělení
-  - [ ] diskrétní i spojitý případ
-  - [ ] popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
-  - [ ] střední hodnota
-    - [ ] linearita střední hodnoty
-    - [ ] střední hodnota součinu nezávislých veličin
-    - [ ] Markovova nerovnost
+- [x] Pravděpodobnostní prostor, náhodné jevy, pravděpodobnost
+  - [x] definice těchto pojmů, příklady
+  - [x] základní pravidla pro počítání s pravděpodobností
+  - [x] nezávislost náhodných jevů, podmíněná pravděpodobnost
+  - [x] Bayesův vzorec
+- [x] Náhodné veličiny a jejich rozdělení
+  - [x] diskrétní i spojitý případ
+  - [x] popis pomocí distribuční funkce a pomocí pravděpodobnostní funkce/hustoty
+  - [x] střední hodnota
+    - [x] linearita střední hodnoty
+    - [x] střední hodnota součinu nezávislých veličin
+    - [x] Markovova nerovnost
   - [ ] rozptyl
     - [ ] definice
     - [ ] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
@@ -84,8 +84,23 @@
 
 - (continuous r.v.) $X$ is a general r.v. s.t
   - there exists a non-negative real function $f_X : \mathbb{R} \rightarrow \mathbb{R}_0^+$
-  - its cumulative function $F_X(x) = \int_{-\infty}^xf_X(t)dt$
+  - for cumulative function of $X$ we have : $F_X(x) = \int_{-\infty}^xf_X(t)dt$
   - $f_X$ is called probability density
+
+### Markov inequality
+
+- says that the probability that a random variable $X$ has value $x$ greater than $n$ times the expected value is smaller than $\frac{1}{n}$
+
+### Variance
+
+- variance of a r.v. $X$
+  - $var(X)$
+  - it is a particular number $k \in \mathbb{R}$
+  - it is $\mathbb{E}[(X-\mathbb{E}[X])^2]$
+    - it is the expected value of a helper variable $Y= (X - \mathbb{E}[X])^2$
+    - $Y$ counts for any event, how far will be the value of $X$ from its mean $\mathbb{E}[X]$ when that particular event happens
+
+- variance of sum of r.v's $X$ and $Y$
 
 ### Summer 2023 (probability)
 
