@@ -372,6 +372,29 @@
     - recursively compute determinant of $A^{i,j}$
       - it is a matrix where $i$-th row and $j$-th column are omitted
 
+### Positively (semi-)definite matrices
+
+- ❗**symmetric** matrix $A$ is PSD if for every vector $x$ we have $x^TAx \geq 0$
+
+- characteristic of symmetric PSD $A$
+  - all eigenvalues are non-negative
+  - exists matrix $M \in \mathbb{R}^{m \times n}$ s.t. $M^TM = A$
+  - (Sylvester criterion) all main leading matrices have non-negative determinants
+
+- Cholesky decomposition
+  - for PD matrix $A$
+  - there exists ❗**unique** lower diagonal matrix $L$ with positive diagonal s.t. $A=LL^T$ 
+
+- scalar product using PD matrices
+  - for PD matrix $A$ we have that $\sigma(x,y)=x^TAy$ is a scalar product
+
+### Diagonalization
+
+- ❗for matrix $A$, if it can be diagonalized then it has $n$ linearly independent eigenvectors
+
+- ❗every symmetric matrix can be diagonalized 
+  - and the regular witness matrix is an orthogonal matrix
+
 ## Past exams
 
 ### Spring 2025 (matrices)
