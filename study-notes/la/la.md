@@ -336,6 +336,42 @@
 
 - applying orthonormal matrix to both $x,y$ does not change their scalar product 
 
+### Determinant
+
+- ❗only defined for square matrices
+  
+- determinant is
+  - sum over symmetric group of size $n$
+    - in each summand
+      - multiply it by $sgn$ of the permutation and then 
+      - compute product of terms where for each row, the column term is selected by the result of the permutation
+
+- determinant of triangle matrices is the product of elements on the diagonal
+
+- determinant of transposition is the same as det of original matrix
+
+- determinant of matrix $A$ with a column $i$ to which we add vector $b$ is
+  - $\det(A) = \det(A) + \det(A + e_i(b^T - A_{i,*}))$
+
+- ❗interchanging two rows flips the sign of the resulting determinant
+
+- ❗adding a mutliple of $i$-th row to $j$-th row does not change the determinant at all 
+
+- matrix $A$ is regular iff $\det(A) \neq 0$
+
+- determinant of product of two matrices is the product of their determinants
+
+- determinant of inverse matrix is multiplicative inverse of the determinant of the original matrix
+
+- Laplace expansion
+  - to compute a determinant select row/column $i$
+  - then compute a sum over all terms in the row/column
+  - in each summand
+    - select correct sign $(-1)^{i+j}$
+    - the term at that position $a_{i,j}$
+    - recursively compute determinant of $A^{i,j}$
+      - it is a matrix where $i$-th row and $j$-th column are omitted
+
 ## Past exams
 
 ### Spring 2025 (matrices)
