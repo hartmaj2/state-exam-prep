@@ -267,7 +267,7 @@
     - $\sigma(x,x) = 0$ iff $x = e_3$
     - $\sigma(x,y) = \overline{ \sigma(y,x)}$
     - $\sigma(\alpha \star x,y)= \alpha \cdot \sigma(x, y)$
-    - $\sigma(x \oplus y ,z) \leq \sigma(x,z) + \sigma(y,z)$
+    - $\sigma(x \oplus y ,z) = \sigma(x,z) + \sigma(y,z)$
 
 ### Norm
 
