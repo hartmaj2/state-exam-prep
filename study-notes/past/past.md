@@ -117,7 +117,7 @@
 #### Strong LLN
 
 - for independent identically distributed random vars $X_1,\ldots,X_n$
-- we have that $P(\lim_{n \rightarrow \infty}\bar{X_n} = \mu$
+- we have that $P(\lim_{n \rightarrow \infty}\bar{X_n} = \mu) = 1$
 
 ### Summer 2023 (probability)
 
