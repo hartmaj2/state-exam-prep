@@ -19,7 +19,7 @@
     - [ ] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
   - [x] práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
 - [ ] Limitní věty
-  - [ ] zákon velkých čísel
+  - [x] zákon velkých čísel
   - [ ] centrální limitní věta
 - [ ] Bodové odhady
   - [ ] alespoň jedna metoda pro jejich tvorbu
