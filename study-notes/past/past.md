@@ -149,14 +149,14 @@
 
 #### Biasedness
 
-- unbiased when $\mathbb{E}[\theta] = \mu$ 
+- unbiased when $\mathbb{E}[\theta_n] = \mu$ 
   - where 
     - $\mu$ is the real parameter
-    - $\theta$ is the estimator function (in terms of the random variables)
+    - $\theta_n$ is the estimator function (in terms of the random variables)
 
 #### Consistency
 
-- consistent when $$
+- consistent when for every $\epsilon > 0$ we have $\lim_{n \rightarrow \infty}P(|\theta_n - \mu| > \epsilon) = 0$
 
 ### Summer 2023 (probability)
 
