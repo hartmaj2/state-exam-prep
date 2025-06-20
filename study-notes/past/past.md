@@ -14,10 +14,10 @@
     - [x] linearita střední hodnoty
     - [x] střední hodnota součinu nezávislých veličin
     - [x] Markovova nerovnost
-  - [ ] rozptyl
-    - [ ] definice
+  - [x] rozptyl
+    - [x] definice
     - [ ] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
-  - [ ] práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
+  - [x] práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
 - [ ] Limitní věty
   - [ ] zákon velkých čísel
   - [ ] centrální limitní věta
