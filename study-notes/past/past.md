@@ -21,14 +21,14 @@
 - [x] Limitní věty
   - [x] zákon velkých čísel
   - [x] centrální limitní věta
-- [ ] Bodové odhady
-  - [ ] alespoň jedna metoda pro jejich tvorbu
-  - [ ] vlastnosti
-- [ ] Intervalové odhady: metoda založená na aproximaci normálním rozdělením
-- [ ] Testování hypotéz
-  - [ ] základní přístup
-  - [ ] chyby 1. a 2. druhu
-  - [ ] hladina významnosti
+- [x] Bodové odhady
+  - [x] alespoň jedna metoda pro jejich tvorbu
+  - [x] vlastnosti
+- [x] Intervalové odhady: metoda založená na aproximaci normálním rozdělením
+- [x] Testování hypotéz
+  - [x] základní přístup
+  - [x] chyby 1. a 2. druhu
+  - [x] hladina významnosti
 
 ## Past exams
 
@@ -157,6 +157,24 @@
 #### Consistency
 
 - consistent when for every $\epsilon > 0$ we have $\lim_{n \rightarrow \infty}P(|\theta_n - \mu| > \epsilon) = 0$
+
+#### Constructing point estimate
+
+- compute theoretical moment
+- then set the empirical moment equal
+
+### Confidence intervals
+
+- compute $\bar{X_n}$ sample mean is the middle point
+- how far the interval spreads is computed using
+  - look in the table $1-\frac{\alpha}{2}$ to find $z$
+  - then compute $d =z \cdot \frac{\sigma}{\sqrt{n}}$
+  - then the interval is $(\bar{X_n}-d,\bar{X_n}+d)$
+
+## Hypothesis testing
+
+- p-value
+  - $P( \text{ more extreme event than what we observed happended } | \ H_0 \text{ is true })$
 
 ### Summer 2023 (probability)
 
