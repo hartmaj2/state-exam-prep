@@ -16,7 +16,7 @@
     - [x] Markovova nerovnost
   - [x] rozptyl
     - [x] definice
-    - [ ] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
+    - [x] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
   - [x] práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
 - [ ] Limitní věty
   - [x] zákon velkých čísel
@@ -101,6 +101,23 @@
     - $Y$ counts for any event, how far will be the value of $X$ from its mean $\mathbb{E}[X]$ when that particular event happens
 
 - variance of sum of r.v's $X$ and $Y$
+  - rewrites to $var(X) + var(Y) + 2 (\mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y])$
+    - the funky term with expected values is called **covariance**
+
+### Law of large numbers
+
+#### Weak LLN
+
+- tells us something about large number of random variables that are ❗**identically** distributed
+- when we take $n \rightarrow \infty$ then for any $\epsilon > 0$ we have $P(|\bar{X_n} - \mu| > \epsilon) = 0$
+  - where $\bar{X_n}$ is the sample mean of the variables $X_1,\ldots,X_n$
+  - and since each $X_i$ comes from the same distribution we have single $\mu := \mathbb{E}[X_i]$ for each of them
+  - i.o.w. the limit tells us, that when enemy gives us $\epsilon$ we can guarantee that when the number of vars goes to infinity, probability of being more than $\epsilon$ far from the mean $\mu$ tends to $0$
+
+#### Strong LLN
+
+- for independent identically distributed random vars $X_1,\ldots,X_n$
+- we have that $P(\lim_{n \rightarrow \infty}\bar{X_n} = \mu$
 
 ### Summer 2023 (probability)
 
