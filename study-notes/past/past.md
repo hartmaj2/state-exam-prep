@@ -18,9 +18,9 @@
     - [x] definice
     - [x] vzorec pro rozptyl součtu (závislých či nezávislých veličin)
   - [x] práce s konkrétními rozděleními: geometrické, binomické, Poissonovo, normální, exponenciální
-- [ ] Limitní věty
+- [x] Limitní věty
   - [x] zákon velkých čísel
-  - [ ] centrální limitní věta
+  - [x] centrální limitní věta
 - [ ] Bodové odhady
   - [ ] alespoň jedna metoda pro jejich tvorbu
   - [ ] vlastnosti
@@ -132,6 +132,31 @@
     - $var(X_i) = \sigma$
 - can also be expressed as:
   - $$\bar{X}_n \xrightarrow{d} \mathcal{N}\left( \mu, \frac{\sigma^2}{n} \right)$$
+
+## Point estimates
+
+### Estimator
+
+- function $\theta_n(x_1,\ldots,x_n)$ 
+  - $\theta_n : \Omega \rightarrow \mathbb{R}$ (when viewed as a random variable)
+  - $\theta_n : \mathbb{R}^n \rightarrow \mathbb{R}$ (when viewed as function of the observed data)
+  - where 
+    - is parametrized by number of samples $n$
+    - $x_i$ is a realization of some random variable
+    - output is a number which estimates some parameter of the distribution from which the random variables (and their realizations) come from
+
+### Properties of estimators
+
+#### Biasedness
+
+- unbiased when $\mathbb{E}[\theta] = \mu$ 
+  - where 
+    - $\mu$ is the real parameter
+    - $\theta$ is the estimator function (in terms of the random variables)
+
+#### Consistency
+
+- consistent when $$
 
 ### Summer 2023 (probability)
 
