@@ -119,5 +119,19 @@
 - for independent identically distributed random vars $X_1,\ldots,X_n$
 - we have that $P(\lim_{n \rightarrow \infty}\bar{X_n} = \mu) = 1$
 
+### Central limit theorem
+
+- answers a question:
+  - what is the distribution of the sample mean of many independent identically distributed random variables
+- for every $t \in \mathbb{R}$ we have that:
+- $$\lim_{n \to \infty} \mathbb{P}\left( \frac{S_n - n\mu}{\sigma \sqrt{n}} \leq t \right) = \Phi(t)$$
+  - where: 
+    - $\Phi(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{t} e^{-x^2/2} \, dx$
+    - and $S_n = \sum_{i=1}^nX_n$
+    - $\mathbb{E}[X_i] = \mu$
+    - $var(X_i) = \sigma$
+- can also be expressed as:
+  - $$\bar{X}_n \xrightarrow{d} \mathcal{N}\left( \mu, \frac{\sigma^2}{n} \right)$$
+
 ### Summer 2023 (probability)
 
