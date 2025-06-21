@@ -14,10 +14,10 @@
   věta a její důkaz použitím Tutteovy věty)
   - [ ] Edmondsův algoritmus (pouze vědět o jeho existenci)
 - [ ] Kreslení grafů na plochách
-  - [ ] základní topologické pojmy (homeomorfismus, křivka, plocha)
-  - [ ] konstrukce ploch pomocí přidávání uší a křížítek (formulace), orientovatelné a neorientovatelné plochy,
+  - [x] základní topologické pojmy (homeomorfismus, křivka, plocha)
+  - [x] konstrukce ploch pomocí přidávání uší a křížítek (formulace), orientovatelné a neorientovatelné plochy,
   Eulerova charakteristika
-  - [ ] pojem buňkového (2-cell) nakreslení
+  - [x] pojem buňkového (2-cell) nakreslení
   - [ ] zobecněná Eulerova formule, její použití pro horní odhad počtu hran a minimálního stupně v grafu
   nakresleném na dané ploše
 - [ ] Grafové minory
@@ -113,3 +113,103 @@
 - chordal graphs
 - complete graphs
 - bipartite graphs
+
+## Drawing graphs on surfaces
+
+### Basic definitions
+
+- homeomorphism
+  - mapping $f : \mathbb{R}^d \rightarrow \mathbb{R}^d$ s.t.
+    - $f$ is continuous
+    - $f$ is bijective
+    - ❗$f^{-1}$ is continuous
+
+- arc
+    - mapping $f : [0,1] \rightarrow \mathbb{R}^d$ s.t. 
+      - $f$ is injective
+      - $f$ is continuous
+
+- surface
+  - $2$-dimensional topological manifold without a "boundary" s.t. it is also
+    - compact
+    - connected
+  - ❗$\mathbb{R}^2$ is not a surface
+
+- connected surface $S$
+  - cannot be expressed as union $S = A \cup B$ s.t.
+    - $A \cap B = \emptyset$ and $A,B$ are open
+
+- manifold with boundary 
+  - is a topological space 
+  - where each point has a neighborhood homeomorphic either to 
+    - the open $n$-dimensional Euclidean space $\mathbb{R}^n$, 
+    - or to the closed half-space $\mathbb{H}^n = \{ x \in \mathbb{R}^n : x_n \geq 0 \}$
+
+- drawing
+  - mapping $\varphi : V(G) \cup E(G) \rightarrow S$ where $S$ is a surface, $G$ a graph and
+    - for each $v \in V(G)$ we have $\varphi(v) \in S$
+    - for $u \neq v$ we have $\varphi(u) \neq \varphi(v)$
+    - for $e = \{u,v\}$ then $\varphi(e)$ is an arc in $S$
+    - for $e_1 \neq e_2$ we have $\varphi(e_1) \cap \varphi(e_2) = \varphi(e_1 \cap e_2)$
+
+- face
+  - connected component of $S \setminus (\cup_{v \in V}\varphi(v) \cup \cup_{e \in E}\varphi(e) )$
+
+### Construction of topological surfaces
+
+- adding a 
+  - ❗crosscap
+    - introduces non-orientability
+  - ❗handle
+    - increases genus by $1$
+
+- euler characteristic ❗of a surface
+  - $\chi(S) = V(G) + F(G) - E(G)$
+    - where $G$ is any triangulation drawn on $S$
+  - for sphere we have $\chi(\Sigma_0) = 2$
+
+- surface classification
+  - let $S$ be a surface with $k$ crosscaps and $l$ handles
+    - orientable if $k = 0$
+    - non-orientable otherwise 
+
+- notation
+  - $\Sigma_g$ 
+    - surface that was created from $\Sigma_0$ by adding $g$ ears
+  - $\Pi_g$
+    - surface that was created from $\Sigma_0$ by adding $g$ crosscaps where $g > 0$
+
+- genus of a surface $S$ is $\Gamma(S)$
+  - suppose $S$ has $k$ crosscaps and $l$ handles
+  - if $S$ is orientable
+    - $\Gamma(S) = l$
+    - $\chi(S) = 2 - 2 \cdot \Gamma(S)$
+  - if $S$ is non-orientable
+    - $\Gamma(S) = k + 2l$
+    - $\chi(S) = 2 - \Gamma(S)$
+  - ❗i.o.w. for euler characteristic
+    - adding ear has always value 2
+    - adding crosscap has value 1
+
+- $2$-cell embedding
+  - drawing of a graph in which each face is homeomorphic to an open $2$-dimensional ball in $\mathbb{R}^2$
+
+### Generalized Euler's formula
+
+- for any graph drawn on surface $S$ we have
+  - $v + f \geq e + \chi(S)$ ❗(direction of the inequality)
+  - if $2$-cell embedding then
+    - $v + f = e + \chi(S)$
+
+- from that we can derive
+  - $e \leq 3v - 3\chi(S)$
+    - (increasing the genus of the surface $\rightarrow$ decreasing genus $\rightarrow$ increasing the right hand side of the inequality)
+
+- from that we have
+  - $\mu \leq 6 - \frac{\chi(S)}{v}$
+    - where $\mu$ is the average degree in $G$
+
+- trivially also 
+  - $\delta \leq 6 - \frac{\chi(S)}{v}$
+    - where $\delta$ is the minimum degree in $G$
+  - and $\delta \leq \Delta \leq v + 1$
