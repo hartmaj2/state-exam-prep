@@ -213,3 +213,19 @@
   - $\delta \leq 6 - \frac{\chi(S)}{v}$
     - where $\delta$ is the minimum degree in $G$
   - and $\delta \leq \Delta \leq v + 1$
+
+## Past exams
+
+### Spring 2025 (graph drawing)
+
+#### (2)
+
+- use generalized Euler's formula (the one with inequality)
+
+- use the argument that an edge maximal planar graph is a triangulation (no more edges can be added to preserve planarity)
+
+#### (3)
+
+- use generalized Euler's formula for $2$-cell embeddings
+
+- ❗use the fact that for any drawing we have $f \geq 1$
