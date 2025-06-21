@@ -83,3 +83,23 @@
   - objective:
     - make $\phi'(x) = \gamma$
   - we create a Kempe chain which is a path with alternating colors of $\alpha$ and $\beta$ starting at $y_i$ ❗and it is the longest such
+
+### Perfect graphs
+
+#### Perfect graph
+
+- perfect graph
+  - $G$ is perfect if for every induced subgraph $H \subseteq G$ we have that $\kappa(H) = \chi(H)$
+    - where $\kappa(G) = \max_{K \subseteq G : K \text{ is complete }}|V(K)|$
+      - i.e. the size of the maximal clique in $G$
+
+#### Strong perfect graph theorem
+
+- graph $G$ is perfect iff it does not contain
+  - an odd cycle ❗of size $\geq 5$ as an induced subgraph 
+  - ❗and no induced subgraph $H$ s.t. $H$ is a complement of some odd cycle of size $\geq 5$
+
+#### Weak perfect graph theorem
+
+- a graph $G$ is perfect iff $\overline{G}$ is perfect
+  - where $\overline{G}$ is the complement of $G$
