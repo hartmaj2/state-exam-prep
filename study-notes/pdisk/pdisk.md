@@ -214,6 +214,35 @@
     - where $\delta$ is the minimum degree in $G$
   - and $\delta \leq \Delta \leq v + 1$
 
+## Graph matching
+
+- matching $M$ in graph $G=(V,E)$
+  - $M \subseteq E$ s.t.
+    - for any $e_1 \neq e_2 \in M$ we have $e_1 \cap e_2 = \emptyset$
+
+- perfect matching $M$ iff 
+  - $\bigcup_{e \in M}=V(G)$
+
+- Tutte theorem
+  - $G$ has perfect matching iff $\forall S \subseteq V(G) : odd(V(G) \setminus S) \leq |S|$
+  - $odd(G) =$ # of components of odd size
+  - ❗easier implication 
+    - $\implies$
+
+- Petersen theorem
+  - $G$ has perfect matching iff $G$ is $2$-edge connected and $3$-regular
+  - proof outline
+    - just check Tutte criterion
+    - fix a subset $S \subseteq V(G)$
+    - draw a diagram with odd components
+      - at least two edges must go from each odd component to $S$
+        - ($2$-edge connectedness)
+      - ❗observe that if we have odd component s.t. degree of every vertex inside is odd
+        - then an odd number of edges must go out of it
+      - ❗use two way counting 
+        - at most $3$ edges go out of any vertex in $S$ ($3$-regularity)
+        - at least $3$ edges go out of every odd component
+
 ## Past exams
 
 ### Spring 2025 (graph drawing)
