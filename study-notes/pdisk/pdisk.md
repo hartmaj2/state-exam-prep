@@ -8,11 +8,11 @@
   - [x] Brooksova věta (formulace)
   - [x] základní metody z důkazů Vizingovy a Brooksovy věty (Kempeho řetězce, hladový algoritmus)
   - [x] silná a slabá věta o perfektních grafech (formulace), chordální grafy a další příklady tříd perfektních grafů
-- [ ] Párování v grafech
-  - [ ] definice párování a perfektního párování
-  - [ ] párování v obecných grafech (formulace Tutteovy věty včetně důkazu jednodušší implikace, Petersenova
+- [x] Párování v grafech
+  - [x] definice párování a perfektního párování
+  - [x] párování v obecných grafech (formulace Tutteovy věty včetně důkazu jednodušší implikace, Petersenova
   věta a její důkaz použitím Tutteovy věty)
-  - [ ] Edmondsův algoritmus (pouze vědět o jeho existenci)
+  - [x] Edmondsův algoritmus (pouze vědět o jeho existenci)
 - [ ] Kreslení grafů na plochách
   - [x] základní topologické pojmy (homeomorfismus, křivka, plocha)
   - [x] konstrukce ploch pomocí přidávání uší a křížítek (formulace), orientovatelné a neorientovatelné plochy,
@@ -20,9 +20,9 @@
   - [x] pojem buňkového (2-cell) nakreslení
   - [ ] zobecněná Eulerova formule, její použití pro horní odhad počtu hran a minimálního stupně v grafu
   nakresleném na dané ploše
-- [ ] Grafové minory
-  - [ ] definice a základní vlastnosti
-  - [ ] zachovávání nakreslení při minorových operacích
+- [x] Grafové minory
+  - [x] definice a základní vlastnosti
+  - [x] zachovávání nakreslení při minorových operacích
 - [ ] Množiny a zobrazení
   - [ ] přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční
   množina, ...)
@@ -242,6 +242,25 @@
       - ❗use two way counting 
         - at most $3$ edges go out of any vertex in $S$ ($3$-regularity)
         - at least $3$ edges go out of every odd component
+
+## Minors
+
+- minor $H$ of $G$
+  - $H \preceq G$ iff 
+    - $H$ can be obtained from $G$ by a sequence of
+      - edge deletions
+      - vertex deletions
+      - edge contractions
+
+- if $H$ is subgraph of $G$ then $H \preceq G$
+
+- if $G$ planar then $H \preceq G$ planar
+
+- Kuratowski and Wagner
+  - the following statements are equivalent
+    - $G$ is planar
+    - $G$ does not contain a subdivision of $K_{3,3}$ or $K_5$ as a subgraph
+    - $G$ does not contain $K_{3,3}$ or $K_5$ as a minor
 
 ## Past exams
 
