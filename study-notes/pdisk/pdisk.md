@@ -222,7 +222,7 @@
 
 - use generalized Euler's formula (the one with inequality)
 
-- use the argument that an edge maximal planar graph is a triangulation (no more edges can be added to preserve planarity)
+- ❗each face is bounded by at least $3$ edges
 
 #### (3)
 
