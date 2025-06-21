@@ -2,12 +2,12 @@
 
 ## Topics
 
-- [ ] Barvení grafů
-  - [ ] definice a základní vlastnosti
-  - [ ] hranová barevnost (definice, formulace Vizingovy věty, souvislost s párováními v grafech)
-  - [ ] Brooksova věta (formulace)
-  - [ ] základní metody z důkazů Vizingovy a Brooksovy věty (Kempeho řetězce, hladový algoritmus)
-  - [ ] silná a slabá věta o perfektních grafech (formulace), chordální grafy a další příklady tříd perfektních grafů
+- [x] Barvení grafů
+  - [x] definice a základní vlastnosti
+  - [x] hranová barevnost (definice, formulace Vizingovy věty, souvislost s párováními v grafech)
+  - [x] Brooksova věta (formulace)
+  - [x] základní metody z důkazů Vizingovy a Brooksovy věty (Kempeho řetězce, hladový algoritmus)
+  - [x] silná a slabá věta o perfektních grafech (formulace), chordální grafy a další příklady tříd perfektních grafů
 - [ ] Párování v grafech
   - [ ] definice párování a perfektního párování
   - [ ] párování v obecných grafech (formulace Tutteovy věty včetně důkazu jednodušší implikace, Petersenova
@@ -103,3 +103,13 @@
 
 - a graph $G$ is perfect iff $\overline{G}$ is perfect
   - where $\overline{G}$ is the complement of $G$
+
+#### Chordal graph
+
+- $G$ is chordal iff $G$ does not contain an odd cycle of length greater than $3$ as an induced subgraph
+
+#### Classes of perfect graphs
+
+- chordal graphs
+- complete graphs
+- bipartite graphs
