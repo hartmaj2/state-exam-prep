@@ -229,3 +229,5 @@
 - use generalized Euler's formula for $2$-cell embeddings
 
 - ❗use the fact that for any drawing we have $f \geq 1$
+
+### Summer 2024 (perfect matchings and Tutte)
