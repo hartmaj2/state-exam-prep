@@ -23,19 +23,19 @@
 - [x] Grafové minory
   - [x] definice a základní vlastnosti
   - [x] zachovávání nakreslení při minorových operacích
-- [ ] Množiny a zobrazení
-  - [ ] přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční
+- [x] Množiny a zobrazení
+  - [x] přehled o používané terminologii (třídy a vlastní třídy, kartézský součin, relace, zobrazení, suma, potenční
   množina, ...)
-- [ ] Subvalence a ekvivalence množin
-  - [ ] definice
-  - [ ] Cantorova-Bernsteinova věta (bez důkazu)
-  - [ ] spočetné množiny
-    - [ ] definice
-    - [ ] zachovávání spočetnosti při množinových operacích
-  - [ ] mohutnost množin racionálních a reálných čísel, důkaz neekvivalence diagonální metodou
-- [ ] Dobré uspořádání
-  - [ ] definice
-  - [ ] ordinální a kardinální čísla (definice)
+- [x] Subvalence a ekvivalence množin
+  - [x] definice
+  - [x] Cantorova-Bernsteinova věta (bez důkazu)
+  - [x] spočetné množiny
+    - [x] definice
+    - [x] zachovávání spočetnosti při množinových operacích
+  - [x] mohutnost množin racionálních a reálných čísel, důkaz neekvivalence diagonální metodou
+- [x] Dobré uspořádání
+  - [x] definice
+  - [x] ordinální a kardinální čísla (definice)
 
 ## Graph coloring
 
@@ -261,6 +261,55 @@
     - $G$ is planar
     - $G$ does not contain a subdivision of $K_{3,3}$ or $K_5$ as a subgraph
     - $G$ does not contain $K_{3,3}$ or $K_5$ as a minor
+
+## Classes and proper classes
+
+### Terminology basics
+
+- class 
+  - class term
+    - expression of form $\{ x \ ; \ \varphi(x) \}$ 
+  - collection of objects described by a class
+
+- proper class
+  - class that is not a set
+
+### Subvalency and equivalency
+
+- let $A,B$ sets
+  - $A \preceq B$ iff exists an injective function from $A$ to $B$
+
+- Cantor-Bernstein for $A,B$ sets
+  - $A \approx B$ iff $A \preceq B \wedge B \preceq A$
+
+- countably infinite set $A$
+  - if $A \approx \omega$
+
+- countable $A$
+  - if $A \preceq \omega$
+
+- proof of $x \not \approx \mathcal{P}(x)$
+  - ❗show that there is no **surjective** function $f : x \rightarrow \mathcal{P}(x)$
+
+- proof of $\mathbb{R} \approx \mathcal{P}(\omega)$
+  - prove $\mathbb{R} \approx [0,1] \approx {}^{\omega}2 \approx \mathcal{P}(\omega)$
+
+### Well ordering
+
+- well ordering $\preceq$ of set $M$
+  - for every $\emptyset \neq A \subseteq M$ we have that $A$ has a least element w.r.t. $\preceq$
+  - ❗$A$ is non-empty
+
+- set $x$ is transitive iff
+  - for every $y \in x$ we have that if $z \in y$ then $z \in x$
+
+- $\alpha$ is ordinal iff
+  - $\alpha$ is transitive
+  - $\in$ relation is strict well ordering on $\alpha$
+
+- $\kappa$ is cardinal iff
+  - $\kappa$ is an ordinal
+  - if $\alpha < \kappa$ then $\alpha \not \approx \kappa$
 
 ## Past exams
 
