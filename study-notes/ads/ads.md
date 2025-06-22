@@ -196,3 +196,19 @@
   - compare $x$ and $y$
 
 - ❗what pieces of $X$ and $Y$ can you get rid of when you know $x < y$ ?
+
+### Spring 2023 (binary search trees)
+
+#### (1)
+
+- go through the sequence and just insert all the elements into the tree $T$
+- then run DFS on the tree which goes to the smaller branch first
+  - writes the element after returning from smaller branch before going to the greater branch (or store it to some container at the current offset)
+
+#### (2)
+
+- we can just keep a counter at each vertex telling us, how many elements with same value there are
+
+#### (4)
+
+- probably $\Theta(Ln\log{n})$
