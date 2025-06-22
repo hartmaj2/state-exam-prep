@@ -439,5 +439,27 @@
 
 ### Spring 2023 (linear mapping)
 
+#### (1)
+
+- let $f$ be a linear mapping $f : U \rightarrow V$
+- let $B_1 = \{ x_1, \ldots x_n \}$ be basis of $U$
+- let $B_2 = \{ y_1, \ldots y_m \}$ be basis of $V$
+
+- matrix $A$ of linear mapping $f$ w.r.t. bases $B_1,B_2$ is
+  - ${}_{B_2}[f]_{B_1}=A \in \mathbb{F}^{m \times n}$ s.t
+  - $f(x_i) = a_{1,i}y_1 + \ldots + a_{m,i}y_m$
+
+#### (2)
+
+- let $f : U_1 \rightarrow U_2$ and $g : U_2 \rightarrow U_3$ be linear mappings
+- let $B_1,B_2,B_3$ be bases of $U_1,U_2,U_3$ respectively
+- then the matrix of compositve mapping $g \circ f$ is just the product of the matrices corresponding to $f$ and $g$
+
+#### (3)
+
+- ❗pay attention in what field $\mathbb{F}$ we are solving
+
+- ❗really rewrite every symbol carefully ❗
+
 ### Summer 2023 (linear algebra)
 
