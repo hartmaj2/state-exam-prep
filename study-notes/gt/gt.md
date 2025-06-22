@@ -34,6 +34,7 @@ algoritmu)
 
 - vertex connectivity $k_v(G) =$
   - $n - 1$ if $G \simeq K_n$
+    - ❗this condition is needed because for $K_n$ there exists no vertex cut of any size
   - $\min{ \{ |A| ; A \subseteq V \text{ vertex cut of } G \} }$
 
 - graph $G$ is $k$ vertex-connected iff
