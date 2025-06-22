@@ -16,8 +16,36 @@
 - [ ] Princip inkluze a exkluze
   - [ ] obecná formulace (a důkaz)
   - [ ] použití (problém šatnářky, Eulerova funkce pro počet dělitelů, počet surjekcí)
-- [ ] Hallova věta o systému různých reprezentantů a její vztah k párování v bipartitním grafu
-  - [ ] princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
+- [x] Hallova věta o systému různých reprezentantů a její vztah k párování v bipartitním grafu
+  - [x] princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
+
+## Inclusion exclusion principle
+
+### Formulation
+
+- let $A_1,\ldots,A_n$ sets
+- inclusion exclusion principle
+  - $|\bigcup_{i=1}^n A_i| = \sum_{i=1}^n(-1)^{i+1}\sum_{I \in \binom{[n]}{i}}|\bigcap_{j \in I}A_j|$
+
+- also
+  - $|\bigcup_{i=1}^n A_i| = \sum_{\emptyset \neq I \subseteq [n]}(-1)^{|I|+1}|\bigcap_{j\in I}A_j|$
+
+### Proof
+
+- suppose we have $x \in \bigcup_{i=1}^n A_i$
+  - we want to show that the element is counted exactly once on the right side
+- let $J = \{ j \in [n] \ ; \ x \in A_j \}$
+- in what intersections does $x$ get counted?
+- only in those that contain no set $A_i$ s.t. $i \notin J$
+- so only in intersections of sets determined by indices $I \subseteq J$
+- so we can just count the following:
+  - $\sum_{\emptyset \neq I \subseteq J}(-1)^{|I|+1}|\bigcap_{i \in I}A_i|$
+- since for every intersection, we count $x$ once, we just want to see whether:
+  - $\sum_{\emptyset \neq I \subseteq J}(-1)^{|I|+1} = 1$
+- so we want
+  - $\sum_{|I| \text{ odd } : \ \emptyset \neq I \subseteq J}1 = 1 + \sum_{|I| \text{ even } : \ \emptyset \neq I \subseteq J}1$
+  - $\sum_{|I| \text{ odd } : \ I \subseteq J}1 = \sum_{|I| \text{ even } : \  I \subseteq J}1$
+  - $|\{ I \subseteq J ; |I| \text{ is odd } \}| = |\{ I \subseteq J ; |I| \text{ is even } \}|$
 
 ## Hall theorem
 
