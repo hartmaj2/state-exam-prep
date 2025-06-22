@@ -420,6 +420,23 @@
 
 ### Summer 2024 (basis of vector space)
 
+#### (2)
+
+- ❗similarity corresponds to changing bases
+
+- similarity preserves
+  - eigenvalues (also with their multiplicities)
+    - (characteristic polynomial as well)
+  - rank
+  - ❗determinant
+
+- if we have $AR = RD$ where $D$ is diagonal, then
+  - for each column we have $Ar_i = \lambda_i r_i$
+
+- if $AP = PD$ is to hold, then it must also hold that
+  - $Ap_i = \lambda_i p_i$ for every $i$
+    - i.e. $p_i$ must be an eigenvector of $A$
+
 ### Spring 2023 (linear mapping)
 
 ### Summer 2023 (linear algebra)
