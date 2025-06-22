@@ -19,6 +19,27 @@
 - [ ] Hallova věta o systému různých reprezentantů a její vztah k párování v bipartitním grafu
   - [ ] princip důkazu a algoritmické aspekty (polynomiální algoritmus pro nalezení SRR)
 
+## Hall theorem
+
+### For bipartite graphs
+
+- let $G=(V,E)$ be bipartite graph with partitions $A,B$
+- there exists matching that saturates $A$ iff
+  - for every $F \subseteq A$ we have $|N(F)| \geq |F|$
+
+### System of distinct representants
+
+- let $X$ be a ground set and $M_1,\ldots,M_k$ s.t. $M_i \subseteq X$
+- system of distinct representants is a function
+  - $f : [k] \rightarrow X$ s.t.
+    - for every $i$ we have $f(i) \in M_i$
+    - $f$ is injective
+
+- Hall theorem
+  - there exists SDR iff 
+    - for every $J \subseteq [k]$ we have $|J| \leq |\bigcup_{i \in J}M_i|$
+
+
 ## Past exams
 
 ### Spring 2025 (Euler graphs)
