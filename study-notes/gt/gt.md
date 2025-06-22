@@ -7,23 +7,23 @@
 graf
 - [x] Základní příklady grafů
   - [x] úplný graf a úplný bipartitní graf, cesty a kružnice
-- [ ] Souvislost grafů, komponenty souvislosti, vzdálenost v grafu
+- [x] Souvislost grafů, komponenty souvislosti, vzdálenost v grafu
 - [ ] Stromy
   - [ ] definice a základní vlastnosti (existence listů, počet hran stromu)
   - [ ] ekvivalentní charakteristiky stromů
-- [ ] Rovinné grafy
-  - [ ] definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
-  - [ ] Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
-- [ ] Barevnost grafů
-  - [ ] definice dobrého obarvení
-  - [ ] vztah barevnosti a klikovosti grafu
-- [ ] Hranová a vrcholová souvislost grafů
-  - [ ] hranová a vrcholová verze Mengerovy věty
-- [ ] Orientované grafy, silná a slabá souvislost
-- [ ] Toky v sítích
-  - [ ] definice sítě a toku v ní
-  - [ ] existence maximálního toku (bez důkazu)
-  - [ ] princip hledání maximálního toku v síti s celočíselnými kapacitami (například pomocí Ford-Fulkersonova
+- [x] Rovinné grafy
+  - [x] definice a základní pojmy (rovinný graf a rovinné nakreslení grafu, stěny)
+  - [x] Eulerova formule a maximální počet hran rovinného grafu (důkaz a použití)
+- [x] Barevnost grafů
+  - [x] definice dobrého obarvení
+  - [x] vztah barevnosti a klikovosti grafu
+- [x] Hranová a vrcholová souvislost grafů
+  - [x] hranová a vrcholová verze Mengerovy věty
+- [x] Orientované grafy, silná a slabá souvislost
+- [x] Toky v sítích
+  - [x] definice sítě a toku v ní
+  - [x] existence maximálního toku (bez důkazu)
+  - [x] princip hledání maximálního toku v síti s celočíselnými kapacitami (například pomocí Ford-Fulkersonova
 algoritmu)
 
 ## Menger theorem
