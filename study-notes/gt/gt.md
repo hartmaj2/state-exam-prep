@@ -28,6 +28,28 @@ algoritmu)
 
 ## Menger theorem
 
+### Jelinek version
+
+- edge onnectivity $k_e(G) = \min{ \{ |F| ; F \subseteq E \text{ is edge cut of } G \} }$
+
+- vertex connectivity $k_v(G) =$
+  - $n - 1$ if $G \simeq K_n$
+  - $\min{ \{ |A| ; A \subseteq V \text{ vertex cut of } G \} }$
+
+- graph $G$ is $k$ vertex-connected iff
+  - $k \leq k_v(G)$
+
+- Menger edge theorem
+  - let $G = (V,E)$ be a graph
+  - $k_e(G) = t$ iff
+    - for every $u,v$ there exist at least $t$ edge disjoint paths from $u$ to $v$
+
+- Menger vertex theorem
+  - same as above but
+  - vertex disjoint paths where ❗$u$ and $v$ can be shared
+
+### My version
+
 - $G$ is $k$-edge connected
   - iff for every $x \neq y$ there exists no cut $C$ that uses less than $k$ edges and disconnects $x$ from $y$
 
