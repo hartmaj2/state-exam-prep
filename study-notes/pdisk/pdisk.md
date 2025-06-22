@@ -328,3 +328,20 @@
 - ❗use the fact that for any drawing we have $f \geq 1$
 
 ### Summer 2024 (perfect matchings and Tutte)
+
+#### (2)
+
+- ❗sometimes the second part does not use what was formulated in the first part
+- also, don't be lazy and draw examples
+
+#### (3)
+
+- ❗sometimes the solution is a reduction of the problem to some other problem
+  - think if solving something else doesn't provide me a solution to the original problem
+
+- this problem was also a nice example showing that 
+  - we can reduce the problem of:
+    - finding a set of edges such that each vertex has prescribed number of incident edges
+  - into a problem of:
+    - finding a perfect matching
+  - done using the weird construction
